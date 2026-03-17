@@ -1,0 +1,100 @@
+{
+  "/Users/tank43/Documents/Resurge/Resurge/Features/CravingTools/CravingToolsView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/CravingToolsView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/CravingToolsView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/CravingToolsView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/CravingToolsView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/CravingToolsView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/CravingTools/EmergencyModeView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyModeView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyModeView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyModeView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyModeView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyModeView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Home/DailyChallengeView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallengeView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallengeView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallengeView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallengeView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallengeView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Home/DailyCheckInView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyCheckInView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyCheckInView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyCheckInView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyCheckInView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyCheckInView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/ProgramTools/EmotionalEatingToolsView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmotionalEatingToolsView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmotionalEatingToolsView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmotionalEatingToolsView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmotionalEatingToolsView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmotionalEatingToolsView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/ProgramTools/GamblingToolsView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/GamblingToolsView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/GamblingToolsView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/GamblingToolsView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/GamblingToolsView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/GamblingToolsView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Settings/DataExportView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DataExportView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DataExportView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DataExportView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DataExportView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DataExportView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Settings/EmergencyContactsView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyContactsView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyContactsView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyContactsView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyContactsView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyContactsView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Models/CravingToolKind.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/CravingToolKind.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/CravingToolKind.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/CravingToolKind.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/CravingToolKind.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/CravingToolKind.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Models/DailyChallenge.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallenge.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallenge.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallenge.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallenge.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallenge.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Services/DailyChallengeService.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallengeService.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallengeService.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallengeService.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallengeService.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyChallengeService.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Services/IAP/Entitlements.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/Entitlements.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/Entitlements.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/Entitlements.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/Entitlements.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/Entitlements.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Views/DailyQuoteCard.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyQuoteCard.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyQuoteCard.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyQuoteCard.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyQuoteCard.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/DailyQuoteCard.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Views/EmergencyButton.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyButton.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyButton.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyButton.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyButton.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/EmergencyButton.swiftdeps"
+  }
+}

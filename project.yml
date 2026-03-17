@@ -1,0 +1,84 @@
+name: Resurge
+options:
+  bundleIdPrefix: com.resurge
+  deploymentTarget:
+    iOS: "15.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+  groupSortPosition: top
+
+packages:
+  DGCharts:
+    url: https://github.com/ChartsOrg/Charts
+    from: "5.0.0"
+  Lottie:
+    url: https://github.com/airbnb/lottie-spm.git
+    from: "4.4.0"
+  SwiftCollections:
+    url: https://github.com/apple/swift-collections
+    from: "1.0.0"
+
+schemes:
+  Resurge:
+    build:
+      targets:
+        Resurge: all
+    run:
+      config: Debug
+      storeKitConfiguration: Resurge/Resources/Resurge.storekit
+    test:
+      config: Debug
+      targets:
+        - ResurgeTests
+
+targets:
+  Resurge:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: Resurge
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.resurge.app
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: 1
+        INFOPLIST_FILE: Resurge/Resources/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Resurge/Resources/Resurge.entitlements
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_STYLE: Automatic
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        GENERATE_INFOPLIST_FILE: false
+      configs:
+        Debug:
+          SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "DEBUG"
+        Release:
+          SWIFT_OPTIMIZATION_LEVEL: "-O"
+    dependencies:
+      - package: DGCharts
+        product: DGCharts
+      - package: Lottie
+        product: Lottie
+      - package: SwiftCollections
+        product: Collections
+    entitlements:
+      path: Resurge/Resources/Resurge.entitlements
+
+  ResurgeTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: ResurgeTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.resurge.app.tests
+        SWIFT_VERSION: "5.0"
+        GENERATE_INFOPLIST_FILE: true
+    dependencies:
+      - target: Resurge

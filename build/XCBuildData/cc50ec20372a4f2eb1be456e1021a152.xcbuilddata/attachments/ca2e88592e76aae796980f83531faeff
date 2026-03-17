@@ -1,0 +1,4 @@
+module DGCharts {
+header "DGCharts-Swift.h"
+export *
+}

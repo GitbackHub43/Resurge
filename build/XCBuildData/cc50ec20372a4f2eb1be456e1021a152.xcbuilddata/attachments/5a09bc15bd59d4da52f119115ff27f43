@@ -1,0 +1,731 @@
+{
+  "" : {
+    "const-values" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DGCharts-primary.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DGCharts-primary.d",
+    "diagnostics" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DGCharts-primary.dia",
+    "emit-module-dependencies" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DGCharts-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DGCharts-primary-emit-module.dia",
+    "pch" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DGCharts-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DGCharts-primary.swiftdeps"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Animation/Animator.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Animator.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Animator.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Animator.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Animation/ChartAnimationEasing.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartAnimationEasing.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartAnimationEasing.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartAnimationEasing.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/BarChartView.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartView.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartView.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartView.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/BarLineChartViewBase.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineChartViewBase.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineChartViewBase.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineChartViewBase.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/BubbleChartView.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartView.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartView.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartView.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/CandleStickChartView.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleStickChartView.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleStickChartView.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleStickChartView.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/ChartViewBase.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartViewBase.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartViewBase.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartViewBase.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/CombinedChartView.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartView.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartView.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartView.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/HorizontalBarChartView.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/HorizontalBarChartView.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/HorizontalBarChartView.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/HorizontalBarChartView.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/LineChartView.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartView.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartView.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartView.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/PieChartView.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartView.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartView.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartView.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/PieRadarChartViewBase.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieRadarChartViewBase.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieRadarChartViewBase.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieRadarChartViewBase.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/RadarChartView.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartView.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartView.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartView.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Charts/ScatterChartView.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartView.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartView.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartView.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Components/AxisBase.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AxisBase.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AxisBase.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AxisBase.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Components/ChartLimitLine.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartLimitLine.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartLimitLine.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartLimitLine.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Components/ComponentBase.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ComponentBase.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ComponentBase.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ComponentBase.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Components/Description.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Description.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Description.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Description.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Components/Legend.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Legend.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Legend.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Legend.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Components/LegendEntry.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LegendEntry.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LegendEntry.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LegendEntry.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Components/Marker.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Marker.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Marker.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Marker.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Components/MarkerImage.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/MarkerImage.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/MarkerImage.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/MarkerImage.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Components/MarkerView.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/MarkerView.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/MarkerView.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/MarkerView.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Components/XAxis.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxis.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxis.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxis.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Components/YAxis.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxis.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxis.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxis.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/ChartBaseDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartBaseDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartBaseDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartBaseDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/BarChartData.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartData.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartData.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartData.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/BarChartDataEntry.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataEntry.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataEntry.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataEntry.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/BarChartDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/BarLineScatterCandleBubbleChartData.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartData.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartData.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartData.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/BarLineScatterCandleBubbleChartDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/BubbleChartData.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartData.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartData.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartData.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/BubbleChartDataEntry.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataEntry.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataEntry.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataEntry.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/BubbleChartDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/CandleChartData.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartData.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartData.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartData.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/CandleChartDataEntry.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataEntry.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataEntry.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataEntry.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/CandleChartDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/ChartData.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartData.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartData.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartData.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/ChartDataEntry.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataEntry.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataEntry.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataEntry.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/ChartDataEntryBase.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataEntryBase.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataEntryBase.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataEntryBase.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/ChartDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/CombinedChartData.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartData.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartData.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartData.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/LineChartData.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartData.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartData.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartData.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/LineChartDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/LineRadarChartDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineRadarChartDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineRadarChartDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineRadarChartDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/LineScatterCandleRadarChartDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineScatterCandleRadarChartDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineScatterCandleRadarChartDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineScatterCandleRadarChartDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/PieChartData.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartData.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartData.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartData.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/PieChartDataEntry.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartDataEntry.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartDataEntry.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartDataEntry.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/PieChartDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/RadarChartData.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartData.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartData.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartData.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/RadarChartDataEntry.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartDataEntry.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartDataEntry.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartDataEntry.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/RadarChartDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/ScatterChartData.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartData.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartData.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartData.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Implementations/Standard/ScatterChartDataSet.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartDataSet.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartDataSet.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartDataSet.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Interfaces/BarChartDataSetProtocol.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataSetProtocol.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataSetProtocol.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataSetProtocol.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Interfaces/BarLineScatterCandleBubbleChartDataSetProtocol.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartDataSetProtocol.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartDataSetProtocol.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartDataSetProtocol.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Interfaces/BubbleChartDataSetProtocol.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataSetProtocol.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataSetProtocol.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataSetProtocol.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Interfaces/CandleChartDataSetProtocol.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataSetProtocol.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataSetProtocol.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataSetProtocol.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Interfaces/ChartDataSetProtocol.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataSetProtocol.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataSetProtocol.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataSetProtocol.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Interfaces/LineChartDataSetProtocol.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartDataSetProtocol.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartDataSetProtocol.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartDataSetProtocol.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Interfaces/LineRadarChartDataSetProtocol.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineRadarChartDataSetProtocol.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineRadarChartDataSetProtocol.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineRadarChartDataSetProtocol.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Interfaces/LineScatterCandleRadarChartDataSetProtocol.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineScatterCandleRadarChartDataSetProtocol.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineScatterCandleRadarChartDataSetProtocol.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineScatterCandleRadarChartDataSetProtocol.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Interfaces/PieChartDataSetProtocol.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartDataSetProtocol.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartDataSetProtocol.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartDataSetProtocol.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Interfaces/RadarChartDataSetProtocol.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartDataSetProtocol.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartDataSetProtocol.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartDataSetProtocol.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Data/Interfaces/ScatterChartDataSetProtocol.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartDataSetProtocol.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartDataSetProtocol.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartDataSetProtocol.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Filters/DataApproximator+N.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DataApproximator+N.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DataApproximator+N.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DataApproximator+N.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Filters/DataApproximator.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DataApproximator.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DataApproximator.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DataApproximator.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Formatters/AxisValueFormatter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AxisValueFormatter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AxisValueFormatter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AxisValueFormatter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Formatters/DefaultAxisValueFormatter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DefaultAxisValueFormatter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DefaultAxisValueFormatter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DefaultAxisValueFormatter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Formatters/DefaultFillFormatter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DefaultFillFormatter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DefaultFillFormatter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DefaultFillFormatter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Formatters/DefaultValueFormatter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DefaultValueFormatter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DefaultValueFormatter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DefaultValueFormatter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Formatters/FillFormatter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/FillFormatter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/FillFormatter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/FillFormatter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Formatters/IndexAxisValueFormatter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/IndexAxisValueFormatter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/IndexAxisValueFormatter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/IndexAxisValueFormatter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Formatters/ValueFormatter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ValueFormatter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ValueFormatter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ValueFormatter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Highlight/BarHighlighter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarHighlighter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarHighlighter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarHighlighter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Highlight/ChartHighlighter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartHighlighter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartHighlighter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartHighlighter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Highlight/CombinedHighlighter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedHighlighter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedHighlighter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedHighlighter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Highlight/Highlight.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Highlight.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Highlight.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Highlight.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Highlight/Highlighter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Highlighter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Highlighter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Highlighter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Highlight/HorizontalBarHighlighter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/HorizontalBarHighlighter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/HorizontalBarHighlighter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/HorizontalBarHighlighter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Highlight/PieHighlighter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieHighlighter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieHighlighter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieHighlighter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Highlight/PieRadarHighlighter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieRadarHighlighter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieRadarHighlighter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieRadarHighlighter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Highlight/RadarHighlighter.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarHighlighter.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarHighlighter.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarHighlighter.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Highlight/Range.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Range.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Range.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Range.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Interfaces/BarChartDataProvider.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataProvider.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataProvider.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartDataProvider.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Interfaces/BarLineScatterCandleBubbleChartDataProvider.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartDataProvider.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartDataProvider.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleChartDataProvider.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Interfaces/BubbleChartDataProvider.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataProvider.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataProvider.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartDataProvider.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Interfaces/CandleChartDataProvider.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataProvider.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataProvider.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleChartDataProvider.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Interfaces/ChartDataProvider.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataProvider.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataProvider.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartDataProvider.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Interfaces/CombinedChartDataProvider.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartDataProvider.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartDataProvider.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartDataProvider.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Interfaces/LineChartDataProvider.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartDataProvider.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartDataProvider.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartDataProvider.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Interfaces/ScatterChartDataProvider.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartDataProvider.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartDataProvider.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartDataProvider.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Jobs/AnimatedMoveViewJob.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AnimatedMoveViewJob.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AnimatedMoveViewJob.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AnimatedMoveViewJob.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Jobs/AnimatedViewPortJob.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AnimatedViewPortJob.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AnimatedViewPortJob.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AnimatedViewPortJob.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Jobs/AnimatedZoomViewJob.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AnimatedZoomViewJob.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AnimatedZoomViewJob.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AnimatedZoomViewJob.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Jobs/MoveViewJob.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/MoveViewJob.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/MoveViewJob.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/MoveViewJob.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Jobs/ViewPortJob.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ViewPortJob.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ViewPortJob.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ViewPortJob.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Jobs/ZoomViewJob.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ZoomViewJob.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ZoomViewJob.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ZoomViewJob.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/AxisRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AxisRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AxisRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/AxisRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/BarChartRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarChartRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/BarLineScatterCandleBubbleRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BarLineScatterCandleBubbleRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/BubbleChartRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/BubbleChartRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/CandleStickChartRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleStickChartRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleStickChartRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CandleStickChartRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/CombinedChartRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CombinedChartRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/DataRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DataRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DataRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/DataRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/HorizontalBarChartRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/HorizontalBarChartRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/HorizontalBarChartRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/HorizontalBarChartRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/LegendRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LegendRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LegendRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LegendRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/LineChartRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineChartRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/LineRadarRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineRadarRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineRadarRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineRadarRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/LineScatterCandleRadarRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineScatterCandleRadarRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineScatterCandleRadarRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/LineScatterCandleRadarRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/PieChartRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/PieChartRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/RadarChartRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/RadarChartRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/Renderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Renderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Renderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Renderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/Scatter/ChevronDownShapeRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChevronDownShapeRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChevronDownShapeRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChevronDownShapeRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/Scatter/ChevronUpShapeRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChevronUpShapeRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChevronUpShapeRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChevronUpShapeRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/Scatter/CircleShapeRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CircleShapeRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CircleShapeRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CircleShapeRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/Scatter/CrossShapeRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CrossShapeRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CrossShapeRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/CrossShapeRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/Scatter/ShapeRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ShapeRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ShapeRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ShapeRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/Scatter/SquareShapeRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/SquareShapeRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/SquareShapeRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/SquareShapeRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/Scatter/TriangleShapeRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/TriangleShapeRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/TriangleShapeRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/TriangleShapeRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/Scatter/XShapeRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XShapeRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XShapeRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XShapeRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/ScatterChartRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ScatterChartRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/XAxisRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxisRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxisRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxisRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/XAxisRendererHorizontalBarChart.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxisRendererHorizontalBarChart.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxisRendererHorizontalBarChart.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxisRendererHorizontalBarChart.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/XAxisRendererRadarChart.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxisRendererRadarChart.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxisRendererRadarChart.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/XAxisRendererRadarChart.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/YAxisRenderer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxisRenderer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxisRenderer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxisRenderer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/YAxisRendererHorizontalBarChart.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxisRendererHorizontalBarChart.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxisRendererHorizontalBarChart.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxisRendererHorizontalBarChart.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Renderers/YAxisRendererRadarChart.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxisRendererRadarChart.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxisRendererRadarChart.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/YAxisRendererRadarChart.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/ChartColorTemplates.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartColorTemplates.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartColorTemplates.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartColorTemplates.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/ChartUtils.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartUtils.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartUtils.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ChartUtils.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/Fill.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Fill.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Fill.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Fill.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/Indexed.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Indexed.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Indexed.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Indexed.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/Partition.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Partition.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Partition.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Partition.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/Platform+Accessibility.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Accessibility.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Accessibility.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Accessibility.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/Platform+Color.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Color.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Color.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Color.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/Platform+Gestures.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Gestures.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Gestures.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Gestures.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/Platform+Graphics.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Graphics.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Graphics.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Graphics.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/Platform+Touch Handling.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Touch Handling.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Touch Handling.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform+Touch Handling.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/Platform.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Platform.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/Sequence+KeyPath.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Sequence+KeyPath.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Sequence+KeyPath.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Sequence+KeyPath.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/Transformer.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Transformer.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Transformer.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/Transformer.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/TransformerHorizontalBarChart.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/TransformerHorizontalBarChart.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/TransformerHorizontalBarChart.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/TransformerHorizontalBarChart.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/Source/Charts/Utils/ViewPortHandler.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ViewPortHandler.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ViewPortHandler.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/ViewPortHandler.o"
+  },
+  "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/DerivedSources/resource_bundle_accessor.swift" : {
+    "index-unit-output-path" : "/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/resource_bundle_accessor.o",
+    "llvm-bc" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/resource_bundle_accessor.bc",
+    "object" : "/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/Charts/build/DGCharts.build/Release-iphoneos/DGCharts.build/Objects-normal/arm64/resource_bundle_accessor.o"
+  }
+}

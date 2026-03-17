@@ -1,0 +1,100 @@
+{
+  "/Users/tank43/Documents/Resurge/Resurge/App/AppEnvironment.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AppEnvironment.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AppEnvironment.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AppEnvironment.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AppEnvironment.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AppEnvironment.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Achievements/AchievementsView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AchievementsView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AchievementsView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AchievementsView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AchievementsView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AchievementsView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/ActivityLog/ActivityLogView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ActivityLogView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ActivityLogView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ActivityLogView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ActivityLogView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ActivityLogView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Analytics/AdvancedAnalyticsView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AdvancedAnalyticsView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AdvancedAnalyticsView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AdvancedAnalyticsView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AdvancedAnalyticsView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AdvancedAnalyticsView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Home/AddEditHabitView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AddEditHabitView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AddEditHabitView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AddEditHabitView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AddEditHabitView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AddEditHabitView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Library/ArticleDetailView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ArticleDetailView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ArticleDetailView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ArticleDetailView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ArticleDetailView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ArticleDetailView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Library/ArticleReaderView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ArticleReaderView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ArticleReaderView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ArticleReaderView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ArticleReaderView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ArticleReaderView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Library/BookmarksView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/BookmarksView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/BookmarksView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/BookmarksView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/BookmarksView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/BookmarksView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Onboarding/AddHabitOnboardingView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AddHabitOnboardingView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AddHabitOnboardingView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AddHabitOnboardingView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AddHabitOnboardingView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AddHabitOnboardingView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/ProgramTools/AlcoholToolsView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AlcoholToolsView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AlcoholToolsView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AlcoholToolsView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AlcoholToolsView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AlcoholToolsView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Repositories/AchievementRepository.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AchievementRepository.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AchievementRepository.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AchievementRepository.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AchievementRepository.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AchievementRepository.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Services/BiometricLockManager.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/BiometricLockManager.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/BiometricLockManager.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/BiometricLockManager.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/BiometricLockManager.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/BiometricLockManager.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Theme/AppStyle.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AppStyle.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AppStyle.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AppStyle.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AppStyle.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AppStyle.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/ViewModels/AnalyticsViewModel.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AnalyticsViewModel.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AnalyticsViewModel.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AnalyticsViewModel.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AnalyticsViewModel.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/AnalyticsViewModel.swiftdeps"
+  }
+}

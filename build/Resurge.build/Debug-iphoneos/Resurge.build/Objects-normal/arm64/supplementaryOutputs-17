@@ -1,0 +1,100 @@
+{
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Onboarding/NotificationSetupView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationSetupView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationSetupView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationSetupView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationSetupView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationSetupView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Onboarding/OnboardingContainerView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/OnboardingContainerView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/OnboardingContainerView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/OnboardingContainerView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/OnboardingContainerView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/OnboardingContainerView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/ProgramTools/PhoneToolsView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PhoneToolsView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PhoneToolsView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PhoneToolsView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PhoneToolsView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PhoneToolsView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/ProgramTools/PornToolsView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PornToolsView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PornToolsView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PornToolsView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PornToolsView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PornToolsView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Settings/ModuleLockSettingsView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ModuleLockSettingsView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ModuleLockSettingsView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ModuleLockSettingsView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ModuleLockSettingsView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/ModuleLockSettingsView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Settings/MoreView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MoreView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MoreView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MoreView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MoreView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MoreView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Features/Settings/NotificationSettingsView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationSettingsView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationSettingsView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationSettingsView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationSettingsView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationSettingsView.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Models/MoodState.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MoodState.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MoodState.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MoodState.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MoodState.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MoodState.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Models/MotivationPack.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MotivationPack.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MotivationPack.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MotivationPack.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MotivationPack.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/MotivationPack.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Models/PremiumFeature.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PremiumFeature.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PremiumFeature.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PremiumFeature.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PremiumFeature.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PremiumFeature.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/PreviewContent/PreviewData.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PreviewData.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PreviewData.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PreviewData.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PreviewData.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PreviewData.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Services/NotificationManager.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationManager.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationManager.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationManager.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationManager.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/NotificationManager.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/ViewModels/OnboardingViewModel.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/OnboardingViewModel.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/OnboardingViewModel.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/OnboardingViewModel.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/OnboardingViewModel.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/OnboardingViewModel.swiftdeps"
+  },
+  "/Users/tank43/Documents/Resurge/Resurge/Views/PremiumGateView.swift" : {
+    "const-values" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PremiumGateView.swiftconstvalues",
+    "dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PremiumGateView.d",
+    "diagnostics" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PremiumGateView.dia",
+    "object" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PremiumGateView.o",
+    "swift-dependencies" : "/Users/tank43/Documents/Resurge/build/Resurge.build/Debug-iphoneos/Resurge.build/Objects-normal/arm64/PremiumGateView.swiftdeps"
+  }
+}

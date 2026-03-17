@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>colors</key>
+	<array/>
+	<key>images</key>
+	<array>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/tank43/Documents/Resurge/Resurge/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameChatGPTImageMar142026At022318AM</string>
+			<key>relativePath</key>
+			<string>./ChatGPT Image Mar 14, 2026 at 02_23_18 AM.imageset</string>
+			<key>swiftSymbol</key>
+			<string>chatGPTImageMar142026At022318AM</string>
+		</dict>
+	</array>
+	<key>symbols</key>
+	<array/>
+</dict>
+</plist>

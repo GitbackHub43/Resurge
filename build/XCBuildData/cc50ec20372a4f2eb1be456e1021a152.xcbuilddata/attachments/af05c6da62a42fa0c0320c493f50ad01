@@ -1,0 +1,60 @@
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BinaryInteger\ extensions.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+BitwiseOperations.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+ChunkedBitsIterators.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Codable.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Collection.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Copy.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+CustomReflectable.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Descriptions.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Equatable.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+ExpressibleByArrayLiteral.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+ExpressibleByStringLiteral.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Extras.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Fill.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Hashable.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Initializers.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Invariants.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+LosslessStringConvertible.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+RandomBits.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+RangeReplaceableCollection.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Shifts.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray+Testing.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray._UnsafeHandle.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitArray/BitArray.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+BidirectionalCollection.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+Codable.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+CustomDebugStringConvertible.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+CustomReflectable.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+CustomStringConvertible.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+Equatable.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+ExpressibleByArrayLiteral.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+Extras.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+Hashable.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+Initializers.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+Invariants.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+Random.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ basics.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ conformance.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ formIntersection.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ formSymmetricDifference.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ formUnion.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ intersection.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ isDisjoint.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ isEqualSet.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ isStrictSubset.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ isStrictSuperset.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ isSubset.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ isSuperset.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ subtract.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ subtracting.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ symmetricDifference.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+SetAlgebra\ union.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet+Sorted\ Collection\ APIs.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet.Counted.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet.Index.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet._UnsafeHandle.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/BitSet/BitSet.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/Shared/Range+Utilities.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/Shared/Slice+Utilities.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/Shared/UInt+Tricks.swift
+/Users/tank43/Library/Developer/Xcode/DerivedData/Resurge-hgazflepzjaypscmuonlupadodnx/SourcePackages/checkouts/swift-collections/Sources/BitCollections/Shared/_Word.swift
