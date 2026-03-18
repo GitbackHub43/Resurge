@@ -86,7 +86,7 @@ struct BackupView: View {
                     Label("How it works", systemImage: "info.circle.fill")
                         .font(Typography.headline)
                         .foregroundColor(.neonCyan)
-                    Text("Export creates an encrypted .resurgebackup file. Import restores from a previously exported file. Both require the same passphrase.")
+                    Text("Export creates an encrypted .looprootbackup file. Import restores from a previously exported file. Both require the same passphrase.")
                         .font(Typography.caption)
                         .foregroundColor(.subtleText)
                 }
@@ -137,7 +137,7 @@ struct BackupView: View {
             let data = try EncryptedBackupService.exportBackup(context: viewContext, passphrase: passphrase)
             exportedData = data
             // Save to temp file and share
-            let url = FileManager.default.temporaryDirectory.appendingPathComponent("Resurge_Backup_\(Date().timeIntervalSince1970).resurgebackup")
+            let url = FileManager.default.temporaryDirectory.appendingPathComponent("LoopRoot_Backup_\(Date().timeIntervalSince1970).looprootbackup")
             try data.write(to: url)
             showExportSheet = true
             alertMessage = "Backup exported successfully!"

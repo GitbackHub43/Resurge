@@ -13,7 +13,7 @@ struct PrivacyPolicyView: View {
                     .foregroundColor(.textSecondary)
 
                 section(title: "Your Privacy Matters", body: """
-                Resurge is designed with your privacy as a top priority. We understand that recovery is deeply personal, and we built this app to keep your data safe and private.
+                LoopRoot is designed with your privacy as a top priority. We understand that recovery is deeply personal, and we built this app to keep your data safe and private.
                 """)
 
                 section(title: "Data Storage", body: """
@@ -23,7 +23,7 @@ struct PrivacyPolicyView: View {
                 """)
 
                 section(title: "No Account Required", body: """
-                Resurge does not require you to create an account, provide an email address, or sign in with any service. You can use the app completely anonymously.
+                LoopRoot does not require you to create an account, provide an email address, or sign in with any service. You can use the app completely anonymously.
                 """)
 
                 section(title: "No Tracking or Analytics", body: """
@@ -49,7 +49,7 @@ struct PrivacyPolicyView: View {
                 """)
 
                 section(title: "Children's Privacy", body: """
-                Resurge is not directed at children under 13. We do not knowingly collect data from children.
+                LoopRoot is not directed at children under 13. We do not knowingly collect data from children.
                 """)
 
                 section(title: "Changes to This Policy", body: """
@@ -57,7 +57,7 @@ struct PrivacyPolicyView: View {
                 """)
 
                 section(title: "Contact", body: """
-                If you have questions about this privacy policy, you can reach us at support@resurgeapp.com.
+                If you have questions about this privacy policy, you can reach us at support@looprootapp.com.
                 """)
             }
             .padding(AppStyle.screenPadding)

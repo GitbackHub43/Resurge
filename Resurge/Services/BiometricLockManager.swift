@@ -36,7 +36,7 @@ final class BiometricLockManager {
         do {
             let success = try await context.evaluatePolicy(
                 .deviceOwnerAuthenticationWithBiometrics,
-                localizedReason: "Unlock Resurge to access your private data."
+                localizedReason: "Unlock LoopRoot to access your private data."
             )
             return success
         } catch {

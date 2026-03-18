@@ -23,6 +23,7 @@ final class AchievementEvaluationService {
         let toolsUsed = countUniqueToolsUsed(for: habit)
         let timeSavedHours = Int(habit.timeSavedMinutes / 60)
 
+
         // Include per-habit health badges in evaluation
         let programType = ProgramType(rawValue: habit.programType) ?? .smoking
         let healthBadges = MilestoneBadge.healthBadges(for: programType)
@@ -122,7 +123,11 @@ final class AchievementEvaluationService {
 
     private func countJournalEntries(for habit: CDHabit) -> Int {
         let request = NSFetchRequest<CDJournalEntry>(entityName: "CDJournalEntry")
-        request.predicate = NSPredicate(format: "habit == %@", habit)
+        // Only count actual journal entries — exclude gratitude and craving journal entries
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+            NSPredicate(format: "habit == %@", habit),
+            NSPredicate(format: "promptUsed == nil OR (NOT (promptUsed CONTAINS[cd] %@) AND NOT (promptUsed CONTAINS[cd] %@))", "gratitude", "craving")
+        ])
         return (try? context.count(for: request)) ?? 0
     }
 

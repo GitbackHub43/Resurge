@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreData
+import UserNotifications
 
 @main
 struct ResurgeApp: App {
@@ -8,6 +9,7 @@ struct ResurgeApp: App {
     @AppStorage("biometricLockEnabled") private var biometricLockEnabled = false
     @State private var isUnlocked = false
     @Environment(\.scenePhase) private var scenePhase
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
@@ -40,8 +42,11 @@ struct ResurgeApp: App {
                         }
                     }
 
-                    // Surges are awarded directly in each daily loop view (5+5+5=15/day)
-                    // No backup award needed here
+                    // Schedule/reschedule notifications
+                    NotificationScheduler.scheduleAll(context: environment.viewContext)
+
+                    // Clear badge count
+                    UIApplication.shared.applicationIconBadgeNumber = 0
                 }
             }
         }
@@ -98,7 +103,7 @@ struct BiometricLockScreen: View {
                 }
 
                 VStack(spacing: 8) {
-                    Text("Resurge")
+                    Text("LoopRoot")
                         .font(Typography.largeTitle)
                         .foregroundColor(.textPrimary)
 
@@ -140,5 +145,37 @@ struct BiometricLockScreen: View {
                 }
             }
         }
+    }
+}
+
+// MARK: - AppDelegate for Foreground Notification Display
+
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+    ) -> Bool {
+        UNUserNotificationCenter.current().delegate = self
+        return true
+    }
+
+    /// Show notifications even when the app is in the foreground
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ) {
+        completionHandler([.banner, .sound, .badge])
+    }
+
+    /// Handle notification tap — user tapped on a notification
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void
+    ) {
+        // Clear badge
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        completionHandler()
     }
 }

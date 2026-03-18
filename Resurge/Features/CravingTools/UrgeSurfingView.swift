@@ -5,6 +5,7 @@ struct UrgeSurfingView: View {
 
     @EnvironmentObject var environment: AppEnvironment
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
 
     @State private var elapsedSeconds: Int = 0
     @State private var timerActive: Bool = true
@@ -13,6 +14,8 @@ struct UrgeSurfingView: View {
     @State private var wavePhase: CGFloat = 0
     @State private var showSurfedButton: Bool = false
     @State private var didSurfIt: Bool = false
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let breatheTimer = Timer.publish(every: 4, on: .main, in: .common).autoconnect()
@@ -30,6 +33,18 @@ struct UrgeSurfingView: View {
         }
         .navigationTitle("Urge Surfing")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "urgeSurfing", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "urgeSurfing", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
         .onReceive(timer) { _ in
             guard timerActive else { return }
             elapsedSeconds += 1
@@ -235,7 +250,7 @@ struct UrgeSurfingView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

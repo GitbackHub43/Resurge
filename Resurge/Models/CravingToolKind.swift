@@ -52,7 +52,7 @@ enum CravingToolKind: Codable, Hashable, Identifiable {
         case .quotes:           return "quote.bubble.fill"
         case .journaling:       return "pencil.and.scribble"
         case .bodyOverride:     return "bolt.heart.fill"
-        case .urgeDefusion:     return "waveform.path.ecg"
+        case .urgeDefusion:     return "brain.head.profile"
         case .copingSimulator:  return "theatermasks.fill"
         case .futureThinking:   return "sparkles.rectangle.stack.fill"
         case .focusShift:       return "eye.trianglebadge.exclamationmark.fill"
@@ -126,4 +126,33 @@ enum CravingToolKind: Codable, Hashable, Identifiable {
             self = .programSpecific(type)
         }
     }
+}
+
+// MARK: - Tool Usage Tracking
+
+import CoreData
+
+/// Records a standalone tool completion for analytics tracking.
+/// Creates a minimal CDCravingEntry with the tool ID so it shows in Tool Effectiveness.
+func trackToolCompletion(toolId: String, didResist: Bool = true, context: NSManagedObjectContext) {
+    // Find the habit from the selectedToolHabitId set when launching from toolkit
+    guard let habitIdString = UserDefaults.standard.string(forKey: "selectedToolHabitId"),
+          let habitId = UUID(uuidString: habitIdString) else { return }
+
+    let habitRequest = NSFetchRequest<CDHabit>(entityName: "CDHabit")
+    habitRequest.predicate = NSPredicate(format: "id == %@", habitId as CVarArg)
+    guard let habit = (try? context.fetch(habitRequest))?.first else { return }
+
+    let intensity = Int16(UserDefaults.standard.integer(forKey: "lastToolIntensity"))
+    CDCravingEntry.create(
+        in: context,
+        habit: habit,
+        intensity: intensity > 0 ? intensity : 5,
+        triggerCategory: nil,
+        triggerNote: nil,
+        copingToolUsed: toolId,
+        didResist: didResist,
+        durationSeconds: 0
+    )
+    try? context.save()
 }

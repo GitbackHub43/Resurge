@@ -144,7 +144,7 @@ struct DataExportView: View {
         isExporting = true
 
         DispatchQueue.global(qos: .userInitiated).async {
-            var csvContent = "Resurge Data Export\n\n"
+            var csvContent = "LoopRoot Data Export\n\n"
 
             if selectedTypes.contains(.habits) {
                 csvContent += "=== HABITS ===\nName,Program Type,Start Date,Goal Days\n"
@@ -160,7 +160,7 @@ struct DataExportView: View {
             }
 
             let tempURL = FileManager.default.temporaryDirectory
-                .appendingPathComponent("resurge_export_\(Date().timeIntervalSince1970).csv")
+                .appendingPathComponent("looproot_export_\(Date().timeIntervalSince1970).csv")
 
             try? csvContent.write(to: tempURL, atomically: true, encoding: .utf8)
 

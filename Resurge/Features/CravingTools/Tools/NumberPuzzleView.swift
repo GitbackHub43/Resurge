@@ -1,7 +1,9 @@
 import SwiftUI
+import CoreData
 
 struct NumberPuzzleView: View {
     @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
     @AppStorage("numberPuzzleHighScore") private var highScore: Int = 0
 
     @State private var currentRound = 1
@@ -22,6 +24,8 @@ struct NumberPuzzleView: View {
     @State private var showCorrect = false
     @State private var showWrong = false
     @State private var trophyScale: CGFloat = 0.5
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     private let totalRounds = 10
 
@@ -41,6 +45,18 @@ struct NumberPuzzleView: View {
         }
         .navigationTitle("Number Puzzle")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "puzzle", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "puzzle", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
         .onAppear {
             generateProblem()
             startTimer()
@@ -190,7 +206,7 @@ struct NumberPuzzleView: View {
                     .buttonStyle(RainbowButtonStyle())
 
                     Button {
-                        presentationMode.wrappedValue.dismiss()
+                        showResistPopup = true
                     } label: {
                         Text("Done")
                     }

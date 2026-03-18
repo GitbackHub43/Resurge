@@ -26,6 +26,9 @@ struct ToolkitView: View {
     @State private var selectedReasonsHabit: CDHabit?
     @State private var isNavigatingToTool = false
     @State private var toolDestination: AnyView = AnyView(EmptyView())
+    @State private var showIntensitySlider = false
+    @State private var toolIntensity: Double = 5
+    @State private var pendingToolDestination: (() -> AnyView)?
 
     private let columns = [
         GridItem(.flexible(), spacing: AppStyle.spacing),
@@ -64,13 +67,7 @@ struct ToolkitView: View {
                     RainbowDivider()
                         .padding(.horizontal, AppStyle.screenPadding)
 
-                    // SECTION 3: Reasons Vault
-                    reasonsVaultSection
-
-                    RainbowDivider()
-                        .padding(.horizontal, AppStyle.screenPadding)
-
-                    // SECTION 4: Emergency
+                    // SECTION 3: Emergency
                     emergencySection
 
                     Spacer(minLength: AppStyle.largeSpacing)
@@ -102,12 +99,10 @@ struct ToolkitView: View {
         .sheet(isPresented: $showJournalEditor) {
             JournalEditorView(initialPrompt: journalInitialPrompt, entryContext: journalEntryContext, preSelectedHabit: selectedHabitForJournal)
         }
-        .sheet(isPresented: $showCoachingPlan) {
-            if let habit = selectedCoachingHabit {
-                NavigationView {
-                    CoachingPlanView(habit: habit)
-                        .environmentObject(environment)
-                }
+        .sheet(item: $selectedCoachingHabit) { habit in
+            NavigationView {
+                CoachingPlanView(habit: habit)
+                    .environmentObject(environment)
             }
         }
         .sheet(item: $selectedReasonsHabit) { habit in
@@ -157,6 +152,65 @@ struct ToolkitView: View {
                 }
                 .background(Color.appBackground.ignoresSafeArea())
                 .navigationBarTitleDisplayMode(.inline)
+            }
+        }
+        .sheet(isPresented: $showIntensitySlider) {
+            NavigationView {
+                VStack(spacing: 24) {
+                    Spacer().frame(height: 20)
+
+                    Text("How intense is your craving?")
+                        .font(Typography.title)
+                        .rainbowText()
+
+                    Text("This helps us track which tools work best under pressure.")
+                        .font(Typography.caption)
+                        .foregroundColor(.subtleText)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+
+                    // Intensity value
+                    Text("\(Int(toolIntensity))")
+                        .font(.system(size: 56, weight: .bold, design: .rounded))
+                        .foregroundColor(toolIntensity >= 7 ? .neonMagenta : (toolIntensity >= 4 ? .neonOrange : .neonGreen))
+
+                    // Slider
+                    VStack(spacing: 4) {
+                        Slider(value: $toolIntensity, in: 1...10, step: 1)
+                            .tint(.neonCyan)
+                            .padding(.horizontal, 32)
+
+                        HStack {
+                            Text("Low").font(Typography.caption).foregroundColor(.subtleText)
+                            Spacer()
+                            Text("High").font(Typography.caption).foregroundColor(.subtleText)
+                        }
+                        .padding(.horizontal, 32)
+                    }
+
+                    Spacer()
+
+                    Button {
+                        UserDefaults.standard.set(Int(toolIntensity), forKey: "lastToolIntensity")
+                        showIntensitySlider = false
+                        if let dest = pendingToolDestination {
+                            toolDestination = dest()
+                            isNavigatingToTool = true
+                        }
+                    } label: {
+                        Text("Start Tool")
+                    }
+                    .buttonStyle(RainbowButtonStyle())
+                    .padding(.horizontal)
+                    .padding(.bottom, 30)
+                }
+                .background(Color.appBackground.ignoresSafeArea())
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") { showIntensitySlider = false }
+                    }
+                }
             }
         }
     }
@@ -317,8 +371,9 @@ struct ToolkitView: View {
         Button {
             withHabitSelection { habit in
                 UserDefaults.standard.set(habit.id.uuidString, forKey: "selectedToolHabitId")
-                toolDestination = destination()
-                isNavigatingToTool = true
+                pendingToolDestination = destination
+                toolIntensity = 5
+                showIntensitySlider = true
             }
         } label: {
             toolCardContent(
@@ -339,8 +394,9 @@ struct ToolkitView: View {
             if isPremium {
                 withHabitSelection { habit in
                     UserDefaults.standard.set(habit.id.uuidString, forKey: "selectedToolHabitId")
-                    toolDestination = destination()
-                    isNavigatingToTool = true
+                    pendingToolDestination = destination
+                    toolIntensity = 5
+                    showIntensitySlider = true
                 }
             } else {
                 premiumFeatureName = title
@@ -387,7 +443,6 @@ struct ToolkitView: View {
                     if isPremium {
                         withHabitSelection { habit in
                             selectedCoachingHabit = habit
-                            showCoachingPlan = true
                         }
                     } else {
                         premiumFeatureName = "Daily Coaching"

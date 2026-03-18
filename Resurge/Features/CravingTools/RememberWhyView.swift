@@ -106,6 +106,17 @@ struct RememberWhyView: View {
                 .foregroundColor(.subtleText)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, AppStyle.screenPadding)
+
+            HStack(spacing: 6) {
+                Image(systemName: "info.circle.fill")
+                    .font(.caption)
+                    .foregroundColor(.neonCyan)
+                Text("Your reason will be displayed on your Home page to keep you motivated.")
+                    .font(Typography.caption)
+                    .foregroundColor(.neonCyan)
+            }
+            .padding(.horizontal, AppStyle.screenPadding)
+            .multilineTextAlignment(.center)
         }
         .padding(.top, AppStyle.spacing)
     }
@@ -250,6 +261,8 @@ struct RememberWhyView: View {
         }
     }
 
+    @Environment(\.managedObjectContext) private var viewContext
+
     private func saveNewNote() {
         let trimmed = newNoteText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return }
@@ -257,6 +270,13 @@ struct RememberWhyView: View {
         let note = WhyNote(text: trimmed)
         notes.insert(note, at: 0)
         saveNotes()
+
+        // Update the habit's reasonToQuit so it displays on the home page
+        if let id = habitId,
+           let habit = activeHabits.first(where: { $0.id == id }) {
+            habit.reasonToQuit = trimmed
+            try? viewContext.save()
+        }
 
         newNoteText = ""
         showAddNote = false

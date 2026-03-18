@@ -767,9 +767,23 @@ struct ProgressDashboardView: View {
             for journal in journals {
                 let habitLabel = journal.habit?.name ?? ""
                 let isGratitude = journal.promptUsed?.contains("gratitude") == true
-                let desc = isGratitude ? "Gratitude log for \(habitLabel)" : "Journal entry for \(habitLabel)"
-                let icon = isGratitude ? "heart.fill" : "book.fill"
-                let color: Color = isGratitude ? .neonGold : .neonBlue
+                let isCravingJournal = journal.promptUsed?.contains("craving") == true
+                let desc: String
+                let icon: String
+                let color: Color
+                if isGratitude {
+                    desc = "Gratitude log for \(habitLabel)"
+                    icon = "heart.fill"
+                    color = .neonGold
+                } else if isCravingJournal {
+                    desc = "Craving journal for \(habitLabel)"
+                    icon = "bolt.heart.fill"
+                    color = .neonOrange
+                } else {
+                    desc = "Journal entry for \(habitLabel)"
+                    icon = "book.fill"
+                    color = .neonBlue
+                }
                 events.append(ActivityEvent(icon: icon, color: color, description: desc, date: journal.createdAt, relativeTime: relativeTimeString(from: journal.createdAt)))
             }
         }

@@ -10,7 +10,7 @@ struct SurgesIntroView: View {
         ("Owlet", .neonCyan),
         ("Cosmic Sparkle", .neonMagenta),
         ("Ultraviolet", .neonPurple),
-        ("Power-Ups", .neonGreen),
+        ("Watch Skins", .neonPurple),
     ]
 
     var body: some View {
@@ -172,11 +172,11 @@ struct SurgesIntroView: View {
                         }
                         .frame(maxWidth: .infinity)
 
-                        // Power-Up
+                        // Watch Skins
                         VStack(spacing: 6) {
-                            PowerUpOnboardingPreview()
+                            WatchSkinOnboardingPreview()
                                 .frame(width: 54, height: 54)
-                            Text("Power-Ups")
+                            Text("Watch Skins")
                                 .font(.system(size: 10, weight: .medium))
                                 .foregroundColor(.subtleText)
                         }
@@ -260,17 +260,22 @@ private struct CosmicSparkleOnboardingPreview: View {
     }
 }
 
-private struct PowerUpOnboardingPreview: View {
-    @State private var glow: Double = 0.3
+private struct WatchSkinOnboardingPreview: View {
+    @State private var rainbowPhase: CGFloat = 0
     var body: some View {
         ZStack {
-            Circle().fill(Color.neonGreen.opacity(0.12)).frame(width: 48, height: 48)
-            Circle().stroke(Color.neonGreen.opacity(0.3), lineWidth: 1.5).frame(width: 44, height: 44)
-            Image(systemName: "shield.checkered")
-                .font(.system(size: 22))
-                .foregroundColor(.neonGreen)
+            Circle().fill(Color(hex: "0A0A2E")).frame(width: 48, height: 48)
+            Circle()
+                .stroke(
+                    AngularGradient(colors: [.neonCyan, .neonPurple, .neonMagenta, .neonGold, .neonCyan], center: .center, startAngle: .degrees(rainbowPhase), endAngle: .degrees(rainbowPhase + 360)),
+                    lineWidth: 2.5
+                )
+                .frame(width: 42, height: 42)
+            Image(systemName: "clock.fill").font(.system(size: 18))
+                .foregroundStyle(
+                    LinearGradient(colors: [.neonCyan, .neonPurple, .neonMagenta, .neonGold], startPoint: .topLeading, endPoint: .bottomTrailing)
+                )
         }
-        .shadow(color: Color.neonGreen.opacity(glow), radius: 8)
-        .onAppear { withAnimation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true)) { glow = 0.7 } }
+        .onAppear { withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) { rainbowPhase = 360 } }
     }
 }

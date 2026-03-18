@@ -4,6 +4,7 @@ import CoreData
 struct TriggerEffectivenessView: View {
     @EnvironmentObject var environment: AppEnvironment
     @Environment(\.managedObjectContext) private var viewContext
+    let habit: CDHabit
 
     private struct TriggerStat: Identifiable {
         let id = UUID()
@@ -13,7 +14,10 @@ struct TriggerEffectivenessView: View {
 
     private var triggerStats: [TriggerStat] {
         let request = NSFetchRequest<CDCravingEntry>(entityName: "CDCravingEntry")
-        request.predicate = NSPredicate(format: "triggerCategory != nil AND triggerCategory != ''")
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+            NSPredicate(format: "habit == %@", habit),
+            NSPredicate(format: "triggerCategory != nil AND triggerCategory != ''")
+        ])
         guard let entries = try? viewContext.fetch(request) else { return [] }
 
         var triggerCounts: [String: Int] = [:]
@@ -160,9 +164,11 @@ struct TriggerEffectivenessView: View {
 struct TriggerEffectivenessView_Previews: PreviewProvider {
     static var previews: some View {
         let env = AppEnvironment.preview
+        let habit = CDHabit.create(in: env.viewContext, name: "Quit Smoking", programType: "smoking")
         NavigationView {
-            TriggerEffectivenessView()
+            TriggerEffectivenessView(habit: habit)
                 .environmentObject(env)
+                .environment(\.managedObjectContext, env.viewContext)
         }
     }
 }

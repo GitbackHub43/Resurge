@@ -1,8 +1,10 @@
 import SwiftUI
+import CoreData
 
 struct FocusShiftView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
     @AppStorage("focusShiftBestLevel") private var bestLevel: Int = 0
 
     @State private var level: Int = 1
@@ -12,6 +14,8 @@ struct FocusShiftView: View {
     @State private var isComplete: Bool = false
     @State private var confettiVisible: Bool = false
     @State private var gameStarted: Bool = false
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     // Grid state
     @State private var gridItems: [FocusGridItem] = []
@@ -46,6 +50,18 @@ struct FocusShiftView: View {
         }
         .navigationTitle("Focus Shift")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "focusShift", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "focusShift", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
         .onReceive(roundTimer) { _ in
             guard gameStarted, !isComplete, !showCorrectAnswer, timeRemaining > 0 else { return }
             timeRemaining -= 0.1
@@ -310,6 +326,7 @@ struct FocusShiftView: View {
             isComplete = true
             confettiVisible = true
         }
+        // Tool completion tracked via resist popup
     }
 
     // MARK: - Completion View
@@ -352,7 +369,7 @@ struct FocusShiftView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

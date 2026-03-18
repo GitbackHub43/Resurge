@@ -44,7 +44,7 @@ struct PrivacyLockSettingsView: View {
                     }
                     .tint(.neonCyan)
                 } footer: {
-                    Text("When enabled, \(biometricTypeName) will be required each time you open Resurge. Your data stays private.")
+                    Text("When enabled, \(biometricTypeName) will be required each time you open LoopRoot. Your data stays private.")
                         .foregroundColor(.subtleText)
                 }
                 .listRowBackground(Color.cardBackground)

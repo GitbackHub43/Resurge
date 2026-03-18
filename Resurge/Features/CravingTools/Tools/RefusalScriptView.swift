@@ -1,8 +1,10 @@
 import SwiftUI
+import CoreData
 
 struct RefusalScriptView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
     @AppStorage("practicedScripts") private var practicedScriptsRaw: String = ""
 
     // MARK: - State
@@ -11,6 +13,8 @@ struct RefusalScriptView: View {
     @State private var selectedScript: RefusalScript? = nil
     @State private var isComplete: Bool = false
     @State private var confettiVisible: Bool = false
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     private let scripts: [RefusalScript] = [
         RefusalScript(
@@ -107,6 +111,18 @@ struct RefusalScriptView: View {
         }
         .navigationTitle("Refusal Scripts")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "refusalScript", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "refusalScript", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
     }
 
     // MARK: - Main Content
@@ -360,7 +376,7 @@ struct RefusalScriptView: View {
             .padding(.horizontal, AppStyle.screenPadding)
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }
@@ -402,7 +418,7 @@ struct RefusalScriptView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

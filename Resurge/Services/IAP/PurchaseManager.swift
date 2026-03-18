@@ -15,9 +15,9 @@ final class PurchaseManager: ObservableObject {
     }
 
     private let productIDs: Set<String> = [
-        "com.resurge.premium.monthly",
-        "com.resurge.premium.yearly",
-        "com.resurge.premium.lifetime"
+        "com.looproot.premium.monthly",
+        "com.looproot.premium.yearly",
+        "com.looproot.premium.lifetime"
     ]
 
     func start(context: NSManagedObjectContext) {
@@ -40,11 +40,11 @@ final class PurchaseManager: ObservableObject {
 
         // Determine tier
         let tier: SubscriptionTier
-        if purchasedIDs.contains("com.resurge.premium.lifetime") {
+        if purchasedIDs.contains("com.looproot.premium.lifetime") {
             tier = .proLifetime
-        } else if purchasedIDs.contains("com.resurge.premium.yearly") {
+        } else if purchasedIDs.contains("com.looproot.premium.yearly") {
             tier = .proYearly
-        } else if purchasedIDs.contains("com.resurge.premium.monthly") {
+        } else if purchasedIDs.contains("com.looproot.premium.monthly") {
             tier = .proMonthly
         } else {
             tier = .free

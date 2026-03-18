@@ -680,7 +680,23 @@ struct CravingModeView: View {
             habit.resetOnLapse()
         }
 
+        // Also save journal notes as a separate craving journal entry
+        if !journalNotes.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            let journalEntry = CDJournalEntry.create(
+                in: context,
+                habit: habit,
+                body: journalNotes,
+                title: "Craving Journal",
+                mood: Int16(didResist ? 3 : 1),
+                promptUsed: "craving"
+            )
+            _ = journalEntry
+        }
+
         environment.coreDataStack.save()
+
+        // Evaluate badges immediately after craving protocol
+        environment.achievementService.evaluate(for: habit)
 
         // Surges only earned from daily loop (15/day) — no craving protocol award
 

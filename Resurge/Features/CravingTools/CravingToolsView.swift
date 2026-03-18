@@ -85,7 +85,7 @@ struct CravingToolsView: View {
         case .quotes:
             QuotesToolPlaceholder()
         case .journaling:
-            JournalEditorView()
+            JournalEditorView(entryContext: "craving")
                 .environmentObject(environment)
         default:
             ProgramSpecificToolPlaceholder()

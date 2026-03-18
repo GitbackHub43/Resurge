@@ -73,9 +73,9 @@ final class NotificationManager {
 
         let identifier: String
         if let habitId = habitId {
-            identifier = "com.resurge.pledge.reminder.\(habitId)"
+            identifier = "com.looproot.pledge.reminder.\(habitId)"
         } else {
-            identifier = "com.resurge.pledge.reminder"
+            identifier = "com.looproot.pledge.reminder"
         }
 
         let request = UNNotificationRequest(
@@ -113,9 +113,9 @@ final class NotificationManager {
 
         let identifier: String
         if let habitId = habitId {
-            identifier = "com.resurge.reflection.reminder.\(habitId)"
+            identifier = "com.looproot.reflection.reminder.\(habitId)"
         } else {
-            identifier = "com.resurge.reflection.reminder"
+            identifier = "com.looproot.reflection.reminder"
         }
 
         let request = UNNotificationRequest(
@@ -144,7 +144,7 @@ final class NotificationManager {
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
 
         let request = UNNotificationRequest(
-            identifier: "com.resurge.motivational.\(UUID().uuidString)",
+            identifier: "com.looproot.motivational.\(UUID().uuidString)",
             content: content,
             trigger: trigger
         )
@@ -181,7 +181,7 @@ final class NotificationManager {
             let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
 
             let request = UNNotificationRequest(
-                identifier: "com.resurge.daily.quote.\(index)",
+                identifier: "com.looproot.daily.quote.\(index)",
                 content: content,
                 trigger: trigger
             )
@@ -196,7 +196,7 @@ final class NotificationManager {
 
     /// Cancel only the daily quote notifications
     func cancelQuoteNotifications() {
-        let quoteIds = (0..<5).map { "com.resurge.daily.quote.\($0)" }
+        let quoteIds = (0..<5).map { "com.looproot.daily.quote.\($0)" }
         center.removePendingNotificationRequests(withIdentifiers: quoteIds)
     }
 
@@ -216,7 +216,7 @@ final class NotificationManager {
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
 
         let request = UNNotificationRequest(
-            identifier: "com.resurge.highrisk.\(hour).\(minute)",
+            identifier: "com.looproot.highrisk.\(hour).\(minute)",
             content: content,
             trigger: trigger
         )
@@ -247,9 +247,9 @@ final class NotificationManager {
 
         let identifier: String
         if let habitId = habitId {
-            identifier = "com.resurge.goal.\(habitId)"
+            identifier = "com.looproot.goal.\(habitId)"
         } else {
-            identifier = "com.resurge.goal.\(habitName.lowercased().replacingOccurrences(of: " ", with: "_"))"
+            identifier = "com.looproot.goal.\(habitName.lowercased().replacingOccurrences(of: " ", with: "_"))"
         }
 
         let request = UNNotificationRequest(
@@ -277,7 +277,7 @@ final class NotificationManager {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: max(1, seconds), repeats: false)
 
         let request = UNNotificationRequest(
-            identifier: "com.resurge.focus.start.\(UUID().uuidString)",
+            identifier: "com.looproot.focus.start.\(UUID().uuidString)",
             content: content,
             trigger: trigger
         )
@@ -299,7 +299,7 @@ final class NotificationManager {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: max(1, seconds), repeats: false)
 
         let request = UNNotificationRequest(
-            identifier: "com.resurge.focus.end.\(UUID().uuidString)",
+            identifier: "com.looproot.focus.end.\(UUID().uuidString)",
             content: content,
             trigger: trigger
         )
@@ -345,7 +345,7 @@ final class NotificationManager {
     func cancelHighRiskAlerts() {
         center.getPendingNotificationRequests { requests in
             let ids = requests
-                .filter { $0.identifier.hasPrefix("com.resurge.highrisk.") }
+                .filter { $0.identifier.hasPrefix("com.looproot.highrisk.") }
                 .map { $0.identifier }
             self.center.removePendingNotificationRequests(withIdentifiers: ids)
         }

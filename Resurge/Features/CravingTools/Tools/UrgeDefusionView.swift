@@ -1,8 +1,10 @@
 import SwiftUI
+import CoreData
 
 struct UrgeDefusionView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
 
     // MARK: - State
 
@@ -15,6 +17,8 @@ struct UrgeDefusionView: View {
     @State private var flashGreen: Bool = false
     @State private var wobble: Bool = false
     @State private var showHint: Bool = false
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     private let rounds: [DefusionRound] = [
         DefusionRound(
@@ -79,6 +83,18 @@ struct UrgeDefusionView: View {
         }
         .navigationTitle("Urge Defusion")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "urgeDefusion", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "urgeDefusion", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
     }
 
     // MARK: - Round View
@@ -315,7 +331,7 @@ struct UrgeDefusionView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

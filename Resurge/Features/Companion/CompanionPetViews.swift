@@ -26,11 +26,6 @@ struct DogPetView: View {
     @State private var bounce: CGFloat = 0
 
     var body: some View {
-        Canvas { context, canvasSize in
-            // Everything is drawn relative to center
-        }
-        .hidden()
-        // Use ZStack with proper centering
         ZStack {
             // Tail — attached to back of body
             Capsule()
@@ -113,6 +108,8 @@ struct DogPetView: View {
             }
         }
         .frame(width: size, height: size)
+        .clipped()
+        .contentShape(Rectangle())
         .onAppear {
             withAnimation(.easeInOut(duration: 0.25).repeatForever(autoreverses: true)) { tailWag = 35 }
             withAnimation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true)) { bounce = -size * 0.02 }

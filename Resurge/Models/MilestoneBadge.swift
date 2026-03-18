@@ -55,7 +55,7 @@ struct MilestoneBadge: Identifiable, Equatable {
 
     // MARK: - All Badges
 
-    static let allBadges: [MilestoneBadge] = (timeBadges + behaviorBadges + streakBadges + programBadges + allTrackBadges).sorted { $0.requiredDays < $1.requiredDays }
+    static let allBadges: [MilestoneBadge] = (timeBadges + behaviorBadges + streakBadges + programBadges).sorted { $0.requiredDays < $1.requiredDays }
 
     // MARK: - Health Badges (generated from HealthTimeline per habit)
 

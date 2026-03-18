@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreData
 
 // MARK: - Value Action Model
 
@@ -12,6 +13,7 @@ struct ValueAction: Codable, Identifiable {
 struct ValuesCompassView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
     @AppStorage("userValues") private var userValuesData: String = "[]"
     @AppStorage("valueActions") private var valueActionsData: String = "[]"
 
@@ -19,6 +21,8 @@ struct ValuesCompassView: View {
     @State private var isComplete: Bool = false
     @State private var confettiVisible: Bool = false
     @State private var pulseScale: CGFloat = 1.0
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     // Step 0: Value selection
     @State private var selectedValues: [String] = []
@@ -80,6 +84,18 @@ struct ValuesCompassView: View {
         }
         .navigationTitle("Values Compass")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "valuesCompass", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "valuesCompass", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
         .onAppear {
             let saved = savedValues
             if !saved.isEmpty {
@@ -519,7 +535,7 @@ struct ValuesCompassView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

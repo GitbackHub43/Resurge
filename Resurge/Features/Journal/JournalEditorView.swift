@@ -116,7 +116,7 @@ struct JournalEditorView: View {
             case "evening":
                 return [.gratitude, .win, .struggle, .insight, .peaceful, .proud]
             default:
-                return [.gratitude, .reflection, .win, .struggle, .craving, .insight, .milestone]
+                return [.reflection, .win, .struggle, .insight, .milestone, .hopeful, .proud]
             }
         }
     }
@@ -176,11 +176,6 @@ struct JournalEditorView: View {
             "How did I spend my free time differently?",
             "What real-life skill am I building?"
         ],
-        "procrastination": [
-            "What task did I tackle that I usually avoid?",
-            "What does 'good enough' look like today?",
-            "What small step did I take toward a big goal?"
-        ],
         "sugar": [
             "How did my energy levels feel today?",
             "What healthy alternative did I enjoy?",
@@ -201,11 +196,6 @@ struct JournalEditorView: View {
             "How did I handle the urge for excitement?",
             "What does financial peace mean to me?"
         ],
-        "sleep": [
-            "How did my bedtime routine go?",
-            "What helped me wind down tonight?",
-            "How did quality sleep change my day?"
-        ]
     ]
 
     private var allPrompts: [String] {
@@ -514,6 +504,14 @@ struct JournalEditorView: View {
                     if let prompt = initialPrompt, !prompt.isEmpty {
                         bodyText = prompt + "\n\n"
                     }
+                    // Auto-tag based on context
+                    if entryContext == "gratitude" {
+                        selectedTags.insert(.gratitude)
+                        if title.isEmpty { title = "Gratitude Log" }
+                    } else if entryContext == "craving" {
+                        selectedTags.insert(.craving)
+                        if title.isEmpty { title = "Craving Journal" }
+                    }
                 }
                 // Randomize starting prompt index
                 currentPromptIndex = Int.random(in: 0..<allPrompts.count)
@@ -547,6 +545,11 @@ struct JournalEditorView: View {
             _ = entry
         }
         environment.coreDataStack.save()
+
+        // Evaluate badge unlock immediately after saving
+        if let habit = selectedHabit ?? habits.first {
+            environment.achievementService.evaluate(for: habit)
+        }
     }
 }
 

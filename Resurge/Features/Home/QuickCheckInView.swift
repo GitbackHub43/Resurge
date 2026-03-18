@@ -441,6 +441,9 @@ struct QuickCheckInView: View {
         existingEntry = entry
         isUpdate = true
 
+        // Evaluate badges immediately
+        environment.achievementService.evaluate(for: habit)
+
         // Check if all 3 daily loop tasks are now done
         checkDailyLoopCompletion()
 

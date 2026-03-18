@@ -13,15 +13,15 @@ struct TermsOfServiceView: View {
                     .foregroundColor(.textSecondary)
 
                 section(title: "Acceptance of Terms", body: """
-                By downloading, installing, or using Resurge, you agree to these Terms of Service. If you do not agree, please do not use the app.
+                By downloading, installing, or using LoopRoot, you agree to these Terms of Service. If you do not agree, please do not use the app.
                 """)
 
                 section(title: "Description of Service", body: """
-                Resurge is a personal habit and addiction recovery tracking app. It provides tools for tracking sobriety, logging cravings, journaling, setting goals, and monitoring progress. Resurge is a self-help tool and is not a substitute for professional medical advice, diagnosis, or treatment.
+                LoopRoot is a personal habit and addiction recovery tracking app. It provides tools for tracking sobriety, logging cravings, journaling, setting goals, and monitoring progress. LoopRoot is a self-help tool and is not a substitute for professional medical advice, diagnosis, or treatment.
                 """)
 
                 section(title: "Not Medical Advice", body: """
-                Resurge is not a medical device and does not provide medical advice. The content, tools, and features in this app are for informational and motivational purposes only.
+                LoopRoot is not a medical device and does not provide medical advice. The content, tools, and features in this app are for informational and motivational purposes only.
 
                 If you are experiencing a medical emergency, substance withdrawal, or mental health crisis, please contact emergency services (911) or a qualified healthcare provider immediately.
 
@@ -33,7 +33,7 @@ struct TermsOfServiceView: View {
                 """)
 
                 section(title: "Subscriptions & Payments", body: """
-                Resurge offers optional premium subscriptions (Monthly, Yearly, and Lifetime) that unlock additional features. Subscriptions are processed through the Apple App Store.
+                LoopRoot offers optional premium subscriptions (Monthly, Yearly, and Lifetime) that unlock additional features. Subscriptions are processed through the Apple App Store.
 
                 - Payment is charged to your Apple ID account at confirmation of purchase.
                 - Monthly and yearly subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period.
@@ -43,19 +43,19 @@ struct TermsOfServiceView: View {
                 """)
 
                 section(title: "Free Tier", body: """
-                The free version of Resurge includes tracking for 1 habit, basic check-ins, journaling, craving tools, and basic achievements. Premium features require a paid subscription.
+                The free version of LoopRoot includes tracking for 1 habit, basic check-ins, journaling, craving tools, and basic achievements. Premium features require a paid subscription.
                 """)
 
                 section(title: "Intellectual Property", body: """
-                All content, design, code, graphics, and other materials in Resurge are owned by Resurge and protected by copyright and intellectual property laws. You may not copy, modify, distribute, or reverse engineer any part of the app.
+                All content, design, code, graphics, and other materials in LoopRoot are owned by LoopRoot and protected by copyright and intellectual property laws. You may not copy, modify, distribute, or reverse engineer any part of the app.
                 """)
 
                 section(title: "Disclaimer of Warranties", body: """
-                Resurge is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that the app will be error-free, uninterrupted, or free of harmful components.
+                LoopRoot is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that the app will be error-free, uninterrupted, or free of harmful components.
                 """)
 
                 section(title: "Limitation of Liability", body: """
-                To the maximum extent permitted by law, Resurge and its developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the app.
+                To the maximum extent permitted by law, LoopRoot and its developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the app.
                 """)
 
                 section(title: "Termination", body: """
@@ -67,7 +67,7 @@ struct TermsOfServiceView: View {
                 """)
 
                 section(title: "Contact", body: """
-                If you have questions about these terms, you can reach us at support@resurgeapp.com.
+                If you have questions about these terms, you can reach us at support@looprootapp.com.
                 """)
             }
             .padding(AppStyle.screenPadding)

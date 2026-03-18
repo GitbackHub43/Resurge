@@ -11,6 +11,7 @@ struct CoachingPlanView: View {
     @FetchRequest private var plans: FetchedResults<CDCoachingPlan>
 
     @State private var isGenerating = false
+    @State private var completionTrigger = false
 
     // MARK: - All Tasks (cycle infinitely)
 
@@ -121,6 +122,7 @@ struct CoachingPlanView: View {
     }
 
     private var isCompletedToday: Bool {
+        let _ = completionTrigger // force SwiftUI to re-evaluate when this changes
         let todayString = formattedDate(DebugDate.now)
         return coachingTaskCompletedDate == todayString
     }
@@ -350,6 +352,9 @@ struct CoachingPlanView: View {
         UserDefaults.standard.set(todayString, forKey: completedDateKey)
         UserDefaults.standard.set(todayString, forKey: streakLastDateKey)
         UserDefaults.standard.set(streak, forKey: streakCountKey)
+
+        // Force UI refresh
+        completionTrigger.toggle()
     }
 
     private func formattedDate(_ date: Date) -> String {

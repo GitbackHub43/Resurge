@@ -47,21 +47,21 @@ final class MockIAPProvider: IAPProviderProtocol {
     var availableProducts: [PurchaseProduct] {
         [
             PurchaseProduct(
-                id: "com.resurge.premium.monthly",
+                id: "com.looproot.premium.monthly",
                 displayName: "Premium Monthly",
                 displayPrice: "$4.99/mo",
                 tier: .monthly,
                 trialDays: 7
             ),
             PurchaseProduct(
-                id: "com.resurge.premium.yearly",
+                id: "com.looproot.premium.yearly",
                 displayName: "Premium Yearly",
                 displayPrice: "$29.99/yr",
                 tier: .yearly,
                 trialDays: 7
             ),
             PurchaseProduct(
-                id: "com.resurge.lifetime",
+                id: "com.looproot.lifetime",
                 displayName: "Lifetime",
                 displayPrice: "$59.99",
                 tier: .lifetime,

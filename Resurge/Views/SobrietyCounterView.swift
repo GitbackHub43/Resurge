@@ -8,6 +8,7 @@ struct SobrietyCounterView: View {
 
     @State private var now = DebugDate.now
     @State private var glowOpacity: Double = 0.15
+    @AppStorage("equippedWatchSkin") private var equippedWatchSkin: String = ""
 
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -38,11 +39,48 @@ struct SobrietyCounterView: View {
 
     // MARK: - Compact Layout
 
+    private var watchIcon: some View {
+        Group {
+            switch equippedWatchSkin {
+            case "watch_classic":
+                ZStack {
+                    Circle().stroke(Color.neonCyan, lineWidth: 1.5).frame(width: 16, height: 16)
+                    Rectangle().fill(Color.neonCyan).frame(width: 1, height: 5).offset(y: -2)
+                    Rectangle().fill(Color.neonCyan).frame(width: 4, height: 1).offset(x: 1)
+                }
+                .frame(width: 18, height: 18)
+            case "watch_digital":
+                ZStack {
+                    RoundedRectangle(cornerRadius: 2).stroke(Color.neonGreen, lineWidth: 1.5).frame(width: 16, height: 14)
+                    Text("00").font(.system(size: 6, weight: .bold, design: .monospaced)).foregroundColor(.neonGreen)
+                }
+                .frame(width: 18, height: 18)
+            case "watch_luxury":
+                ZStack {
+                    Circle().fill(Color.neonGold.opacity(0.15)).frame(width: 18, height: 18)
+                    Circle().stroke(Color.neonGold, lineWidth: 1.5).frame(width: 16, height: 16)
+                    Image(systemName: "clock.fill")
+                        .font(.system(size: 10))
+                        .foregroundColor(.neonGold)
+                }
+                .frame(width: 18, height: 18)
+            case "watch_holographic":
+                Image(systemName: "clock.fill")
+                    .font(Typography.caption)
+                    .foregroundStyle(
+                        LinearGradient(colors: [.neonCyan, .neonPurple, .neonMagenta, .neonGold], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    )
+            default:
+                Image(systemName: "clock.fill")
+                    .font(Typography.caption)
+                    .foregroundColor(.neonCyan)
+            }
+        }
+    }
+
     private func compactLayout(parts: (days: Int, hours: Int, minutes: Int, seconds: Int)) -> some View {
         HStack(spacing: 6) {
-            Image(systemName: "clock.fill")
-                .font(Typography.caption)
-                .foregroundColor(.neonCyan)
+            watchIcon
 
             Text("\(parts.days)d \(parts.hours)h \(parts.minutes)m")
                 .font(Typography.headline)

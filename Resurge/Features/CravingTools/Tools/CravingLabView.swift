@@ -1,13 +1,17 @@
 import SwiftUI
+import CoreData
 
 struct CravingLabView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
 
     @State private var currentStep: Int = 0
     @State private var isComplete: Bool = false
     @State private var confettiVisible: Bool = false
     @State private var pulseScale: CGFloat = 1.0
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     // Step 0: Body region
     @State private var selectedRegion: String = ""
@@ -52,6 +56,18 @@ struct CravingLabView: View {
         }
         .navigationTitle("Craving Lab")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "cravingLab", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "cravingLab", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
         .onReceive(observeTimer) { _ in
             guard currentStep == 2, observeTimeRemaining > 0 else { return }
             observeTimeRemaining -= 1
@@ -442,7 +458,7 @@ struct CravingLabView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

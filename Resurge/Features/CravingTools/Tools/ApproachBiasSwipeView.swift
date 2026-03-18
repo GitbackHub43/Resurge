@@ -1,8 +1,10 @@
 import SwiftUI
+import CoreData
 
 struct ApproachBiasSwipeView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
     @AppStorage("biasSwipeHighScore") private var highScore: Int = 0
 
     @State private var score: Int = 0
@@ -11,6 +13,8 @@ struct ApproachBiasSwipeView: View {
     @State private var timeRemaining: Int = 180
     @State private var isComplete: Bool = false
     @State private var confettiVisible: Bool = false
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     // Card state
     @State private var currentCard: BiasCard?
@@ -58,6 +62,18 @@ struct ApproachBiasSwipeView: View {
         }
         .navigationTitle("Approach Bias")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "biasTraining", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "biasTraining", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
         .onAppear { nextCard() }
         .onReceive(gameTimer) { _ in
             guard !isComplete, timeRemaining > 0 else { return }
@@ -340,7 +356,7 @@ struct ApproachBiasSwipeView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

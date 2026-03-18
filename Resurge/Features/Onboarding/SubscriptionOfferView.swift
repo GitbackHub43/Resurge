@@ -227,9 +227,9 @@ struct SubscriptionOfferView: View {
     private func startPurchase() {
         let productId: String
         switch selectedPlan {
-        case .monthly:  productId = "com.resurge.premium.monthly"
-        case .yearly:   productId = "com.resurge.premium.yearly"
-        case .lifetime: productId = "com.resurge.premium.lifetime"
+        case .monthly:  productId = "com.looproot.premium.monthly"
+        case .yearly:   productId = "com.looproot.premium.yearly"
+        case .lifetime: productId = "com.looproot.premium.lifetime"
         }
 
         guard let product = environment.entitlementManager.availableProducts.first(where: {

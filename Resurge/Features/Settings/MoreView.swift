@@ -113,21 +113,21 @@ struct MoreView: View {
                     }
                     .listRowBackground(Color.cardBackground)
 
-                    // MARK: - Debug (REMOVE before App Store)
-                    Section {
-                        NavigationLink {
-                            DebugTimeTravelView()
-                                .environmentObject(environment)
-                        } label: {
-                            settingsRow(icon: "clock.arrow.circlepath", title: "Time Travel (Debug)", color: .neonOrange)
-                        }
-                        // Pet preview removed — pets are now in Vault Shop
-                    } header: {
-                        Text("Developer")
-                    }
-                    .listRowBackground(Color.cardBackground)
+                    // MARK: - Debug (UNCOMMENT to re-enable Time Travel)
+                    // Section {
+                    //     NavigationLink {
+                    //         DebugTimeTravelView()
+                    //             .environmentObject(environment)
+                    //     } label: {
+                    //         settingsRow(icon: "clock.arrow.circlepath", title: "Time Travel (Debug)", color: .neonOrange)
+                    //     }
+                    // } header: {
+                    //     Text("Developer")
+                    // }
+                    // .listRowBackground(Color.cardBackground)
                 }
                 .listStyle(.insetGrouped)
+                .onAppear { UITableView.appearance().backgroundColor = .clear }
             }
             .navigationTitle("More")
             .toolbar {

@@ -70,29 +70,6 @@ struct StealthSettingsView: View {
                 }
                 .listRowBackground(Color.cardBackground)
 
-                // MARK: - Emergency Resources
-
-                Section {
-                    NavigationLink {
-                        EmergencyContactsView()
-                    } label: {
-                        HStack(spacing: AppStyle.spacing) {
-                            Image(systemName: "phone.fill")
-                                .font(.title3)
-                                .foregroundColor(.accentOrange)
-                                .frame(width: AppStyle.iconSize)
-                            Text("Emergency Resources")
-                                .font(Typography.body)
-                                .foregroundColor(.appText)
-                        }
-                    }
-                } header: {
-                    Text("Emergency Resources")
-                        .font(Typography.headline)
-                        .foregroundColor(.appText)
-                        .textCase(nil)
-                }
-                .listRowBackground(Color.cardBackground)
             }
             .listStyle(.insetGrouped)
         }

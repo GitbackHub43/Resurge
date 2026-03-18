@@ -23,6 +23,10 @@ struct NotificationSettingsView: View {
     @State private var quoteTime5 = Calendar.current.date(from: DateComponents(hour: 14, minute: 0)) ?? Date()
 
     @State private var notificationPermissionDenied = false
+    @State private var wakeTime: Date = {
+        let hour = UserDefaults.standard.integer(forKey: "wakeUpHour")
+        return Calendar.current.date(from: DateComponents(hour: hour > 0 ? hour : 7, minute: 0)) ?? Date()
+    }()
 
     private var isPremium: Bool {
         environment.entitlementManager.isPremium
@@ -82,22 +86,20 @@ struct NotificationSettingsView: View {
                     .tint(.neonCyan)
 
                     if dailyLoopEnabled {
+                        DatePicker("Wake Time", selection: $wakeTime, displayedComponents: .hourAndMinute)
+                            .foregroundColor(.textPrimary)
+
+                        let wakeH = Calendar.current.component(.hour, from: wakeTime)
+                        let afternoonH = (wakeH + 8) % 24
+                        let eveningH = (wakeH + 16) % 24
+
                         VStack(alignment: .leading, spacing: 8) {
-                            notificationTimeRow("Morning Plan/Review",
-                                                hour: UserDefaults.standard.integer(forKey: "wakeUpHour"),
-                                                icon: "sunrise.fill",
-                                                color: .neonGold)
-                            notificationTimeRow("Afternoon Check-In",
-                                                hour: UserDefaults.standard.integer(forKey: "afternoonHour"),
-                                                icon: "sun.max.fill",
-                                                color: .neonOrange)
-                            notificationTimeRow("Evening Review/Reflection",
-                                                hour: UserDefaults.standard.integer(forKey: "eveningHour"),
-                                                icon: "moon.fill",
-                                                color: .neonPurple)
+                            notificationTimeRow("Morning Plan/Review", hour: wakeH, icon: "sunrise.fill", color: .neonGold)
+                            notificationTimeRow("Afternoon Check-In", hour: afternoonH, icon: "sun.max.fill", color: .neonOrange)
+                            notificationTimeRow("Evening Review/Reflection", hour: eveningH, icon: "moon.fill", color: .neonPurple)
                         }
 
-                        Text("Reminders will include your habit name for each active habit.")
+                        Text("Set your wake time — the other two are automatically 8 hours apart.")
                             .font(Typography.caption)
                             .foregroundColor(.subtleText)
                     }
@@ -164,6 +166,14 @@ struct NotificationSettingsView: View {
                 ensurePermissionThenScheduleDailyLoop()
             }
         }
+        .onChange(of: wakeTime) { newValue in
+            let cal = Calendar.current
+            let wakeH = cal.component(.hour, from: newValue)
+            UserDefaults.standard.set(wakeH, forKey: "wakeUpHour")
+            UserDefaults.standard.set((wakeH + 8) % 24, forKey: "afternoonHour")
+            UserDefaults.standard.set((wakeH + 16) % 24, forKey: "eveningHour")
+            NotificationScheduler.scheduleAll(context: environment.viewContext)
+        }
         .onChange(of: quoteTime1) { newValue in
             let cal = Calendar.current
             quoteSlot1Hour = cal.component(.hour, from: newValue)
@@ -216,6 +226,9 @@ struct NotificationSettingsView: View {
     private func ensurePermissionThenScheduleDailyLoop() {
         environment.notificationManager.requestPermissionIfNeeded { granted in
             notificationPermissionDenied = !granted
+            if granted {
+                NotificationScheduler.scheduleAll(context: environment.viewContext)
+            }
         }
     }
 

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Resurge is an iOS habit & addiction recovery app built with SwiftUI, Core Data, and MVVM architecture. It supports 10 recovery programs (smoking, alcohol, porn, phone, social media, gaming, sugar, emotional eating, shopping, gambling). Bundle ID: `com.resurge.app`. Deployment target: iOS 15+. Fully offline — no servers, no accounts, no internet required.
+LoopRoot (codebase still named "Resurge" internally) is an iOS habit & addiction recovery app built with SwiftUI, Core Data, and MVVM architecture. It supports 10 recovery programs (smoking, alcohol, porn, phone, social media, gaming, sugar, emotional eating, shopping, gambling). Bundle ID: `com.looproot.app`. Deployment target: iOS 15+. Fully offline — no servers, no accounts, no internet required. Tagline: "Stay in the loop. Find your root."
 
 ## Build & Run
 

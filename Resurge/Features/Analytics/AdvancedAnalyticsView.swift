@@ -77,7 +77,7 @@ struct AdvancedAnalyticsView: View {
                                 // MARK: - Navigation Links
                                 VStack(spacing: 12) {
                                     NavigationLink {
-                                        WeekOverWeekView()
+                                        WeekOverWeekView(habit: habit)
                                             .environmentObject(environment)
                                     } label: {
                                         analyticsNavRow(
@@ -88,7 +88,7 @@ struct AdvancedAnalyticsView: View {
                                     }
 
                                     NavigationLink {
-                                        TriggerEffectivenessView()
+                                        TriggerEffectivenessView(habit: habit)
                                             .environmentObject(environment)
                                     } label: {
                                         analyticsNavRow(
@@ -99,7 +99,7 @@ struct AdvancedAnalyticsView: View {
                                     }
 
                                     NavigationLink {
-                                        ToolEffectivenessView()
+                                        ToolEffectivenessView(habit: habit)
                                             .environmentObject(environment)
                                     } label: {
                                         analyticsNavRow(

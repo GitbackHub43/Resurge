@@ -22,11 +22,11 @@ private enum VaultShopData {
         VaultItem(id: "celebration_cosmic_sparkle", name: "Cosmic Sparkle", description: "Stars explode across the screen when you unlock a new badge", icon: "star.fill", cost: 200, category: "Celebration Packs")
     ]
 
-    static let powerUps: [VaultItem] = [
-        VaultItem(id: "powerup_streak_shield", name: "Streak Shield", description: "Protects your streak once if you miss a day. One-time use — buy more as needed", icon: "shield.checkered", cost: 150, category: "Power-Ups"),
-        VaultItem(id: "powerup_daily_boost", name: "Daily Surge Boost", description: "Double your Surges for one day — earn 30 instead of 15. One-time use", icon: "bolt.circle.fill", cost: 200, category: "Power-Ups"),
-        VaultItem(id: "powerup_badge_reveal", name: "Badge Reveal", description: "See exactly how close you are to your next badge unlock with a progress bar", icon: "eye.circle.fill", cost: 100, category: "Power-Ups"),
-        VaultItem(id: "powerup_motivation_pack", name: "Motivation Pack", description: "Unlock 30 exclusive motivational quotes from real recovery stories", icon: "quote.bubble.fill", cost: 250, category: "Power-Ups")
+    static let watchSkins: [VaultItem] = [
+        VaultItem(id: "watch_classic", name: "Classic Watch", description: "A clean analog clock face for your recovery timer on the home screen", icon: "clock.fill", cost: 100, category: "Watch Skins"),
+        VaultItem(id: "watch_digital", name: "Digital Watch", description: "A retro digital display style for your recovery timer", icon: "timer.square", cost: 150, category: "Watch Skins"),
+        VaultItem(id: "watch_luxury", name: "Luxury Watch", description: "A gold bezel clock with diamond markers for your recovery timer", icon: "clock.badge.checkmark.fill", cost: 250, category: "Watch Skins"),
+        VaultItem(id: "watch_holographic", name: "Holographic Watch", description: "An animated rainbow gradient clock that glows on your home screen", icon: "sparkles", cost: 400, category: "Watch Skins")
     ]
 
     static let appThemes: [VaultItem] = [
@@ -57,9 +57,19 @@ struct VaultShopView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @AppStorage("shardBalance") private var shardBalance: Int = 0
     @AppStorage("selectedTheme") private var selectedTheme: String = "default"
+    @AppStorage("isPremium") private var isPremium: Bool = false
     @State private var showPurchaseConfirm = false
     @State private var selectedItem: VaultItem?
     @State private var purchasedItems: Set<String> = []
+
+    // Items locked behind premium — users must buy premium first, then spend Surges
+    private let premiumOnlyIds: Set<String> = [
+        "celebration_golden_shower", "celebration_neon_rain", "celebration_cosmic_sparkle",
+        "theme_aurora", "theme_sunset", "theme_ocean",
+        "pet_cat", "pet_hamster", "pet_owl",
+        "companion_glasses", "companion_crown", "companion_bowtie",
+        "watch_digital", "watch_luxury", "watch_holographic"
+    ]
 
     var body: some View {
         ZStack {
@@ -79,10 +89,10 @@ struct VaultShopView: View {
                     )
 
                     shopSection(
-                        icon: "bolt.shield.fill",
-                        title: "Power-Ups",
+                        icon: "clock.fill",
+                        title: "Watch Skins",
                         color: .neonPurple,
-                        items: VaultShopData.powerUps
+                        items: VaultShopData.watchSkins
                     )
 
                     shopSection(
@@ -169,10 +179,12 @@ struct VaultShopView: View {
 
             LazyVStack(spacing: AppStyle.spacing) {
                 ForEach(items) { item in
+                    let isLocked = premiumOnlyIds.contains(item.id) && !isPremium
                     VaultItemCard(
                         item: item,
                         isPurchased: purchasedItems.contains(item.id),
                         canAfford: shardBalance >= item.cost,
+                        isPremiumLocked: isLocked,
                         onBuy: {
                             selectedItem = item
                             showPurchaseConfirm = true
@@ -219,6 +231,11 @@ struct VaultShopView: View {
             UserDefaults.standard.set(item.id, forKey: "activePet")
         }
 
+        // If it's a watch skin, equip it immediately
+        if item.id.hasPrefix("watch_") {
+            UserDefaults.standard.set(item.id, forKey: "equippedWatchSkin")
+        }
+
         selectedItem = nil
     }
 
@@ -239,12 +256,12 @@ struct VaultShopView: View {
             print("Failed to load cosmetic unlocks: \(error.localizedDescription)")
         }
 
-        // DEBUG: Give 2000 surges for testing — REMOVE before App Store submission
-        if shardBalance < 2000 {
-            shardBalance = 2000
+        // DEBUG: Give 200 surges for testing — REMOVE before App Store
+        if shardBalance < 200 {
+            shardBalance = 200
             let wallet = CDRewardWallet.fetchOrCreate(in: viewContext)
-            wallet.shardsBalance = 2000
-            wallet.lifetimeEarned = max(wallet.lifetimeEarned, 2000)
+            wallet.shardsBalance = 200
+            wallet.lifetimeEarned = max(wallet.lifetimeEarned, 200)
             try? viewContext.save()
         }
     }
@@ -256,10 +273,12 @@ private struct VaultItemCard: View {
     let item: VaultItem
     let isPurchased: Bool
     let canAfford: Bool
+    var isPremiumLocked: Bool = false
     let onBuy: () -> Void
     @AppStorage("selectedTheme") private var selectedTheme: String = "default"
     @AppStorage("activePet") private var activePet: String = ""
     @AppStorage("equippedAccessories") private var equippedAccessories: String = ""
+    @AppStorage("equippedWatchSkin") private var equippedWatchSkin: String = ""
 
     var body: some View {
         HStack(spacing: 12) {
@@ -279,7 +298,16 @@ private struct VaultItemCard: View {
 
             Spacer()
 
-            if isPurchased {
+            if isPremiumLocked {
+                VStack(spacing: 2) {
+                    Image(systemName: "lock.fill")
+                        .font(.system(size: 14))
+                        .foregroundColor(.premiumGold)
+                    Text("Premium")
+                        .font(.system(size: 9, weight: .semibold))
+                        .foregroundColor(.premiumGold)
+                }
+            } else if isPurchased {
                 if item.id.hasPrefix("theme_") {
                     let isActive = selectedTheme == item.id
                     Button {
@@ -324,6 +352,19 @@ private struct VaultItemCard: View {
                             .padding(.horizontal, 14)
                             .padding(.vertical, 8)
                             .background(isEquipped ? Color.neonOrange.opacity(0.15) : Color.neonGold.opacity(0.15))
+                            .cornerRadius(12)
+                    }
+                } else if item.id.hasPrefix("watch_") {
+                    let isEquipped = equippedWatchSkin == item.id
+                    Button {
+                        equippedWatchSkin = item.id
+                    } label: {
+                        Text(isEquipped ? "Equipped" : "Equip")
+                            .font(.subheadline.weight(.bold))
+                            .foregroundColor(isEquipped ? .neonGreen : .neonPurple)
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 8)
+                            .background(isEquipped ? Color.neonGreen.opacity(0.15) : Color.neonPurple.opacity(0.15))
                             .cornerRadius(12)
                     }
                 } else {
@@ -400,6 +441,10 @@ private struct VaultItemCard: View {
         case "celebration_golden_shower": GoldenShowerPreview()
         case "celebration_neon_rain": NeonRainPreview()
         case "celebration_cosmic_sparkle": CosmicSparklePreview()
+        case "watch_classic": WatchSkinPreview(style: .classic)
+        case "watch_digital": WatchSkinPreview(style: .digital)
+        case "watch_luxury": WatchSkinPreview(style: .luxury)
+        case "watch_holographic": WatchSkinPreview(style: .holographic)
         case "powerup_streak_shield": PowerUpPreview(icon: "shield.checkered", color: .neonGreen)
         case "powerup_journal_prompts": PowerUpPreview(icon: "text.book.closed.fill", color: .neonBlue)
         case "powerup_weekly_insights": PowerUpPreview(icon: "chart.line.uptrend.xyaxis", color: .neonPurple)
@@ -592,6 +637,67 @@ private struct CosmicSparklePreview: View {
 }
 
 // Power-Up Preview — glowing icon with pulse
+// Watch Skin Preview
+private struct WatchSkinPreview: View {
+    enum Style { case classic, digital, luxury, holographic }
+    let style: Style
+    @State private var pulse: CGFloat = 1.0
+    @State private var rainbowPhase: CGFloat = 0
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(Color(hex: "0A0A1A"))
+                .frame(width: 60, height: 60)
+
+            switch style {
+            case .classic:
+                Circle().stroke(Color.neonCyan, lineWidth: 2).frame(width: 50, height: 50)
+                Rectangle().fill(Color.neonCyan).frame(width: 2, height: 16).offset(y: -6)
+                Rectangle().fill(Color.neonCyan).frame(width: 12, height: 2).offset(x: 4)
+                Circle().fill(Color.neonCyan).frame(width: 4, height: 4)
+
+            case .digital:
+                RoundedRectangle(cornerRadius: 4).stroke(Color.neonGreen, lineWidth: 2).frame(width: 46, height: 36)
+                Text("12:00").font(.system(size: 14, weight: .bold, design: .monospaced)).foregroundColor(.neonGreen)
+
+            case .luxury:
+                Circle().stroke(Color.neonGold, lineWidth: 3).frame(width: 50, height: 50)
+                Circle().fill(Color.neonGold).frame(width: 4, height: 4)
+                ForEach(0..<12, id: \.self) { i in
+                    let isMain = i % 3 == 0
+                    Circle().fill(isMain ? Color.white : Color.neonGold.opacity(0.5))
+                        .frame(width: isMain ? 4 : 2, height: isMain ? 4 : 2)
+                        .offset(y: -20)
+                        .rotationEffect(.degrees(Double(i) * 30))
+                }
+                Rectangle().fill(Color.neonGold).frame(width: 2, height: 14).offset(y: -5)
+                Rectangle().fill(Color.white).frame(width: 1.5, height: 10).offset(x: 3, y: -2).rotationEffect(.degrees(90))
+
+            case .holographic:
+                Circle()
+                    .stroke(
+                        AngularGradient(colors: [.neonCyan, .neonPurple, .neonMagenta, .neonGold, .neonCyan], center: .center, startAngle: .degrees(rainbowPhase), endAngle: .degrees(rainbowPhase + 360)),
+                        lineWidth: 3
+                    )
+                    .frame(width: 50, height: 50)
+                Image(systemName: "clock.fill").font(.system(size: 20))
+                    .foregroundStyle(
+                        LinearGradient(colors: [.neonCyan, .neonPurple, .neonMagenta, .neonGold], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    )
+            }
+        }
+        .frame(width: 65, height: 65)
+        .scaleEffect(pulse)
+        .onAppear {
+            withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) { pulse = 1.05 }
+            if style == .holographic {
+                withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) { rainbowPhase = 360 }
+            }
+        }
+    }
+}
+
 private struct PowerUpPreview: View {
     let icon: String
     let color: Color

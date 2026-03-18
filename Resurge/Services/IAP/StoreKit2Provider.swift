@@ -4,9 +4,9 @@ import StoreKit
 final class StoreKit2Provider: IAPProviderProtocol {
 
     private static let productIdentifiers: Set<String> = [
-        "com.resurge.premium.monthly",
-        "com.resurge.premium.yearly",
-        "com.resurge.premium.lifetime",
+        "com.looproot.premium.monthly",
+        "com.looproot.premium.yearly",
+        "com.looproot.premium.lifetime",
     ]
 
     private var storeProducts: [Product] = []

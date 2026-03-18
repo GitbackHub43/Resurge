@@ -1,13 +1,17 @@
 import SwiftUI
+import CoreData
 
 struct BreathingExerciseView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
     @State private var selectedPattern: BreathingPattern = .relaxing
     @State private var isActive = false
     @State private var isExpanded = false
     @State private var breathText = "Tap Start to begin"
     @State private var cycleCount = 0
     @State private var isComplete = false
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     enum BreathingPattern: String, CaseIterable {
         case relaxing = "Relaxing (4-7-8)"
@@ -44,6 +48,18 @@ struct BreathingExerciseView: View {
         }
         .navigationTitle("Breathing Exercise")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "breathing", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "breathing", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
     }
 
     // MARK: - Exercise View
@@ -178,7 +194,7 @@ struct BreathingExerciseView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

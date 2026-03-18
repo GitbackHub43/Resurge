@@ -1,4 +1,5 @@
 import SwiftUI
+import CoreData
 
 // MARK: - Future Scene Model
 
@@ -12,6 +13,7 @@ struct FutureScene: Codable, Identifiable {
 struct TimePortalView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
     @AppStorage("futureScenes") private var futureSceneData: String = "[]"
 
     @State private var isCreating: Bool = false
@@ -29,6 +31,8 @@ struct TimePortalView: View {
     @State private var displayedScene: FutureScene?
 
     @State private var pulseScale: CGFloat = 1.0
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     private let emojiGrid: [String] = [
         "\u{1F31F}", "\u{2B50}", "\u{1F3C6}", "\u{1F3AF}", "\u{1F4AA}", "\u{1F9D8}\u{200D}\u{2642}\u{FE0F}",
@@ -62,6 +66,18 @@ struct TimePortalView: View {
         }
         .navigationTitle("Time Portal")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "futureThinking", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "futureThinking", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
         .onAppear {
             if scenes.isEmpty {
                 isCreating = true
@@ -122,7 +138,7 @@ struct TimePortalView: View {
             .padding(.horizontal, AppStyle.screenPadding)
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }
@@ -403,7 +419,7 @@ struct TimePortalView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

@@ -1,12 +1,16 @@
 import SwiftUI
+import CoreData
 
 struct GroundingExerciseView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
     @State private var currentStep: Int = 0
     @State private var isComplete: Bool = false
     @State private var pulseScale: CGFloat = 1.0
     @State private var confettiVisible: Bool = false
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     private let steps: [GroundingStep] = [
         GroundingStep(number: 5, sense: "SEE", prompt: "Name 5 things you can SEE", icon: "eye.fill", color: .neonCyan),
@@ -30,6 +34,18 @@ struct GroundingExerciseView: View {
         }
         .navigationTitle("Grounding")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "grounding", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "grounding", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
     }
 
     // MARK: - Step View
@@ -210,7 +226,7 @@ struct GroundingExerciseView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

@@ -123,7 +123,7 @@ struct PremiumGateView: View {
 
     private func unlockPremium() {
         guard let monthlyProduct = environment.entitlementManager.availableProducts.first(where: {
-            $0.id == "com.resurge.premium.monthly"
+            $0.id == "com.looproot.premium.monthly"
         }) else {
             onDismiss()
             return

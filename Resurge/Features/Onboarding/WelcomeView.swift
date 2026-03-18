@@ -54,18 +54,18 @@ struct WelcomeView: View {
                         .font(Typography.title)
                         .foregroundColor(.appText)
 
-                    Text("Resurge")
+                    Text("LoopRoot")
                         .font(Typography.largeTitle)
                         .rainbowText()
                 }
 
                 // Subtitle
-                Text("Your Personal Recovery Coach")
+                Text("Stay in the loop. Find your root.")
                     .font(Typography.headline)
                     .foregroundColor(.neonGold)
 
                 // Description
-                Text("Take control of the habits that hold you back. Resurge helps you track your progress, stay motivated, and build the life you deserve — one day at a time.")
+                Text("Take control of the habits that hold you back. LoopRoot helps you track your progress, stay motivated, and build the life you deserve — one day at a time.")
                     .font(Typography.body)
                     .foregroundColor(.subtleText)
                     .multilineTextAlignment(.center)

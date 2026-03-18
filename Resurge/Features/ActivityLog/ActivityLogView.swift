@@ -37,6 +37,7 @@ struct ActivityLogView: View {
         case dailyLoop = "Daily Loop"
         case journal = "Journal"
         case gratitude = "Gratitude"
+        case cravingJournal = "Craving Journal"
         case cravings = "Cravings"
         case plans = "Plans"
         case all = "All"
@@ -122,12 +123,21 @@ struct ActivityLogView: View {
             }
         case .journal:
             for journal in habitJournalEntries {
-                items.append(.journal(journal))
+                // Exclude gratitude and craving journal entries from regular journal tab
+                let tags = journal.promptUsed ?? ""
+                if !tags.contains("gratitude") && !tags.contains("craving") {
+                    items.append(.journal(journal))
+                }
             }
         case .gratitude:
-            // Journal entries tagged with gratitude (stored in promptUsed field)
             for journal in habitJournalEntries {
                 if let tags = journal.promptUsed, tags.contains("gratitude") {
+                    items.append(.journal(journal))
+                }
+            }
+        case .cravingJournal:
+            for journal in habitJournalEntries {
+                if let tags = journal.promptUsed, tags.contains("craving") {
                     items.append(.journal(journal))
                 }
             }
@@ -321,8 +331,12 @@ struct ActivityLogView: View {
             entryDetailSheet(entry: entry)
         }
         .sheet(item: $selectedJournalEntry) { journal in
-            JournalEditorView(existingEntry: journal)
-                .environmentObject(environment)
+            if journal.promptUsed?.contains("craving") == true {
+                cravingJournalDetailSheet(journal)
+            } else {
+                JournalEditorView(existingEntry: journal)
+                    .environmentObject(environment)
+            }
         }
         .alert("Delete Entry", isPresented: $showDeleteConfirm) {
             Button("Delete", role: .destructive) {
@@ -701,28 +715,34 @@ struct ActivityLogView: View {
     // MARK: - Journal Card
 
     private func journalCard(_ entry: CDJournalEntry) -> some View {
-        Button {
+        let isGratitude = entry.promptUsed?.contains("gratitude") == true
+        let isCravingJournal = entry.promptUsed?.contains("craving") == true
+        let cardColor: Color = isGratitude ? .neonGold : (isCravingJournal ? .neonOrange : .neonBlue)
+        let cardIcon = isGratitude ? "heart.fill" : (isCravingJournal ? "bolt.heart.fill" : "book.fill")
+        let cardTitle = isGratitude ? "Gratitude Log" : (isCravingJournal ? "Craving Journal" : (entry.title ?? "Journal entry"))
+
+        return Button {
             selectedJournalEntry = entry
         } label: {
         HStack(spacing: 0) {
             // Accent bar
             RoundedRectangle(cornerRadius: 2)
-                .fill(Color.neonBlue)
+                .fill(cardColor)
                 .frame(width: 4)
 
             HStack(spacing: 12) {
                 ZStack {
                     Circle()
-                        .fill(Color.neonBlue.opacity(0.12))
+                        .fill(cardColor.opacity(0.12))
                         .frame(width: 40, height: 40)
-                    Image(systemName: "book.fill")
+                    Image(systemName: cardIcon)
                         .font(Typography.body)
-                        .foregroundColor(.neonBlue)
+                        .foregroundColor(cardColor)
                 }
 
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
-                        Text(entry.title ?? "Journal entry")
+                        Text(cardTitle)
                             .font(Typography.headline)
                             .foregroundColor(.appText)
                             .lineLimit(1)
@@ -736,10 +756,15 @@ struct ActivityLogView: View {
                         .font(.system(size: 10))
                         .foregroundColor(.subtleText.opacity(0.7))
 
-                    Text(entry.body)
-                        .font(Typography.caption)
-                        .foregroundColor(.subtleText)
-                        .lineLimit(2)
+                    if let habitName = entry.habit?.name {
+                        Text(habitName)
+                            .font(.system(size: 10, weight: .medium))
+                            .foregroundColor(cardColor)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            .background(cardColor.opacity(0.1))
+                            .cornerRadius(4)
+                    }
                 }
             }
             .padding(12)
@@ -795,6 +820,69 @@ struct ActivityLogView: View {
                 .foregroundColor(.subtleText)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.appBackground.ignoresSafeArea())
+        }
+    }
+
+    // MARK: - Craving Journal Detail Sheet
+
+    private func cravingJournalDetailSheet(_ journal: CDJournalEntry) -> some View {
+        NavigationView {
+            ZStack {
+                Color.appBackground.ignoresSafeArea()
+
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 16) {
+                        // Date
+                        HStack {
+                            Image(systemName: "bolt.heart.fill")
+                                .foregroundColor(.neonOrange)
+                            Text(formatDate(journal.createdAt))
+                                .font(Typography.callout)
+                                .foregroundColor(.subtleText)
+                            Spacer()
+                        }
+
+                        if let habitName = journal.habit?.name {
+                            Text(habitName)
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.neonOrange)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Color.neonOrange.opacity(0.1))
+                                .cornerRadius(6)
+                        }
+
+                        // Journal content — same look as craving protocol
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("What you wrote during your craving:")
+                                .font(Typography.headline)
+                                .foregroundColor(.neonOrange)
+
+                            Text(journal.body)
+                                .font(Typography.body)
+                                .foregroundColor(.appText)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .padding()
+                        .background(Color.cardBackground)
+                        .cornerRadius(AppStyle.cornerRadius)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: AppStyle.cornerRadius)
+                                .stroke(Color.neonOrange.opacity(0.3), lineWidth: 1)
+                        )
+                    }
+                    .padding()
+                }
+            }
+            .navigationTitle("Craving Journal")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Done") {
+                        selectedJournalEntry = nil
+                    }
+                }
+            }
         }
     }
 }

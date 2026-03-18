@@ -50,7 +50,7 @@ final class CalendarMilestoneService: CalendarMilestoneServiceProtocol {
         event.endDate = date
         event.isAllDay = true
         event.calendar = eventStore.defaultCalendarForNewEvents
-        event.notes = "Milestone reached in Resurge!"
+        event.notes = "Milestone reached in LoopRoot!"
 
         // Add an alert 1 hour before
         let alarm = EKAlarm(relativeOffset: -3600)

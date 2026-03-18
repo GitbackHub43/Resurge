@@ -19,6 +19,8 @@ struct UrgeLogView: View {
     @State private var intensity: Double = 5
     @State private var selectedTriggers: Set<String> = []
     @State private var showPatterns: Bool = false
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     // Pattern data
     @State private var totalEntries: Int = 0
@@ -64,6 +66,18 @@ struct UrgeLogView: View {
         }
         .navigationTitle("Urge Log")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "urgeLog", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "urgeLog", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
         .onAppear {
             fetchPatternData()
         }
@@ -281,7 +295,7 @@ struct UrgeLogView: View {
                 .multilineTextAlignment(.center)
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

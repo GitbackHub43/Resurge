@@ -1,8 +1,10 @@
 import SwiftUI
+import CoreData
 
 struct CopingSimulatorView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
 
     // MARK: - State
 
@@ -12,6 +14,8 @@ struct CopingSimulatorView: View {
     @State private var selectedChoice: Int? = nil
     @State private var showOutcome: Bool = false
     @State private var totalXP: Int = 0
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     private let scenarios: [Scenario] = [
         Scenario(
@@ -76,6 +80,18 @@ struct CopingSimulatorView: View {
         }
         .navigationTitle("Coping Simulator")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "copingSimulator", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "copingSimulator", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
     }
 
     // MARK: - Scenario View
@@ -297,7 +313,7 @@ struct CopingSimulatorView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

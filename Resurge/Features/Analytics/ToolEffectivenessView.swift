@@ -4,6 +4,7 @@ import CoreData
 struct ToolEffectivenessView: View {
     @EnvironmentObject var environment: AppEnvironment
     @Environment(\.managedObjectContext) private var viewContext
+    let habit: CDHabit
 
     private struct ToolStat: Identifiable {
         let id = UUID()
@@ -15,7 +16,10 @@ struct ToolEffectivenessView: View {
 
     private var toolStats: [ToolStat] {
         let request = NSFetchRequest<CDCravingEntry>(entityName: "CDCravingEntry")
-        request.predicate = NSPredicate(format: "copingToolUsed != nil AND copingToolUsed != ''")
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+            NSPredicate(format: "copingToolUsed != nil AND copingToolUsed != ''"),
+            NSPredicate(format: "habit == %@", habit)
+        ])
         guard let entries = try? viewContext.fetch(request) else { return [] }
 
         // Group by tool
@@ -329,9 +333,11 @@ struct ToolEffectivenessView: View {
 struct ToolEffectivenessView_Previews: PreviewProvider {
     static var previews: some View {
         let env = AppEnvironment.preview
+        let habit = CDHabit.create(in: env.viewContext, name: "Quit Smoking", programType: "smoking")
         NavigationView {
-            ToolEffectivenessView()
+            ToolEffectivenessView(habit: habit)
                 .environmentObject(env)
+                .environment(\.managedObjectContext, env.viewContext)
         }
     }
 }

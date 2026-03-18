@@ -221,9 +221,6 @@ struct AchievementsView: View {
                             }
                         }
 
-                        // MARK: - Achievement Tracks
-                        achievementTracksSection
-
                         // MARK: - Badge Categories
                         badgeSection(icon: "flame.fill", title: "Streak Badges", color: .neonOrange, badges: streakBadges, isExpanded: $streaksExpanded)
                         badgeSection(icon: "clock.fill", title: "Time Reclaimed", color: .neonCyan, badges: timeBadges, isExpanded: $timeExpanded)
@@ -429,8 +426,8 @@ struct AchievementsView: View {
             "celebration_neon_rain": "Neon Rain", "celebration_cosmic_sparkle": "Cosmic Sparkle",
             "theme_midnight": "Midnight", "theme_aurora": "Neon Jungle",
             "theme_sunset": "Ultraviolet", "theme_ocean": "Ocean",
-            "powerup_streak_shield": "Streak Shield", "powerup_daily_boost": "Daily Surge Boost",
-            "powerup_badge_reveal": "Badge Reveal", "powerup_motivation_pack": "Motivation Pack",
+            "watch_classic": "Classic Watch", "watch_digital": "Digital Watch",
+            "watch_luxury": "Luxury Watch", "watch_holographic": "Holographic Watch",
             "companion_hat": "Tiny Hat", "companion_glasses": "Cool Glasses",
             "companion_crown": "Royal Crown", "companion_bowtie": "Bowtie",
         ]
@@ -464,10 +461,10 @@ struct AchievementsView: View {
         case "theme_aurora": return ("leaf.fill", .neonGreen)
         case "theme_sunset": return ("bolt.fill", .neonPurple)
         case "theme_ocean": return ("water.waves", .neonBlue)
-        case "powerup_streak_shield": return ("shield.checkered", .neonGreen)
-        case "powerup_daily_boost": return ("bolt.circle.fill", .neonGold)
-        case "powerup_badge_reveal": return ("eye.circle.fill", .neonCyan)
-        case "powerup_motivation_pack": return ("quote.bubble.fill", .neonPurple)
+        case "watch_classic": return ("clock.fill", .neonCyan)
+        case "watch_digital": return ("timer.square", .neonGreen)
+        case "watch_luxury": return ("clock.badge.checkmark.fill", .neonGold)
+        case "watch_holographic": return ("sparkles", .neonPurple)
         case "companion_hat": return ("hat.widebrim.fill", .neonGold)
         case "companion_glasses": return ("eyeglasses", .neonCyan)
         case "companion_crown": return ("crown.fill", .neonGold)
@@ -483,8 +480,8 @@ struct AchievementsView: View {
             "celebration_neon_rain": "Neon Rain", "celebration_cosmic_sparkle": "Cosmic Sparkle",
             "theme_midnight": "Midnight", "theme_aurora": "Neon Jungle",
             "theme_sunset": "Ultraviolet", "theme_ocean": "Ocean",
-            "powerup_streak_shield": "Streak Shield", "powerup_daily_boost": "Daily Surge Boost",
-            "powerup_badge_reveal": "Badge Reveal", "powerup_motivation_pack": "Motivation Pack",
+            "watch_classic": "Classic Watch", "watch_digital": "Digital Watch",
+            "watch_luxury": "Luxury Watch", "watch_holographic": "Holographic Watch",
             "companion_hat": "Tiny Hat", "companion_glasses": "Cool Glasses",
             "companion_crown": "Royal Crown", "companion_bowtie": "Bowtie",
         ]
@@ -779,6 +776,7 @@ struct AchievementsView: View {
 private struct BadgeCard: View {
     let badge: MilestoneBadge
     let isUnlocked: Bool
+    @AppStorage("isPremium") private var isPremium: Bool = false
 
     var body: some View {
         VStack(spacing: 10) {
@@ -790,13 +788,17 @@ private struct BadgeCard: View {
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
 
-            if badge.requiredDays > 0 {
+            if badge.category == .time && badge.requiredDays > 0 {
+                Text("\(badge.requiredDays)h reclaimed")
+                    .font(.caption)
+                    .foregroundColor(.subtleText)
+            } else if badge.requiredDays > 0 {
                 Text("\(badge.requiredDays) days")
                     .font(.caption)
                     .foregroundColor(.subtleText)
             }
 
-            if badge.isPremium && !isUnlocked {
+            if badge.isPremium && !isUnlocked && !isPremium {
                 HStack(spacing: 3) {
                     Image(systemName: "lock.fill")
                         .font(.caption2)

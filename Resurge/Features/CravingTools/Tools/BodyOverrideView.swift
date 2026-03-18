@@ -1,8 +1,10 @@
 import SwiftUI
+import CoreData
 
 struct BodyOverrideView: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
 
     // MARK: - State
 
@@ -10,6 +12,9 @@ struct BodyOverrideView: View {
     @State private var isComplete: Bool = false
     @State private var confettiVisible: Bool = false
     @State private var urgeMeter: Double = 1.0
+
+    @State private var showResistPopup = false
+    @State private var didResistResult: Bool? = nil
 
     // Timers
     @State private var coldTimeRemaining: Int = 30
@@ -61,6 +66,18 @@ struct BodyOverrideView: View {
         }
         .navigationTitle("Body Override")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Did this help?", isPresented: $showResistPopup) {
+            Button("Yes, I resisted") {
+                trackToolCompletion(toolId: "bodyOverride", didResist: true, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+            Button("No, I gave in") {
+                trackToolCompletion(toolId: "bodyOverride", didResist: false, context: viewContext)
+                presentationMode.wrappedValue.dismiss()
+            }
+        } message: {
+            Text("Did completing this tool help you resist your craving?")
+        }
         .onDisappear {
             activeTimer?.invalidate()
         }
@@ -417,7 +434,7 @@ struct BodyOverrideView: View {
             Spacer()
 
             Button {
-                presentationMode.wrappedValue.dismiss()
+                showResistPopup = true
             } label: {
                 Text("Done")
             }

@@ -22,6 +22,8 @@ struct HomeView: View {
     @State private var trophyScale: CGFloat = 0.5
     @State private var refreshTrigger: UUID = UUID()
     @State private var showGoalComplete = false
+    @State private var isEditingReason = false
+    @State private var editedReason = ""
     // MARK: - Date Helpers
 
     private var todayString: String {
@@ -330,10 +332,58 @@ struct HomeView: View {
                         .frame(height: 6)
                     }
 
-                    if let reason = habit.reasonToQuit, !reason.isEmpty {
-                        Text("\"\(reason)\"")
-                            .font(Typography.callout).foregroundColor(.subtleText).italic()
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                    // Your Why — editable with pencil icon
+                    if isEditingReason {
+                        HStack(spacing: 8) {
+                            TextField("Your reason for quitting...", text: $editedReason)
+                                .font(Typography.callout)
+                                .foregroundColor(.appText)
+                                .padding(8)
+                                .background(Color.cardBackground)
+                                .cornerRadius(8)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(Color.neonCyan.opacity(0.4), lineWidth: 1)
+                                )
+
+                            Button {
+                                habit.reasonToQuit = editedReason.trimmingCharacters(in: .whitespacesAndNewlines)
+                                try? viewContext.save()
+                                isEditingReason = false
+                            } label: {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .font(.title3)
+                                    .foregroundColor(.neonGreen)
+                            }
+                        }
+                    } else if let reason = habit.reasonToQuit, !reason.isEmpty {
+                        HStack {
+                            Text("\"\(reason)\"")
+                                .font(Typography.callout).foregroundColor(.subtleText).italic()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+
+                            Button {
+                                editedReason = reason
+                                isEditingReason = true
+                            } label: {
+                                Image(systemName: "pencil")
+                                    .font(.caption)
+                                    .foregroundColor(.subtleText.opacity(0.6))
+                            }
+                        }
+                    } else {
+                        Button {
+                            editedReason = ""
+                            isEditingReason = true
+                        } label: {
+                            HStack(spacing: 4) {
+                                Image(systemName: "plus.circle")
+                                    .font(.caption)
+                                Text("Add your reason for quitting")
+                                    .font(Typography.caption)
+                            }
+                            .foregroundColor(.neonCyan.opacity(0.6))
+                        }
                     }
                 }
                 .neonCard(glow: .neonCyan)
