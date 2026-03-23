@@ -2,6 +2,7 @@ import SwiftUI
 import CoreData
 
 struct BreathingExerciseView: View {
+    var skipResistPopup: Bool = false
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) private var viewContext
     @State private var selectedPattern: BreathingPattern = .relaxing
@@ -200,7 +201,12 @@ struct BreathingExerciseView: View {
             Spacer()
 
             Button {
-                showResistPopup = true
+                if skipResistPopup {
+                    UserDefaults.standard.set(true, forKey: "cravingToolDidComplete")
+                    presentationMode.wrappedValue.dismiss()
+                } else {
+                    showResistPopup = true
+                }
             } label: {
                 Text("Done")
             }

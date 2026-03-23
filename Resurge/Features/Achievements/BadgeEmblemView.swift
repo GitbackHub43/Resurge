@@ -22,24 +22,29 @@ struct BadgeEmblemView: View {
 
     // MARK: - Colors
 
+    private var isJournalBadge: Bool {
+        badge.key.contains("journal")
+    }
+
     private var badgeColor: Color {
+        if isJournalBadge { return .neonBlue }
         switch badge.category {
         case .time: return .neonCyan
         case .streak: return .neonOrange
         case .behavior: return .neonGreen
         case .program:
-            if let pt = badge.programType { return Color(hex: pt.colorHex) }
             return .neonPurple
         case .tool: return .neonGold
         }
     }
 
     private var gradientColors: [Color] {
+        if isJournalBadge { return [.neonBlue, .neonCyan] }
         switch badge.category {
         case .time: return [.neonCyan, .neonBlue]
         case .streak: return [.neonOrange, .neonGold]
         case .behavior: return [.neonGreen, .neonCyan]
-        case .program: return [badgeColor, badgeColor.opacity(0.6)]
+        case .program: return [.neonPurple, .neonMagenta]
         case .tool: return [.neonGold, .neonOrange]
         }
     }

@@ -69,7 +69,7 @@ struct DebugTimeTravelView: View {
                                     Button {
                                         selectedHabitIndex = index
                                     } label: {
-                                        Text(habit.name)
+                                        Text(habit.safeDisplayName)
                                             .font(Typography.caption.weight(.semibold))
                                             .foregroundColor(selectedHabitIndex == index ? .white : .subtleText)
                                             .padding(.horizontal, 14)

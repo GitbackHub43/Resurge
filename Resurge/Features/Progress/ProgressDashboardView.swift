@@ -144,7 +144,7 @@ struct ProgressDashboardView: View {
                             selectedHabitIndex = index
                         }
                     } label: {
-                        Text(habit.name)
+                        Text(habit.safeDisplayName)
                             .font(Typography.caption)
                             .foregroundColor(selectedHabitIndex == index ? .white : .subtleText)
                             .padding(.horizontal, 14)
@@ -439,16 +439,17 @@ struct ProgressDashboardView: View {
 
     private var badgesSection: some View {
         let healthBadgesForHabit = MilestoneBadge.healthBadges(for: selectedProgramType)
-        let allBadges = MilestoneBadge.allBadges + healthBadgesForHabit
+        let programBadgesForHabit = MilestoneBadge.programBadges.filter { $0.programType == selectedProgramType }
+        let journalBadges = MilestoneBadge.behaviorBadges.filter { $0.key.contains("journal") }
+        let allBadgesRaw = MilestoneBadge.streakBadges + MilestoneBadge.timeBadges + healthBadgesForHabit + journalBadges + programBadgesForHabit
+        var seenKeys = Set<String>()
+        let allBadges = allBadgesRaw.filter { seenKeys.insert($0.key).inserted }
         let recentUnlocked = allBadges.filter { unlockedKeys.contains($0.key) }.prefix(4)
 
         return VStack(alignment: .leading, spacing: AppStyle.spacing) {
             HStack {
                 sectionHeader(icon: "trophy.fill", title: "Badges", color: .neonPurple)
                 Spacer()
-                Text("\(unlockedKeys.count)/\(allBadges.count)")
-                    .font(Typography.badge)
-                    .foregroundColor(.neonPurple)
             }
 
             // Show up to 4 recently unlocked badges in a row
@@ -491,7 +492,7 @@ struct ProgressDashboardView: View {
             }
             .buttonStyle(.plain)
 
-            Text("Earn points for completing plans, craving protocols, worksheets, and reviews — not just streaks.")
+            Text("Unlock badges by hitting streaks, reclaiming time, reaching health milestones, and journaling.")
                 .font(Typography.caption)
                 .foregroundColor(.subtleText)
         }
@@ -739,7 +740,7 @@ struct ProgressDashboardView: View {
         cravingRequest.fetchLimit = 5
         if let cravings = try? viewContext.fetch(cravingRequest) {
             for craving in cravings {
-                let habitLabel = craving.habit?.name
+                let habitLabel = craving.habit?.safeDisplayName
                 if craving.didResist {
                     let desc = habitLabel != nil ? "Craving resisted for \(habitLabel!)" : "Craving resisted"
                     events.append(ActivityEvent(icon: "shield.fill", color: .neonGreen, description: desc, date: craving.timestamp, relativeTime: relativeTimeString(from: craving.timestamp)))
@@ -759,7 +760,7 @@ struct ProgressDashboardView: View {
         logRequest.fetchLimit = 10
         if let logs = try? viewContext.fetch(logRequest) {
             for log in logs {
-                let habitLabel = log.habit?.name ?? ""
+                let habitLabel = log.habit?.safeDisplayName ?? ""
                 let entryLabel: String
                 let icon: String
                 let color: Color
@@ -794,7 +795,7 @@ struct ProgressDashboardView: View {
         journalRequest.fetchLimit = 5
         if let journals = try? viewContext.fetch(journalRequest) {
             for journal in journals {
-                let habitLabel = journal.habit?.name ?? ""
+                let habitLabel = journal.habit?.safeDisplayName ?? ""
                 let isGratitude = journal.promptUsed?.contains("gratitude") == true
                 let isCravingJournal = journal.promptUsed?.contains("craving") == true
                 let desc: String

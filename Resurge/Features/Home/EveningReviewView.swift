@@ -115,7 +115,7 @@ struct EveningReviewView: View {
             }
 
             HStack {
-                Text(habit.name)
+                Text(habit.safeDisplayName)
                     .font(Typography.headline)
                     .foregroundColor(.neonCyan)
                 Spacer()
@@ -371,6 +371,15 @@ struct EveningReviewView: View {
 
     // MARK: - Save Button
 
+    private var canSaveEvening: Bool {
+        !todayWin.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
+        !selectedEveningTags.isEmpty &&
+        !eveningReflection.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
+        !gratitude.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
+        !tomorrowPlan.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
+        (!didLapse || !lapseNote.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+    }
+
     private var saveButton: some View {
         Button {
             saveEveningReview()
@@ -381,6 +390,8 @@ struct EveningReviewView: View {
             }
         }
         .buttonStyle(RainbowButtonStyle())
+        .disabled(!canSaveEvening)
+        .opacity(canSaveEvening ? 1.0 : 0.4)
     }
 
     // MARK: - Completion Overlay

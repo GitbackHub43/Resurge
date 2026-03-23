@@ -22,7 +22,7 @@ struct HabitCardView: View {
                     .font(.title3)
                     .foregroundColor(.primaryTeal)
 
-                Text(habit.name)
+                Text(habit.safeDisplayName)
                     .font(Typography.headline)
                     .foregroundColor(.appText)
 

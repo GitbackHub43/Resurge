@@ -18,6 +18,17 @@ struct JournalEditorView: View {
 
     @State private var title: String = ""
     @State private var bodyText: String = ""
+
+    private var canSaveEntry: Bool {
+        let stripped = bodyText.trimmingCharacters(in: .whitespacesAndNewlines)
+        if stripped.isEmpty { return false }
+        // For gratitude, check they typed beyond the template
+        if let prompt = initialPrompt, !prompt.isEmpty {
+            let templateStripped = prompt.trimmingCharacters(in: .whitespacesAndNewlines)
+            if stripped == templateStripped { return false }
+        }
+        return true
+    }
     @State private var selectedMood: MoodState = .neutral
     @State private var selectedHabitID: UUID?
     @State private var selectedTags: Set<EntryTag> = []
@@ -66,7 +77,7 @@ struct JournalEditorView: View {
 
         var color: Color {
             switch self {
-            case .gratitude: return .neonGold
+            case .gratitude: return .neonOrange
             case .reflection: return .neonPurple
             case .win: return .neonGreen
             case .struggle: return .neonOrange
@@ -217,7 +228,7 @@ struct JournalEditorView: View {
                         // Date header
                         HStack(spacing: 8) {
                             Image(systemName: entryContext == "gratitude" ? "heart.fill" : "book.fill")
-                                .foregroundColor(entryContext == "gratitude" ? .neonGold : .neonBlue)
+                                .foregroundColor(entryContext == "gratitude" ? .neonOrange : .neonBlue)
                             Text({
                                 let f = DateFormatter(); f.dateStyle = .long; f.timeStyle = .short
                                 return f.string(from: existingEntry?.createdAt ?? DebugDate.now)
@@ -239,7 +250,7 @@ struct JournalEditorView: View {
                                             Button {
                                                 selectedHabitID = habit.id
                                             } label: {
-                                                Text(habit.name)
+                                                Text(habit.safeDisplayName)
                                                     .font(.subheadline)
                                                     .padding(.horizontal, 14)
                                                     .padding(.vertical, 8)
@@ -465,8 +476,8 @@ struct JournalEditorView: View {
                             Text(isEditing ? "Update Entry" : "Save Entry")
                         }
                         .buttonStyle(RainbowButtonStyle())
-                        .disabled(bodyText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-                        .opacity(bodyText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? 0.5 : 1.0)
+                        .disabled(!canSaveEntry)
+                        .opacity(canSaveEntry ? 1.0 : 0.4)
                         .padding(.top, 4)
                     }
                     .padding()

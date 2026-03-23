@@ -290,7 +290,7 @@ struct PlanView: View {
                             selectedHabitIndex = index
                         }
                     } label: {
-                        Text(habit.name)
+                        Text(habit.safeDisplayName)
                             .font(Typography.caption)
                             .foregroundColor(selectedHabitIndex == index ? .white : .subtleText)
                             .padding(.horizontal, 14)
@@ -377,21 +377,21 @@ struct PlanView: View {
 
     private var newWeekCard: some View {
         VStack(spacing: AppStyle.spacing) {
-                HStack(spacing: 8) {
-                    Image(systemName: "calendar.badge.clock")
-                        .font(.system(size: 18))
-                        .foregroundColor(.neonGold)
-                    Text(isMonday ? "New Week" : "New Day")
-                        .font(Typography.headline)
-                        .foregroundColor(.appText)
+            HStack(spacing: 8) {
+                Image(systemName: "calendar.badge.clock")
+                    .font(.system(size: 18))
+                    .foregroundColor(.neonGold)
+                Text(isMonday ? "New Week" : "New Day")
+                    .font(Typography.headline)
+                    .foregroundColor(.appText)
+                Spacer()
+                Text("Day \(planDayCount)")
+                    .font(Typography.caption)
+                    .foregroundColor(.neonCyan)
+            }
 
-                    Spacer()
-
-                    Text("Day \(planDayCount)")
-                        .font(Typography.caption)
-                        .foregroundColor(.neonCyan)
-                }
-
+            if hasPlans {
+                // Has existing plans — offer keep or new
                 Text(isMonday
                      ? "New week ahead! Keep your current plan or create a fresh one?"
                      : "New day. Keep your plan or switch it up?")
@@ -404,34 +404,49 @@ struct PlanView: View {
                     } label: {
                         Text("Keep Plan")
                             .font(Typography.caption)
-                        .foregroundColor(.neonGreen)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .background(Color.neonGreen.opacity(0.15))
-                        .cornerRadius(AppStyle.smallCornerRadius)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: AppStyle.smallCornerRadius)
-                                .stroke(Color.neonGreen.opacity(0.3), lineWidth: 1)
-                        )
+                            .foregroundColor(.neonGreen)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(Color.neonGreen.opacity(0.15))
+                            .cornerRadius(AppStyle.smallCornerRadius)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: AppStyle.smallCornerRadius)
+                                    .stroke(Color.neonGreen.opacity(0.3), lineWidth: 1)
+                            )
+                    }
+                    .buttonStyle(.plain)
+
+                    Button {
+                        startNewPlan()
+                    } label: {
+                        Text("New Plan")
+                            .font(Typography.caption)
+                            .foregroundColor(.neonCyan)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(Color.neonCyan.opacity(0.15))
+                            .cornerRadius(AppStyle.smallCornerRadius)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: AppStyle.smallCornerRadius)
+                                    .stroke(Color.neonCyan.opacity(0.3), lineWidth: 1)
+                            )
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
+            } else {
+                // No plans yet — just create
+                Text(isMonday
+                     ? "New week! Start strong with a plan."
+                     : "New day. Set up your If-Then plan.")
+                    .font(Typography.caption)
+                    .foregroundColor(.subtleText)
 
                 Button {
                     startNewPlan()
                 } label: {
-                    Text("New Plan")
-                        .font(Typography.caption)
-                        .foregroundColor(.neonCyan)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .background(Color.neonCyan.opacity(0.15))
-                        .cornerRadius(AppStyle.smallCornerRadius)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: AppStyle.smallCornerRadius)
-                                .stroke(Color.neonCyan.opacity(0.3), lineWidth: 1)
-                        )
+                    Text("Create Your Plan")
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(RainbowButtonStyle())
             }
         }
         .neonCard(glow: .neonGold)

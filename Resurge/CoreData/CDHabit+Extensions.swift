@@ -8,6 +8,15 @@ public class CDHabit: NSManagedObject, Identifiable {
 
     @NSManaged public var id: UUID
     @NSManaged public var name: String
+
+    /// Safe display name — falls back to "Quit [Program]" if name is empty or matches raw program name
+    var safeDisplayName: String {
+        let pt = ProgramType(rawValue: programType) ?? .smoking
+        if name.isEmpty || name == pt.displayName {
+            return "Quit \(pt.displayName)"
+        }
+        return name
+    }
     @NSManaged public var programType: String
     @NSManaged public var startDate: Date
     @NSManaged public var goalDays: Int32

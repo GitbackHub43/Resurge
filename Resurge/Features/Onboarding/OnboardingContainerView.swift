@@ -205,7 +205,7 @@ struct OnboardingContainerView: View {
         }
 
         environment.habitRepository.create(
-            name: habitName.isEmpty ? selectedProgramType.displayName : habitName,
+            name: habitName.isEmpty ? "Quit \(selectedProgramType.displayName)" : habitName,
             programType: selectedProgramType,
             startDate: startDate,
             goalDays: goalDays,

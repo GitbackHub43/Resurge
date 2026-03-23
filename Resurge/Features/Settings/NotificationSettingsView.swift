@@ -16,18 +16,18 @@ struct NotificationSettingsView: View {
     @AppStorage("quoteSlot5Hour") private var quoteSlot5Hour = 14
     @AppStorage("quoteSlot5Minute") private var quoteSlot5Minute = 0
 
-    @State private var quoteTime1 = Calendar.current.date(from: DateComponents(hour: 8, minute: 0)) ?? Date()
-    @State private var quoteTime2 = Calendar.current.date(from: DateComponents(hour: 12, minute: 0)) ?? Date()
-    @State private var quoteTime3 = Calendar.current.date(from: DateComponents(hour: 17, minute: 0)) ?? Date()
-    @State private var quoteTime4 = Calendar.current.date(from: DateComponents(hour: 21, minute: 0)) ?? Date()
-    @State private var quoteTime5 = Calendar.current.date(from: DateComponents(hour: 14, minute: 0)) ?? Date()
+    @State private var quoteTime1 = Calendar.current.date(from: DateComponents(hour: (UserDefaults.standard.integer(forKey: "wakeUpHour") > 0 ? UserDefaults.standard.integer(forKey: "wakeUpHour") : 7) + 1, minute: 0)) ?? Date()
+    @State private var quoteTime2 = Calendar.current.date(from: DateComponents(hour: (UserDefaults.standard.integer(forKey: "wakeUpHour") > 0 ? UserDefaults.standard.integer(forKey: "wakeUpHour") : 7) + 4, minute: 0)) ?? Date()
+    @State private var quoteTime3 = Calendar.current.date(from: DateComponents(hour: (UserDefaults.standard.integer(forKey: "wakeUpHour") > 0 ? UserDefaults.standard.integer(forKey: "wakeUpHour") : 7) + 7, minute: 0)) ?? Date()
+    @State private var quoteTime4 = Calendar.current.date(from: DateComponents(hour: (UserDefaults.standard.integer(forKey: "wakeUpHour") > 0 ? UserDefaults.standard.integer(forKey: "wakeUpHour") : 7) + 10, minute: 0)) ?? Date()
+    @State private var quoteTime5 = Calendar.current.date(from: DateComponents(hour: (UserDefaults.standard.integer(forKey: "wakeUpHour") > 0 ? UserDefaults.standard.integer(forKey: "wakeUpHour") : 7) + 13, minute: 0)) ?? Date()
 
     @State private var notificationPermissionDenied = false
     @AppStorage("morningLoopHour") private var morningLoopHour = 7
     @AppStorage("morningLoopMinute") private var morningLoopMinute = 0
-    @AppStorage("afternoonLoopHour") private var afternoonLoopHour = 15
+    @AppStorage("afternoonLoopHour") private var afternoonLoopHour = 13
     @AppStorage("afternoonLoopMinute") private var afternoonLoopMinute = 0
-    @AppStorage("eveningLoopHour") private var eveningLoopHour = 23
+    @AppStorage("eveningLoopHour") private var eveningLoopHour = 19
     @AppStorage("eveningLoopMinute") private var eveningLoopMinute = 0
 
     @State private var morningTime: Date = Date()
@@ -123,7 +123,7 @@ struct NotificationSettingsView: View {
                 } header: {
                     Text("Daily Loop")
                 } footer: {
-                    Text("Three reminders per day based on your wake time, 8 hours apart.")
+                    Text("Three reminders per day based on your wake time, 6 hours apart.")
                         .foregroundColor(.textSecondary)
                 }
                 .listRowBackground(Color.cardBackground)
@@ -166,9 +166,27 @@ struct NotificationSettingsView: View {
         .onAppear {
             checkNotificationPermission()
             let cal = Calendar.current
+            let wake = UserDefaults.standard.integer(forKey: "wakeUpHour")
+            let w = wake > 0 ? wake : 7
+
+            // Daily loop: wake, wake+6, wake+12
+            if morningLoopHour == 7 && wake > 0 { morningLoopHour = w }
+            if afternoonLoopHour == 13 || afternoonLoopHour == 15 { afternoonLoopHour = (w + 6) % 24 }
+            if eveningLoopHour == 19 || eveningLoopHour == 23 { eveningLoopHour = (w + 12) % 24 }
+
             morningTime = cal.date(from: DateComponents(hour: morningLoopHour, minute: morningLoopMinute)) ?? Date()
             afternoonTime = cal.date(from: DateComponents(hour: afternoonLoopHour, minute: afternoonLoopMinute)) ?? Date()
             eveningTime = cal.date(from: DateComponents(hour: eveningLoopHour, minute: eveningLoopMinute)) ?? Date()
+
+            // Quotes: wake+1, wake+4, wake+7, wake+10, wake+13
+            if !UserDefaults.standard.bool(forKey: "quoteTimesCustomized") {
+                quoteSlot1Hour = (w + 1) % 24
+                quoteSlot2Hour = (w + 4) % 24
+                quoteSlot3Hour = (w + 7) % 24
+                quoteSlot4Hour = (w + 10) % 24
+                quoteSlot5Hour = (w + 13) % 24
+            }
+
             quoteTime1 = cal.date(from: DateComponents(hour: quoteSlot1Hour, minute: quoteSlot1Minute)) ?? Date()
             quoteTime2 = cal.date(from: DateComponents(hour: quoteSlot2Hour, minute: quoteSlot2Minute)) ?? Date()
             quoteTime3 = cal.date(from: DateComponents(hour: quoteSlot3Hour, minute: quoteSlot3Minute)) ?? Date()
@@ -212,6 +230,7 @@ struct NotificationSettingsView: View {
             let cal = Calendar.current
             quoteSlot1Hour = cal.component(.hour, from: newValue)
             quoteSlot1Minute = cal.component(.minute, from: newValue)
+            UserDefaults.standard.set(true, forKey: "quoteTimesCustomized")
             ensurePermissionThenScheduleQuotes()
         }
         .onChange(of: quoteTime2) { newValue in

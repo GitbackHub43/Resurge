@@ -11,6 +11,7 @@ struct FutureScene: Codable, Identifiable {
 }
 
 struct TimePortalView: View {
+    var skipResistPopup: Bool = false
 
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) private var viewContext
@@ -156,7 +157,12 @@ struct TimePortalView: View {
             .padding(.horizontal, AppStyle.screenPadding)
 
             Button {
-                showResistPopup = true
+                if skipResistPopup {
+                    UserDefaults.standard.set(true, forKey: "cravingToolDidComplete")
+                    presentationMode.wrappedValue.dismiss()
+                } else {
+                    showResistPopup = true
+                }
             } label: {
                 Text("Done")
             }
@@ -437,7 +443,12 @@ struct TimePortalView: View {
             Spacer()
 
             Button {
-                showResistPopup = true
+                if skipResistPopup {
+                    UserDefaults.standard.set(true, forKey: "cravingToolDidComplete")
+                    presentationMode.wrappedValue.dismiss()
+                } else {
+                    showResistPopup = true
+                }
             } label: {
                 Text("Done")
             }

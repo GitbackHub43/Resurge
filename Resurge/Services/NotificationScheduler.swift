@@ -13,6 +13,7 @@ struct NotificationScheduler {
         let isPremium = UserDefaults.standard.bool(forKey: "isPremium")
         let stealthEnabled = UserDefaults.standard.bool(forKey: "stealth_notifications")
 
+        let wakeHour = UserDefaults.standard.integer(forKey: "wakeUpHour")
         let morningH = UserDefaults.standard.integer(forKey: "morningLoopHour")
         let morningM = UserDefaults.standard.integer(forKey: "morningLoopMinute")
         let afternoonH = UserDefaults.standard.integer(forKey: "afternoonLoopHour")
@@ -65,11 +66,11 @@ struct NotificationScheduler {
                 (max(1, UserDefaults.standard.integer(forKey: "quoteSlot3Hour")), UserDefaults.standard.integer(forKey: "quoteSlot3Minute")),
                 (max(1, UserDefaults.standard.integer(forKey: "quoteSlot4Hour")), UserDefaults.standard.integer(forKey: "quoteSlot4Minute")),
                 (max(1, UserDefaults.standard.integer(forKey: "quoteSlot5Hour")), UserDefaults.standard.integer(forKey: "quoteSlot5Minute")),
-            ].map { ($0.0 == 1 ? 8 : $0.0, $0.1) }
+            ].map { ($0.0 == 1 ? (wakeHour + 1) % 24 : $0.0, $0.1) }
         } else {
             let h = UserDefaults.standard.integer(forKey: "quoteSlot1Hour")
             let m = UserDefaults.standard.integer(forKey: "quoteSlot1Minute")
-            quoteSlots = [(h > 0 ? h : 9, m)]
+            quoteSlots = [(h > 0 ? h : (wakeHour + 1) % 24, m)]
         }
 
         // Now schedule on background

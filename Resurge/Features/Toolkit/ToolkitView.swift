@@ -29,6 +29,16 @@ struct ToolkitView: View {
     @State private var showIntensitySlider = false
     @State private var toolIntensity: Double = 5
     @State private var pendingToolDestination: (() -> AnyView)?
+    @State private var pendingPrompt: String?
+    @State private var pendingContext: String?
+    @State private var journalSheetConfig: JournalSheetConfig?
+
+    struct JournalSheetConfig: Identifiable {
+        let id = UUID()
+        let prompt: String?
+        let context: String?
+        let habit: CDHabit?
+    }
 
     private let columns = [
         GridItem(.flexible(), spacing: AppStyle.spacing),
@@ -39,7 +49,10 @@ struct ToolkitView: View {
 
     private func withHabitSelection(_ action: @escaping (CDHabit) -> Void) {
         if activeHabits.count <= 1, let habit = activeHabits.first {
-            action(habit)
+            // Delay to let SwiftUI process prompt/context state changes first
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                action(habit)
+            }
         } else {
             pendingHabitAction = action
             showHabitPicker = true
@@ -96,8 +109,8 @@ struct ToolkitView: View {
             onUnlock: { showPremiumGate = false },
             onDismiss: { showPremiumGate = false }
         )
-        .sheet(isPresented: $showJournalEditor) {
-            JournalEditorView(initialPrompt: journalInitialPrompt, entryContext: journalEntryContext, preSelectedHabit: selectedHabitForJournal)
+        .sheet(item: $journalSheetConfig) { config in
+            JournalEditorView(initialPrompt: config.prompt, entryContext: config.context, preSelectedHabit: config.habit)
         }
         .sheet(item: $selectedCoachingHabit) { habit in
             NavigationView {
@@ -106,7 +119,7 @@ struct ToolkitView: View {
             }
         }
         .sheet(item: $selectedReasonsHabit) { habit in
-            RememberWhyView(habitId: habit.id, habitName: habit.name)
+            RememberWhyView(habitId: habit.id, habitName: habit.safeDisplayName)
         }
         .sheet(isPresented: $showHabitPicker) {
             NavigationView {
@@ -120,7 +133,7 @@ struct ToolkitView: View {
                         ForEach(activeHabits) { habit in
                             Button {
                                 showHabitPicker = false
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                                     pendingHabitAction?(habit)
                                 }
                             } label: {
@@ -129,7 +142,7 @@ struct ToolkitView: View {
                                     Image(systemName: program.iconName)
                                         .font(.title2)
                                         .foregroundColor(Color(hex: program.colorHex))
-                                    Text(habit.name)
+                                    Text(habit.safeDisplayName)
                                         .font(Typography.headline)
                                         .foregroundColor(.appText)
                                     Spacer()
@@ -442,7 +455,7 @@ struct ToolkitView: View {
                 workbookRow(
                     title: "Gratitude Log",
                     icon: "heart.fill",
-                    color: .neonGold,
+                    color: .neonOrange,
                     prompt: "Three things I'm grateful for today:\n1. \n2. \n3. ",
                     context: "gratitude"
                 )
@@ -563,13 +576,13 @@ struct ToolkitView: View {
 
     private var emergencySection: some View {
         VStack(alignment: .leading, spacing: AppStyle.spacing) {
-            sectionHeader(icon: "sos.circle.fill", title: "Crisis", color: .neonMagenta)
+            sectionHeader(icon: "sos.circle.fill", title: "Crisis", color: .red)
 
             VStack(spacing: 10) {
                 emergencyRow(
                     title: "Crisis Helplines",
                     icon: "phone.fill",
-                    color: .neonOrange,
+                    color: .red,
                     destination: AnyView(EmergencyContactsView()),
                     isPremiumOnly: false
                 )
@@ -656,11 +669,15 @@ struct ToolkitView: View {
 
     private func workbookRow(title: String, icon: String, color: Color, prompt: String?, context: String? = nil) -> some View {
         Button {
-            journalInitialPrompt = prompt
-            journalEntryContext = context
-            withHabitSelection { habit in
-                selectedHabitForJournal = habit
-                showJournalEditor = true
+            pendingPrompt = prompt
+            pendingContext = context
+            if activeHabits.count <= 1, let habit = activeHabits.first {
+                journalSheetConfig = JournalSheetConfig(prompt: prompt, context: context, habit: habit)
+            } else {
+                pendingHabitAction = { habit in
+                    journalSheetConfig = JournalSheetConfig(prompt: self.pendingPrompt, context: self.pendingContext, habit: habit)
+                }
+                showHabitPicker = true
             }
         } label: {
             HStack(spacing: 12) {

@@ -23,10 +23,10 @@ private enum VaultShopData {
     ]
 
     static let watchSkins: [VaultItem] = [
-        VaultItem(id: "watch_classic", name: "Classic Watch", description: "A clean analog clock face for your recovery timer on the home screen", icon: "clock.fill", cost: 100, category: "Watch Skins"),
-        VaultItem(id: "watch_digital", name: "Digital Watch", description: "A retro digital display style for your recovery timer", icon: "timer.square", cost: 150, category: "Watch Skins"),
-        VaultItem(id: "watch_luxury", name: "Luxury Watch", description: "A gold bezel clock with diamond markers for your recovery timer", icon: "clock.badge.checkmark.fill", cost: 250, category: "Watch Skins"),
-        VaultItem(id: "watch_holographic", name: "Holographic Watch", description: "An animated rainbow gradient clock that glows on your home screen", icon: "sparkles", cost: 400, category: "Watch Skins")
+        VaultItem(id: "watch_classic", name: "Classic", description: "", icon: "clock.fill", cost: 100, category: "Watch Skins"),
+        VaultItem(id: "watch_digital", name: "Digital", description: "", icon: "timer.square", cost: 150, category: "Watch Skins"),
+        VaultItem(id: "watch_luxury", name: "Luxury", description: "", icon: "clock.badge.checkmark.fill", cost: 250, category: "Watch Skins"),
+        VaultItem(id: "watch_holographic", name: "Holographic", description: "", icon: "sparkles", cost: 400, category: "Watch Skins")
     ]
 
     static let appThemes: [VaultItem] = [
@@ -38,10 +38,10 @@ private enum VaultShopData {
     ]
 
     static let companionPets: [VaultItem] = [
-        VaultItem(id: "pet_dog", name: "Pup", description: "A loyal puppy that wags its tail and pants happily on your screen", icon: "pawprint.fill", cost: 500, category: "Your Companion"),
-        VaultItem(id: "pet_cat", name: "Kitten", description: "A curious kitten with green eyes that licks its paw and purrs", icon: "pawprint.fill", cost: 500, category: "Your Companion"),
-        VaultItem(id: "pet_hamster", name: "Nibbles", description: "A chubby baby hamster running on a tiny wheel with puffy cheeks", icon: "pawprint.fill", cost: 600, category: "Your Companion"),
-        VaultItem(id: "pet_owl", name: "Owlet", description: "A mystical white baby owl with galaxy-colored eyes that tilts its head", icon: "pawprint.fill", cost: 800, category: "Your Companion")
+        VaultItem(id: "pet_dog", name: "Pup", description: "A loyal puppy that wags its tail", icon: "pawprint.fill", cost: 500, category: "Your Companion"),
+        VaultItem(id: "pet_cat", name: "Kitten", description: "A curious kitten with green eyes and a swaying tail", icon: "pawprint.fill", cost: 500, category: "Your Companion"),
+        VaultItem(id: "pet_hamster", name: "Nibbles", description: "A chubby baby hamster with puffy cheeks", icon: "pawprint.fill", cost: 600, category: "Your Companion"),
+        VaultItem(id: "pet_owl", name: "Owlet", description: "A mystical white owl with galaxy eyes that tilts its head", icon: "pawprint.fill", cost: 800, category: "Your Companion")
     ]
 
     static let companionAccessories: [VaultItem] = [
@@ -93,7 +93,8 @@ struct VaultShopView: View {
                         icon: "clock.fill",
                         title: "Watch Skins",
                         color: .neonPurple,
-                        items: VaultShopData.watchSkins
+                        items: VaultShopData.watchSkins,
+                        subtitle: "Replaces the clock on your home screen next to your recovery timer"
                     )
 
                     shopSection(
@@ -107,7 +108,8 @@ struct VaultShopView: View {
                         icon: "pawprint.fill",
                         title: "Your Companion",
                         color: .neonGreen,
-                        items: VaultShopData.companionPets
+                        items: VaultShopData.companionPets,
+                        subtitle: "Sits on every tab to keep you company"
                     )
 
                     shopSection(
@@ -166,15 +168,23 @@ struct VaultShopView: View {
 
     // MARK: - Shop Section
 
-    private func shopSection(icon: String, title: String, color: Color, items: [VaultItem]) -> some View {
+    private func shopSection(icon: String, title: String, color: Color, items: [VaultItem], subtitle: String? = nil) -> some View {
         VStack(alignment: .leading, spacing: AppStyle.spacing) {
-            HStack(spacing: 8) {
-                Image(systemName: icon)
-                    .font(.system(size: 18))
-                    .foregroundColor(color)
-                Text(title)
-                    .font(Typography.headline)
-                    .foregroundColor(.appText)
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(spacing: 8) {
+                    Image(systemName: icon)
+                        .font(.system(size: 18))
+                        .foregroundColor(color)
+                    Text(title)
+                        .font(Typography.headline)
+                        .foregroundColor(.appText)
+                }
+                if let subtitle = subtitle {
+                    Text(subtitle)
+                        .font(Typography.caption)
+                        .foregroundColor(.subtleText)
+                        .padding(.leading, 26)
+                }
             }
             .padding(.horizontal, AppStyle.screenPadding)
 

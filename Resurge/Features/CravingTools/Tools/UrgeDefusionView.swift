@@ -2,6 +2,7 @@ import SwiftUI
 import CoreData
 
 struct UrgeDefusionView: View {
+    var skipResistPopup: Bool = false
 
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) private var viewContext
@@ -337,7 +338,12 @@ struct UrgeDefusionView: View {
             Spacer()
 
             Button {
-                showResistPopup = true
+                if skipResistPopup {
+                    UserDefaults.standard.set(true, forKey: "cravingToolDidComplete")
+                    presentationMode.wrappedValue.dismiss()
+                } else {
+                    showResistPopup = true
+                }
             } label: {
                 Text("Done")
             }

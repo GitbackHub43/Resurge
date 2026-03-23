@@ -93,16 +93,16 @@ struct AchievementsView: View {
     }
 
     private var filteredProgramBadges: [MilestoneBadge] {
-        if let habit = selectedHabit, let pt = ProgramType(rawValue: habit.programType) {
-            // Show only program badges for the selected habit
-            return MilestoneBadge.programBadges.filter { $0.programType == pt }
+        guard let habit = selectedHabit,
+              let pt = ProgramType(rawValue: habit.programType) else {
+            // No habit selected — show only first habit's program badges
+            if let firstHabit = activeHabits.first,
+               let pt = ProgramType(rawValue: firstHabit.programType) {
+                return MilestoneBadge.programBadges.filter { $0.programType == pt }
+            }
+            return []
         }
-        // Fallback: show all active program badges
-        let active = activeProgramTypes
-        return MilestoneBadge.programBadges.filter { badge in
-            guard let pt = badge.programType else { return false }
-            return active.contains(pt)
-        }
+        return MilestoneBadge.programBadges.filter { $0.programType == pt }
     }
 
     // otherBadges removed
@@ -131,8 +131,8 @@ struct AchievementsView: View {
                             HStack(spacing: 14) {
                                 Image(systemName: "storefront.fill")
                                     .font(.system(size: 24))
-                                    .foregroundColor(.neonCyan)
-                                    .shadow(color: .neonCyan.opacity(0.4), radius: 6)
+                                    .foregroundColor(.neonGold)
+                                    .shadow(color: .neonGold.opacity(0.4), radius: 6)
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text("Vault Shop")
                                         .font(.system(size: 16, weight: .bold))
@@ -149,13 +149,13 @@ struct AchievementsView: View {
                             .padding(16)
                             .background(
                                 LinearGradient(
-                                    colors: [Color.neonCyan.opacity(0.08), Color.neonPurple.opacity(0.08)],
+                                    colors: [Color.neonGold.opacity(0.08), Color.neonOrange.opacity(0.08)],
                                     startPoint: .leading,
                                     endPoint: .trailing
                                 )
                             )
                             .cornerRadius(16)
-                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.neonCyan.opacity(0.3), lineWidth: 1))
+                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.neonGold.opacity(0.3), lineWidth: 1))
                         }
                         .buttonStyle(.plain)
                         .padding(.horizontal)
@@ -165,7 +165,7 @@ struct AchievementsView: View {
                             HStack(spacing: 12) {
                                 Image(systemName: "shield.fill")
                                     .font(.system(size: 22))
-                                    .foregroundColor(.neonPurple)
+                                    .foregroundStyle(LinearGradient(colors: [.neonCyan, .neonPurple, .neonMagenta, .neonGold], startPoint: .topLeading, endPoint: .bottomTrailing))
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text("My Collection")
                                         .font(.system(size: 14, weight: .bold))
@@ -217,9 +217,9 @@ struct AchievementsView: View {
 
                         // MARK: - Badge Categories
                         badgeSection(icon: "flame.fill", title: "Streak Badges", color: .neonOrange, badges: streakBadges, isExpanded: $streaksExpanded)
-                        badgeSection(icon: "clock.fill", title: "Time Reclaimed", color: .neonCyan, badges: timeBadges, isExpanded: $timeExpanded)
+                        badgeSection(icon: "clock.fill", title: "Time Reclaimed", color: .neonGold, badges: timeBadges, isExpanded: $timeExpanded)
                         badgeSection(icon: "heart.fill", title: "Health Badges", color: .neonGreen, badges: healthBadges, isExpanded: $healthExpanded)
-                        badgeSection(icon: "book.fill", title: "Journal Badges", color: .neonBlue, badges: journalBadges, isExpanded: $journalExpanded)
+                        badgeSection(icon: "book.fill", title: "Journal Badges", color: .neonCyan, badges: journalBadges, isExpanded: $journalExpanded)
 
                         if !filteredProgramBadges.isEmpty {
                             badgeSection(icon: "star.fill", title: "Program Badges", color: .neonPurple, badges: filteredProgramBadges, isExpanded: $programExpanded)
@@ -273,7 +273,7 @@ struct AchievementsView: View {
                             selectedHabitIndex = index
                         }
                     } label: {
-                        Text(habit.name)
+                        Text(habit.safeDisplayName)
                             .font(Typography.caption)
                             .foregroundColor(selectedHabitIndex == index ? .white : .subtleText)
                             .padding(.horizontal, 14)
@@ -348,7 +348,15 @@ struct AchievementsView: View {
     @State private var showAllBadges = false
 
     private var allBadgesFlat: [MilestoneBadge] {
-        streakBadges + timeBadges + healthBadges + journalBadges + filteredProgramBadges
+        // Deduplicate by key to prevent inflated counts
+        var seen = Set<String>()
+        var result: [MilestoneBadge] = []
+        for badge in streakBadges + timeBadges + healthBadges + journalBadges + filteredProgramBadges {
+            if seen.insert(badge.key).inserted {
+                result.append(badge)
+            }
+        }
+        return result
     }
 
     private var recentUnlockedBadges: [MilestoneBadge] {

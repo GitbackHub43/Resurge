@@ -526,7 +526,7 @@ struct HomeView: View {
             HStack(spacing: 8) {
                 ForEach(Array(activeHabits.enumerated()), id: \.element.id) { index, habit in
                     let programType = ProgramType(rawValue: habit.programType) ?? .smoking
-                    Text(habit.name.isEmpty ? "Quit \(programType.displayName)" : habit.name)
+                    Text(habit.safeDisplayName)
                         .font(Typography.caption)
                         .lineLimit(1)
                         .foregroundColor(selectedHabitIndex == index ? .white : .subtleText)
@@ -617,9 +617,9 @@ struct HomeView: View {
     private var cravingProtocolButton: some View {
         NavigationLink(destination: CravingModeView(preSelectedHabit: selectedHabit)) {
             HStack(spacing: 10) {
-                Image(systemName: "exclamationmark.shield.fill")
+                Image(systemName: "exclamationmark.triangle.fill")
                     .font(.title2)
-                Text("CRAVING PROTOCOL")
+                Text("CRAVING ALERT")
                     .font(Typography.title)
             }
             .foregroundColor(.white)
@@ -627,13 +627,13 @@ struct HomeView: View {
             .frame(height: 64)
             .background(
                 LinearGradient(
-                    colors: [.neonMagenta, .neonPurple],
+                    colors: [Color.red, Color(hex: "CC0000")],
                     startPoint: .leading,
                     endPoint: .trailing
                 )
             )
             .cornerRadius(AppStyle.cornerRadius)
-            .shadow(color: .neonMagenta.opacity(0.4), radius: 16)
+            .shadow(color: Color.red.opacity(0.4), radius: 16)
         }
         .buttonStyle(.plain)
     }
@@ -807,19 +807,19 @@ struct HomeView: View {
                 scoreboardBox(
                     value: "\(selectedHabit?.daysSoberCount ?? 0)",
                     label: "Days",
-                    color: .neonCyan
+                    color: .neonGreen
                 )
 
                 scoreboardBox(
                     value: "\(cravingsResistedThisWeek)",
                     label: "Cravings",
-                    color: .neonGreen
+                    color: .neonBlue
                 )
 
                 scoreboardBox(
                     value: "\(totalLapseCount)",
                     label: "Lapses",
-                    color: totalLapseCount > 0 ? .neonOrange : .neonGreen
+                    color: .red
                 )
 
                 NavigationLink(destination: ActivityLogView()) {
@@ -971,7 +971,7 @@ struct HomeView: View {
                         .foregroundColor(.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
-                .neonCard(glow: programColor.opacity(0.3))
+                .neonCard(glow: programColor)
             }
         }
     }

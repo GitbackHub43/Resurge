@@ -129,7 +129,7 @@ struct MorningPlanView: View {
             }
 
             HStack {
-                Text(habit.name)
+                Text(habit.safeDisplayName)
                     .font(Typography.headline)
                     .foregroundColor(.neonCyan)
                 Spacer()
@@ -347,6 +347,13 @@ struct MorningPlanView: View {
 
     // MARK: - Save Button
 
+    private var canSaveMorning: Bool {
+        (hasPledged || isPledgedToday) &&
+        !intention.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
+        !selectedMorningTags.isEmpty &&
+        !morningReflection.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
     private var saveButton: some View {
         Button {
             saveMorningPlan()
@@ -357,6 +364,8 @@ struct MorningPlanView: View {
             }
         }
         .buttonStyle(RainbowButtonStyle())
+        .disabled(!canSaveMorning)
+        .opacity(canSaveMorning ? 1.0 : 0.4)
     }
 
     // MARK: - Completion Overlay

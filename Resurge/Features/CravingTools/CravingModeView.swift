@@ -9,14 +9,14 @@ struct CravingModeView: View {
     // MARK: - State
 
     enum Step: Int, CaseIterable {
-        case intensity = 0
+        case reassurance = 0
+        case intensity
         case triggers
         case chooseTool
-        case usingTool
         case outcome
     }
 
-    @State private var currentStep: Step = .intensity
+    @State private var currentStep: Step = .reassurance
     @State private var intensity: Double = 5
     @State private var selectedTriggers: Set<String> = []
     @State private var selectedTool: CravingToolKind?
@@ -66,14 +66,14 @@ struct CravingModeView: View {
                     Spacer().frame(height: 20)
                     Group {
                         switch currentStep {
+                        case .reassurance:
+                            reassuranceStep
                         case .intensity:
                             intensityStep
                         case .triggers:
                             triggersStep
                         case .chooseTool:
                             chooseToolStep
-                        case .usingTool:
-                            usingToolStepContent
                         case .outcome:
                             outcomeStepContent
                         }
@@ -92,6 +92,8 @@ struct CravingModeView: View {
                     Text(bottomButtonLabel)
                 }
                 .buttonStyle(RainbowButtonStyle())
+                .disabled(!canProceed)
+                .opacity(canProceed ? 1.0 : 0.4)
                 .padding(.horizontal)
                 .padding(.bottom, 20)
             }
@@ -131,6 +133,56 @@ struct CravingModeView: View {
                     .frame(width: 8, height: 8)
             }
         }
+    }
+
+    // MARK: - Step 0: Reassurance
+
+    private var programColor: Color {
+        Color(hex: currentProgramType.colorHex)
+    }
+
+    private var reassuranceStep: some View {
+        VStack(spacing: 24) {
+            Spacer()
+
+            Image(systemName: "hand.raised.fill")
+                .font(.system(size: 60))
+                .foregroundColor(programColor)
+                .shadow(color: programColor.opacity(0.5), radius: 16)
+
+            Text("You're Going to Be Okay")
+                .font(.title.weight(.bold))
+                .foregroundColor(.appText)
+                .multilineTextAlignment(.center)
+
+            Text(currentProgramType.goalMessage)
+                .font(.title3)
+                .foregroundColor(programColor)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 20)
+
+            VStack(spacing: 8) {
+                Text(ProgramType.dailyTip(for: currentProgramType, dayOfYear: Calendar.current.ordinality(of: .day, in: .year, for: DebugDate.now) ?? 0))
+                    .font(Typography.callout)
+                    .foregroundColor(.textSecondary)
+                    .multilineTextAlignment(.center)
+            }
+            .padding()
+            .background(programColor.opacity(0.06))
+            .cornerRadius(12)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(programColor.opacity(0.2), lineWidth: 1)
+            )
+            .padding(.horizontal)
+
+            Text("This craving will pass. They always do.")
+                .font(Typography.callout.italic())
+                .foregroundColor(.subtleText.opacity(0.7))
+
+            Spacer()
+        }
+        .padding()
     }
 
     // MARK: - Step 1: Intensity
@@ -260,53 +312,159 @@ struct CravingModeView: View {
 
     // MARK: - Step 3: Choose Tool
 
+    @State private var activeToolKind: CravingToolKind? = nil
+    @State private var toolCompleted = false
+
     private var chooseToolStep: some View {
         VStack(spacing: 20) {
-            Text("Pick a coping tool")
+            Text("Choose what helps you")
                 .font(.title2.weight(.bold))
                 .foregroundColor(.appText)
 
-            ForEach(availableTools) { tool in
-                let isSelected = selectedTool?.id == tool.id
-                Button {
-                    selectedTool = tool
-                } label: {
-                    HStack(spacing: 14) {
-                        Image(systemName: tool.iconName)
-                            .font(.title2)
-                            .foregroundColor(isSelected ? .white : .neonCyan)
-                            .frame(width: 44, height: 44)
-                            .background(isSelected ? Color.neonCyan : Color.neonCyan.opacity(0.12))
-                            .clipShape(Circle())
+            Text("Recommended for Quit \(currentProgramType.displayName)")
+                .font(Typography.caption)
+                .foregroundColor(Color(hex: currentProgramType.colorHex))
 
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(tool.displayName)
-                                .font(.headline)
-                                .foregroundColor(.appText)
-                            Text(tool.description)
-                                .font(.caption)
-                                .foregroundColor(.subtleText)
-                                .lineLimit(2)
-                        }
-                        Spacer()
+            let columns = [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)]
 
-                        if isSelected {
-                            Image(systemName: "checkmark.circle.fill")
+            LazyVGrid(columns: columns, spacing: 12) {
+                ForEach(currentProgramType.recommendedTools, id: \.id) { tool in
+                    Button {
+                        selectedTool = tool
+                        activeToolKind = tool
+                    } label: {
+                        VStack(spacing: 10) {
+                            Image(systemName: tool.iconName)
+                                .font(.system(size: 28))
                                 .foregroundColor(.neonCyan)
+                            Text(tool.displayName)
+                                .font(.caption.weight(.semibold))
+                                .foregroundColor(.appText)
+                                .lineLimit(1)
+                            Text(tool.shortDescription)
+                                .font(.system(size: 10))
+                                .foregroundColor(.subtleText)
+                                .lineLimit(1)
                         }
+                        .frame(maxWidth: .infinity, minHeight: 100)
+                        .background(Color.cardBackground)
+                        .cornerRadius(14)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 14)
+                                .stroke(Color.neonCyan.opacity(0.3), lineWidth: 1)
+                        )
                     }
-                    .padding()
+                }
+
+                // Quick Journal square
+                Button {
+                    selectedTool = .journaling
+                    showJournalSheet = true
+                } label: {
+                    VStack(spacing: 10) {
+                        Image(systemName: "pencil.and.scribble")
+                            .font(.system(size: 28))
+                            .foregroundColor(.neonBlue)
+                        Text("Quick Journal")
+                            .font(.caption.weight(.semibold))
+                            .foregroundColor(.appText)
+                            .lineLimit(1)
+                        Text("Write it out")
+                            .font(.system(size: 10))
+                            .foregroundColor(.subtleText)
+                            .lineLimit(1)
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 100)
                     .background(Color.cardBackground)
                     .cornerRadius(14)
                     .overlay(
                         RoundedRectangle(cornerRadius: 14)
-                            .stroke(isSelected ? Color.neonCyan : Color.clear, lineWidth: 2)
+                            .stroke(Color.neonBlue.opacity(0.3), lineWidth: 1)
                     )
-                    .shadow(color: Color.neonPurple.opacity(0.12), radius: 12)
                 }
             }
+            .padding(.horizontal)
+
+            Text("Use a tool, then tell us how it went")
+                .font(Typography.caption)
+                .foregroundColor(.subtleText)
         }
         .padding()
+        .sheet(item: $activeToolKind, onDismiss: {
+            // Check if tool signaled completion
+            if UserDefaults.standard.bool(forKey: "cravingToolDidComplete") {
+                UserDefaults.standard.set(false, forKey: "cravingToolDidComplete")
+                toolCompleted = true
+            }
+        }) { tool in
+            NavigationView { toolDestinationView(for: tool) }
+                .navigationViewStyle(.stack)
+                .environmentObject(environment)
+                .environment(\.managedObjectContext, environment.viewContext)
+        }
+        .sheet(isPresented: $showJournalSheet, onDismiss: {
+            // Journal counts as completed if they wrote something
+            if !journalNotes.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                toolCompleted = true
+                withAnimation { currentStep = .outcome }
+            }
+        }) {
+            NavigationView {
+                VStack(spacing: 16) {
+                    Text("What are you feeling right now?")
+                        .font(Typography.headline)
+                        .foregroundColor(.neonBlue)
+                        .padding(.top, 20)
+
+                    TextEditor(text: $journalNotes)
+                        .font(Typography.body)
+                        .foregroundColor(.textPrimary)
+                        .frame(minHeight: 200)
+                        .padding(8)
+                        .background(Color.cardBackground)
+                        .cornerRadius(12)
+                        .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.cardBorder, lineWidth: 1))
+                        .padding(.horizontal)
+
+                    Button {
+                        showJournalSheet = false
+                    } label: {
+                        Text("Done")
+                    }
+                    .buttonStyle(RainbowButtonStyle())
+                    .disabled(journalNotes.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                    .opacity(journalNotes.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? 0.4 : 1)
+                    .padding(.horizontal)
+
+                    Spacer()
+                }
+                .background(Color.appBackground.ignoresSafeArea())
+                .navigationTitle("Quick Journal")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") { showJournalSheet = false }
+                    }
+                }
+            }
+            .navigationViewStyle(.stack)
+        }
+    }
+
+    private func toolDestinationView(for tool: CravingToolKind) -> AnyView {
+        // Tools launched from craving protocol skip their own resist popup
+        // The craving outcome screen handles that
+        switch tool {
+        case .breathing:        return AnyView(BreathingExerciseView(skipResistPopup: true))
+        case .bodyOverride:     return AnyView(BodyOverrideView(skipResistPopup: true))
+        case .futureThinking:   return AnyView(TimePortalView(skipResistPopup: true))
+        case .valuesCompass:    return AnyView(ValuesCompassView(skipResistPopup: true))
+        case .copingSimulator:  return AnyView(CopingSimulatorView(skipResistPopup: true))
+        case .focusShift:       return AnyView(FocusShiftView(skipResistPopup: true))
+        case .urgeDefusion:     return AnyView(UrgeDefusionView(skipResistPopup: true))
+        case .puzzle:           return AnyView(NumberPuzzleView(skipResistPopup: true))
+        default:                return AnyView(BreathingExerciseView(skipResistPopup: true))
+        }
     }
 
     // MARK: - Step 4: Using Tool (content only, button is persistent)
@@ -555,36 +713,90 @@ struct CravingModeView: View {
 
     // MARK: - Step 5: Outcome (content only, button is persistent)
 
+    @State private var outcomeSelected: Bool? = nil
+
     private var outcomeStepContent: some View {
         VStack(spacing: 24) {
-            Text("Did you resist the craving?")
+            Text("How did it go?")
                 .font(.title2.weight(.bold))
                 .foregroundColor(.appText)
 
-            HStack(spacing: 20) {
-                outcomeButton(title: "Yes!", icon: "hand.thumbsup.fill", value: true)
-                outcomeButton(title: "No", icon: "hand.thumbsdown.fill", value: false)
+            HStack(spacing: 16) {
+                // I Fought Through It
+                Button {
+                    outcomeSelected = true
+                    didResist = true
+                } label: {
+                    VStack(spacing: 14) {
+                        Image(systemName: "shield.checkered")
+                            .font(.system(size: 40))
+                        Text("I Fought\nThrough It")
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                    }
+                    .foregroundColor(outcomeSelected == true ? .neonGreen : .neonGreen.opacity(0.7))
+                    .frame(maxWidth: .infinity, minHeight: 140)
+                    .background(outcomeSelected == true ? Color.neonGreen.opacity(0.12) : Color.neonGreen.opacity(0.04))
+                    .cornerRadius(16)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(outcomeSelected == true ? Color.neonGreen : Color.neonGreen.opacity(0.2), lineWidth: outcomeSelected == true ? 2 : 1)
+                    )
+                    .shadow(color: outcomeSelected == true ? Color.neonGreen.opacity(0.3) : .clear, radius: 8)
+                }
+
+                // I Gave In
+                Button {
+                    outcomeSelected = false
+                    didResist = false
+                } label: {
+                    VStack(spacing: 14) {
+                        Image(systemName: "heart.circle")
+                            .font(.system(size: 40))
+                        Text("I Gave In")
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                    }
+                    .foregroundColor(outcomeSelected == false ? .neonOrange : .neonOrange.opacity(0.7))
+                    .frame(maxWidth: .infinity, minHeight: 140)
+                    .background(outcomeSelected == false ? Color.neonOrange.opacity(0.12) : Color.neonOrange.opacity(0.04))
+                    .cornerRadius(16)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(outcomeSelected == false ? Color.neonOrange : Color.neonOrange.opacity(0.2), lineWidth: outcomeSelected == false ? 2 : 1)
+                    )
+                    .shadow(color: outcomeSelected == false ? Color.neonOrange.opacity(0.3) : .clear, radius: 8)
+                }
             }
             .padding(.horizontal)
 
-            // Comfort message when they gave in
-            if !didResist {
+            // Contextual message
+            if let selected = outcomeSelected {
                 VStack(spacing: 8) {
-                    Text("That takes courage to admit.")
-                        .font(Typography.headline)
-                        .foregroundColor(.neonCyan)
-
-                    Text("Recovery isn't a straight line. Your timer will reset, but you haven't lost the progress you've made inside. Every craving you've fought before made you stronger. This is just one moment — not your whole story.")
-                        .font(Typography.callout)
-                        .foregroundColor(.subtleText)
-                        .multilineTextAlignment(.center)
+                    if selected {
+                        Text("You're stronger than the urge")
+                            .font(Typography.headline)
+                            .foregroundColor(.neonGreen)
+                        Text("Every craving you beat makes the next one weaker. You just proved you can do this.")
+                            .font(Typography.callout)
+                            .foregroundColor(.subtleText)
+                            .multilineTextAlignment(.center)
+                    } else {
+                        Text("That takes real courage to admit")
+                            .font(Typography.headline)
+                            .foregroundColor(.neonOrange)
+                        Text("A setback is not the end — it's a lesson. Your streak resets, but your courage doesn't. Every time you try again, you get stronger.")
+                            .font(Typography.callout)
+                            .foregroundColor(.subtleText)
+                            .multilineTextAlignment(.center)
+                    }
                 }
                 .padding()
-                .background(Color.neonCyan.opacity(0.06))
+                .background((selected ? Color.neonGreen : Color.neonOrange).opacity(0.06))
                 .cornerRadius(12)
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.neonCyan.opacity(0.2), lineWidth: 1)
+                        .stroke((selected ? Color.neonGreen : Color.neonOrange).opacity(0.2), lineWidth: 1)
                 )
                 .padding(.horizontal)
                 .transition(.opacity)
@@ -593,25 +805,13 @@ struct CravingModeView: View {
         .padding()
     }
 
-    @ViewBuilder
-    private func outcomeButton(title: String, icon: String, value: Bool) -> some View {
-        Button {
-            didResist = value
-        } label: {
-            VStack(spacing: 10) {
-                Image(systemName: icon)
-                    .font(.system(size: 36))
-                Text(title)
-                    .font(.headline)
-            }
-            .frame(maxWidth: .infinity, minHeight: 100)
-            .background(didResist == value ? Color.neonGreen.opacity(0.15) : Color.cardBackground)
-            .foregroundColor(didResist == value ? Color.neonGreen : .appText)
-            .cornerRadius(14)
-            .overlay(
-                RoundedRectangle(cornerRadius: 14)
-                    .stroke(didResist == value ? Color.neonGreen : Color.clear, lineWidth: 2)
-            )
+    private var canProceed: Bool {
+        switch currentStep {
+        case .reassurance: return true
+        case .intensity: return true
+        case .triggers: return !selectedTriggers.isEmpty || isOtherSelected
+        case .chooseTool: return toolCompleted
+        case .outcome: return outcomeSelected != nil
         }
     }
 
@@ -619,21 +819,22 @@ struct CravingModeView: View {
 
     private var bottomButtonLabel: String {
         switch currentStep {
+        case .reassurance:  return "I'm Ready"
         case .intensity:    return "Next"
         case .triggers:     return "Next"
-        case .chooseTool:   return "Start Tool"
-        case .usingTool:    return "I'm Done"
+        case .chooseTool:   return toolCompleted ? "Continue" : "Choose a tool above"
         case .outcome:      return "Save & Close"
         }
     }
 
     private func handleBottomButtonAction() {
         switch currentStep {
-        case .intensity, .triggers, .chooseTool:
+        case .reassurance, .intensity, .triggers:
             advanceStep()
-        case .usingTool:
-            inlineBreathActive = false
-            withAnimation { currentStep = .outcome }
+        case .chooseTool:
+            if toolCompleted {
+                withAnimation { currentStep = .outcome }
+            }
         case .outcome:
             saveCravingEntry()
             presentationMode.wrappedValue.dismiss()
@@ -645,13 +846,13 @@ struct CravingModeView: View {
     private func advanceStep() {
         withAnimation {
             switch currentStep {
+            case .reassurance:
+                currentStep = .intensity
             case .intensity:
                 currentStep = .triggers
             case .triggers:
                 currentStep = .chooseTool
             case .chooseTool:
-                currentStep = .usingTool
-            case .usingTool:
                 currentStep = .outcome
             case .outcome:
                 break
@@ -682,23 +883,13 @@ struct CravingModeView: View {
             durationSeconds: Int32(0)
         )
 
-        // Gave in = lapse — reset recovery timer and log lapse day
+        // Gave in = lapse — reset recovery timer
         if !didResist {
             habit.resetOnLapse()
-            // Create a lapse log entry so the calendar shows the red X
-            let lapseLog = CDDailyLogEntry(context: context)
-            lapseLog.id = UUID()
-            lapseLog.date = Calendar.current.startOfDay(for: DebugDate.now)
-            lapseLog.createdAt = Date()
-            lapseLog.entryType = "lapse"
-            lapseLog.lapsedToday = true
-            lapseLog.lapseNotes = journalNotes.isEmpty ? nil : journalNotes
-            lapseLog.mood = 1
-            lapseLog.habit = habit
         }
 
-        // Also save journal notes as a separate craving journal entry
-        if !journalNotes.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        // Only save journal if user actually used the quick journal tool
+        if selectedTool == .journaling && !journalNotes.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             let journalEntry = CDJournalEntry.create(
                 in: context,
                 habit: habit,

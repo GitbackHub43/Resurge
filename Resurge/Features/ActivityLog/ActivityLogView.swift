@@ -238,7 +238,7 @@ struct ActivityLogView: View {
                                         selectedHabitIndex = index
                                     }
                                 } label: {
-                                    Text(habit.name)
+                                    Text(habit.safeDisplayName)
                                         .font(Typography.caption.weight(.semibold))
                                         .foregroundColor(selectedHabitIndex == index ? .white : .subtleText)
                                         .padding(.horizontal, 14)
@@ -538,8 +538,8 @@ struct ActivityLogView: View {
                             .font(.system(size: 10))
                             .foregroundColor(.subtleText.opacity(0.7))
 
-                        if let habitName = entry.habit?.name {
-                            Text(habitName)
+                        if let habit = entry.habit {
+                            Text(habit.safeDisplayName)
                                 .font(.system(size: 10, weight: .medium))
                                 .foregroundColor(.neonPurple)
                                 .padding(.horizontal, 6)
@@ -717,7 +717,7 @@ struct ActivityLogView: View {
     private func journalCard(_ entry: CDJournalEntry) -> some View {
         let isGratitude = entry.promptUsed?.contains("gratitude") == true
         let isCravingJournal = entry.promptUsed?.contains("craving") == true
-        let cardColor: Color = isGratitude ? .neonGold : (isCravingJournal ? .neonOrange : .neonBlue)
+        let cardColor: Color = isGratitude ? .neonOrange : (isCravingJournal ? .neonOrange : .neonBlue)
         let cardIcon = isGratitude ? "heart.fill" : (isCravingJournal ? "bolt.heart.fill" : "book.fill")
         let cardTitle = isGratitude ? "Gratitude Log" : (isCravingJournal ? "Craving Journal" : (entry.title ?? "Journal entry"))
 
@@ -756,8 +756,8 @@ struct ActivityLogView: View {
                         .font(.system(size: 10))
                         .foregroundColor(.subtleText.opacity(0.7))
 
-                    if let habitName = entry.habit?.name {
-                        Text(habitName)
+                    if let habit = entry.habit {
+                        Text(habit.safeDisplayName)
                             .font(.system(size: 10, weight: .medium))
                             .foregroundColor(cardColor)
                             .padding(.horizontal, 6)
@@ -842,8 +842,8 @@ struct ActivityLogView: View {
                             Spacer()
                         }
 
-                        if let habitName = journal.habit?.name {
-                            Text(habitName)
+                        if let habit = journal.habit {
+                            Text(habit.safeDisplayName)
                                 .font(.system(size: 12, weight: .medium))
                                 .foregroundColor(.neonOrange)
                                 .padding(.horizontal, 8)

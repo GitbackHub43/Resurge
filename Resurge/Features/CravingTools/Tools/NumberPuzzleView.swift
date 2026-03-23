@@ -2,6 +2,7 @@ import SwiftUI
 import CoreData
 
 struct NumberPuzzleView: View {
+    var skipResistPopup: Bool = false
     @Environment(\.presentationMode) private var presentationMode
     @Environment(\.managedObjectContext) private var viewContext
     @AppStorage("numberPuzzleHighScore") private var highScore: Int = 0
@@ -212,7 +213,12 @@ struct NumberPuzzleView: View {
                     .buttonStyle(RainbowButtonStyle())
 
                     Button {
-                        showResistPopup = true
+                        if skipResistPopup {
+                    UserDefaults.standard.set(true, forKey: "cravingToolDidComplete")
+                            presentationMode.wrappedValue.dismiss()
+                        } else {
+                            showResistPopup = true
+                        }
                     } label: {
                         Text("Done")
                     }

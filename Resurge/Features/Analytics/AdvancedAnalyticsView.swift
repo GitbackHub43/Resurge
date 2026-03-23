@@ -31,12 +31,34 @@ struct AdvancedAnalyticsView: View {
                         VStack(spacing: 16) {
                             // MARK: - Habit Picker
                             if habits.count > 1 {
-                                Picker("Habit", selection: $selectedHabitIndex) {
-                                    ForEach(habits.indices, id: \.self) { idx in
-                                        Text(habits[idx].name).tag(idx)
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: 8) {
+                                        ForEach(Array(habits.enumerated()), id: \.element.id) { index, habit in
+                                            let programType = ProgramType(rawValue: habit.programType) ?? .smoking
+                                            Text(habit.safeDisplayName)
+                                                .font(.caption.weight(.semibold))
+                                                .lineLimit(1)
+                                                .foregroundColor(selectedHabitIndex == index ? .white : .subtleText)
+                                                .padding(.horizontal, 14)
+                                                .padding(.vertical, 7)
+                                                .background(
+                                                    selectedHabitIndex == index
+                                                        ? AnyView(LinearGradient(colors: [.neonCyan, .neonPurple], startPoint: .leading, endPoint: .trailing))
+                                                        : AnyView(Color.cardBackground)
+                                                )
+                                                .cornerRadius(20)
+                                                .overlay(
+                                                    RoundedRectangle(cornerRadius: 20)
+                                                        .stroke(selectedHabitIndex == index ? Color.clear : Color.cardBorder, lineWidth: 1)
+                                                )
+                                                .onTapGesture {
+                                                    withAnimation(.easeInOut(duration: 0.2)) {
+                                                        selectedHabitIndex = index
+                                                    }
+                                                }
+                                        }
                                     }
                                 }
-                                .pickerStyle(.segmented)
                                 .padding(.horizontal)
                             }
 
@@ -117,6 +139,16 @@ struct AdvancedAnalyticsView: View {
                 }
             }
             .navigationTitle("Analytics")
+            .onAppear {
+                if selectedHabitIndex >= habits.count {
+                    selectedHabitIndex = max(habits.count - 1, 0)
+                }
+            }
+            .onChange(of: habits.count) { _ in
+                if selectedHabitIndex >= habits.count {
+                    selectedHabitIndex = max(habits.count - 1, 0)
+                }
+            }
         }
     }
 

@@ -514,8 +514,8 @@ struct JournalView: View {
 
                         Spacer()
 
-                        if let habitName = entry.habit?.name {
-                            Text(habitName)
+                        if let habit = entry.habit {
+                            Text(habit.safeDisplayName)
                                 .font(.caption2.weight(.medium))
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 3)

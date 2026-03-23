@@ -11,6 +11,7 @@ struct ValueAction: Codable, Identifiable {
 }
 
 struct ValuesCompassView: View {
+    var skipResistPopup: Bool = false
 
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) private var viewContext
@@ -552,7 +553,12 @@ struct ValuesCompassView: View {
             Spacer()
 
             Button {
-                showResistPopup = true
+                if skipResistPopup {
+                    UserDefaults.standard.set(true, forKey: "cravingToolDidComplete")
+                    presentationMode.wrappedValue.dismiss()
+                } else {
+                    showResistPopup = true
+                }
             } label: {
                 Text("Done")
             }
