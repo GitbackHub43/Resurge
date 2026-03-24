@@ -409,7 +409,8 @@ struct JournalEditorView: View {
                         }
 
 
-                        // MARK: - Prompt Card
+                        // MARK: - Prompt Card (not for gratitude)
+                        if entryContext != "gratitude" {
                         VStack(alignment: .leading, spacing: 6) {
                             Text("Need a prompt?")
                                 .font(.subheadline.weight(.medium))
@@ -425,9 +426,7 @@ struct JournalEditorView: View {
                                 HStack(spacing: 12) {
                                     Button {
                                         let prompt = allPrompts[currentPromptIndex % allPrompts.count]
-                                        if bodyText.isEmpty {
-                                            bodyText = prompt + "\n\n"
-                                        }
+                                        bodyText = prompt + "\n\n"
                                     } label: {
                                         HStack(spacing: 4) {
                                             Image(systemName: "pencil.line")
@@ -466,6 +465,7 @@ struct JournalEditorView: View {
                                 }
                             }
                             .rainbowCard()
+                        }
                         }
 
                         // MARK: - Save Button

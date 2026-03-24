@@ -518,7 +518,9 @@ struct PlanView: View {
                 } label: {
                     Image(systemName: "plus")
                         .font(.title3.weight(.semibold))
-                        .foregroundColor(.neonCyan)
+                        .foregroundStyle(
+                            LinearGradient(colors: [.neonCyan, .neonBlue, .neonPurple, .neonMagenta, .neonOrange, .neonGold], startPoint: .leading, endPoint: .trailing)
+                        )
                 }
             }
 
@@ -555,14 +557,6 @@ struct PlanView: View {
                 .italic()
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 8)
-
-            Button {
-                showCreatePlan = true
-            } label: {
-                Text("Create Your Plan")
-            }
-            .buttonStyle(RainbowButtonStyle())
-            .padding(.top, 4)
         }
         .frame(maxWidth: .infinity)
         .neonCard(glow: .neonCyan)

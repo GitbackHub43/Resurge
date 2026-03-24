@@ -676,6 +676,25 @@ struct ProgressDashboardView: View {
         let calendar = Calendar.current
         let matchingEntries = logEntries.filter { calendar.isDate($0.date, inSameDayAs: date) }
 
+        // Also check CDCravingEntry for lapses (gave in from craving alert)
+        var hasCravingLapse = false
+        if let habit = selectedHabit {
+            let cravingRequest = NSFetchRequest<CDCravingEntry>(entityName: "CDCravingEntry")
+            let dayStart = calendar.startOfDay(for: date)
+            let dayEnd = calendar.date(byAdding: .day, value: 1, to: dayStart) ?? date
+            cravingRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+                NSPredicate(format: "habit == %@", habit),
+                NSPredicate(format: "didResist == NO"),
+                NSPredicate(format: "timestamp >= %@ AND timestamp < %@", dayStart as NSDate, dayEnd as NSDate)
+            ])
+            cravingRequest.fetchLimit = 1
+            hasCravingLapse = ((try? viewContext.fetch(cravingRequest))?.count ?? 0) > 0
+        }
+
+        if hasCravingLapse {
+            return DayDisplayStatus(color: Color.red.opacity(0.7), textColor: .white, showFlame: false, showLapseX: true)
+        }
+
         if !matchingEntries.isEmpty {
             // If ANY entry for this day has a lapse, the day is a lapse day
             let hasLapse = matchingEntries.contains { $0.lapsedToday }
@@ -737,7 +756,7 @@ struct ProgressDashboardView: View {
             cravingRequest.predicate = NSPredicate(format: "habit == %@", habit)
         }
         cravingRequest.sortDescriptors = [NSSortDescriptor(keyPath: \CDCravingEntry.timestamp, ascending: false)]
-        cravingRequest.fetchLimit = 5
+        // No fetch limit — show all
         if let cravings = try? viewContext.fetch(cravingRequest) {
             for craving in cravings {
                 let habitLabel = craving.habit?.safeDisplayName
@@ -757,7 +776,7 @@ struct ProgressDashboardView: View {
             logRequest.predicate = NSPredicate(format: "habit == %@", habit)
         }
         logRequest.sortDescriptors = [NSSortDescriptor(keyPath: \CDDailyLogEntry.createdAt, ascending: false)]
-        logRequest.fetchLimit = 10
+        // No fetch limit — show all
         if let logs = try? viewContext.fetch(logRequest) {
             for log in logs {
                 let habitLabel = log.habit?.safeDisplayName ?? ""
@@ -792,7 +811,7 @@ struct ProgressDashboardView: View {
             journalRequest.predicate = NSPredicate(format: "habit == %@", habit)
         }
         journalRequest.sortDescriptors = [NSSortDescriptor(keyPath: \CDJournalEntry.createdAt, ascending: false)]
-        journalRequest.fetchLimit = 5
+        // No fetch limit — show all
         if let journals = try? viewContext.fetch(journalRequest) {
             for journal in journals {
                 let habitLabel = journal.habit?.safeDisplayName ?? ""
@@ -826,7 +845,7 @@ struct ProgressDashboardView: View {
                 NSPredicate(format: "activeFlag == YES")
             ])
             planRequest.sortDescriptors = [NSSortDescriptor(keyPath: \CDIfThenPlan.createdAt, ascending: false)]
-            planRequest.fetchLimit = 5
+            // No fetch limit — show all
             if let plans = try? viewContext.fetch(planRequest) {
                 for plan in plans {
                     events.append(ActivityEvent(icon: "shield.fill", color: .neonGreen, description: "If-Then Plan: \(plan.triggerType)", date: plan.createdAt, relativeTime: relativeTimeString(from: plan.createdAt)))
@@ -834,7 +853,7 @@ struct ProgressDashboardView: View {
             }
         }
 
-        // Sort by date descending, take first 10
+        // Sort by date descending, show most recent 10
         events.sort { $0.date > $1.date }
         return Array(events.prefix(10))
     }
