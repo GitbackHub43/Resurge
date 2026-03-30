@@ -82,7 +82,7 @@ struct QuickCheckInView: View {
                 VStack(spacing: AppStyle.largeSpacing) {
                     // Mood Section
                     VStack(spacing: 16) {
-                        Text("How are you feeling about \(programType.displayName.lowercased()) today?")
+                        Text("How are you feeling right now?")
                             .font(Typography.headline)
                             .foregroundColor(.textPrimary)
 

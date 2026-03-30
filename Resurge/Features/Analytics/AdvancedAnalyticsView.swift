@@ -88,8 +88,8 @@ struct AdvancedAnalyticsView: View {
                                     )
                                     AnalyticsCard(
                                         title: "Time Saved",
-                                        value: String(format: "%.0f", habit.timeSavedMinutes),
-                                        unit: "min",
+                                        value: formatTimeSaved(habit.timeSavedMinutes),
+                                        unit: "",
                                         icon: "clock.fill",
                                         color: .neonBlue
                                     )
@@ -230,6 +230,23 @@ struct AdvancedAnalyticsView: View {
                 .opacity(0.4)
         )
         .shadow(color: Color.neonPurple.opacity(0.12), radius: 12)
+    }
+}
+
+// MARK: - Helpers
+
+private func formatTimeSaved(_ totalMinutes: Double) -> String {
+    let totalMins = Int(totalMinutes)
+    if totalMins < 60 {
+        return "\(totalMins)m"
+    } else if totalMins < 1440 { // less than 24 hours
+        let hours = totalMins / 60
+        let mins = totalMins % 60
+        return mins > 0 ? "\(hours)h \(mins)m" : "\(hours)h"
+    } else {
+        let days = totalMins / 1440
+        let hours = (totalMins % 1440) / 60
+        return hours > 0 ? "\(days)d \(hours)h" : "\(days)d"
     }
 }
 

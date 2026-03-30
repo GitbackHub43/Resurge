@@ -115,7 +115,6 @@ struct AchievementsView: View {
     }
 
     var body: some View {
-        NavigationView {
             ZStack {
                 Color.appBackground.ignoresSafeArea()
 
@@ -259,7 +258,6 @@ struct AchievementsView: View {
                     selectedHabitIndex = max(activeHabits.count - 1, 0)
                 }
             }
-        }
     }
 
     // MARK: - Habit Pill Switcher

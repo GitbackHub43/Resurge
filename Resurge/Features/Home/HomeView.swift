@@ -415,6 +415,9 @@ struct HomeView: View {
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
             refreshTrigger = UUID()
         }
+        .onReceive(NotificationCenter.default.publisher(for: .NSManagedObjectContextDidSave)) { _ in
+            refreshTrigger = UUID()
+        }
         .onChange(of: activeHabits.count) { _ in
             if selectedHabitIndex >= activeHabits.count {
                 selectedHabitIndex = max(activeHabits.count - 1, 0)

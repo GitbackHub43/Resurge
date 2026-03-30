@@ -181,13 +181,22 @@ struct ProgressDashboardView: View {
     // MARK: - [1] Streak + Calendar (Merged, Collapsible)
 
     private var streakCalendarSection: some View {
-        let calendar = Calendar(identifier: .gregorian)
-        let comps = calendar.dateComponents([.year, .month], from: selectedMonth)
-        let monthStart = calendar.date(from: comps) ?? selectedMonth
+        let calendar: Calendar = {
+            var cal = Calendar(identifier: .gregorian)
+            cal.firstWeekday = 1
+            cal.timeZone = TimeZone.current
+            return cal
+        }()
+        // Build month start from explicit components to avoid timezone shifts
+        var startComps = calendar.dateComponents([.year, .month], from: selectedMonth)
+        startComps.day = 1
+        startComps.hour = 12 // noon to avoid any DST edge cases
+        let monthStart = calendar.date(from: startComps) ?? selectedMonth
         let daysInMonth = calendar.range(of: .day, in: .month, for: monthStart)?.count ?? 30
-        // .weekday: 1=Sunday, 2=Monday, ... 7=Saturday (always, regardless of firstWeekday)
+        // Get weekday of the 1st: Sunday=1, Monday=2, ..., Saturday=7
         let firstWeekday = calendar.component(.weekday, from: monthStart)
-        let leadingBlanks = firstWeekday - 1 // Sunday-first: Sunday=0 blanks, Monday=1, etc.
+        // Leading blanks: Sunday=0, Monday=1, Tuesday=2, Wednesday=3, etc.
+        let leadingBlanks = firstWeekday - 1
         let logEntries = fetchLogEntries(for: monthStart)
         let today = DebugDate.startOfToday
 
@@ -242,9 +251,7 @@ struct ProgressDashboardView: View {
                 // Month navigation
                 HStack {
                     Button(action: {
-                        var newComps = calendar.dateComponents([.year, .month], from: monthStart)
-                        newComps.month = (newComps.month ?? 1) - 1
-                        if let prev = calendar.date(from: newComps) {
+                        if let prev = calendar.date(byAdding: .month, value: -1, to: monthStart) {
                             selectedMonth = prev
                         }
                     }) {
@@ -262,9 +269,7 @@ struct ProgressDashboardView: View {
                     Spacer()
 
                     Button(action: {
-                        var newComps = calendar.dateComponents([.year, .month], from: monthStart)
-                        newComps.month = (newComps.month ?? 1) + 1
-                        if let next = calendar.date(from: newComps) {
+                        if let next = calendar.date(byAdding: .month, value: 1, to: monthStart) {
                             selectedMonth = next
                         }
                     }) {
@@ -275,58 +280,71 @@ struct ProgressDashboardView: View {
                 }
                 .padding(.horizontal, 4)
 
-                // Day-of-week headers
-                let weekdays = ["S", "M", "T", "W", "T", "F", "S"]
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 4), count: 7), spacing: 4) {
-                    ForEach(0..<7, id: \.self) { i in
-                        Text(weekdays[i])
+                // Calendar grid — built as flat array to avoid SwiftUI ForEach range bugs
+                let totalCells = leadingBlanks + daysInMonth
+                let columns = Array(repeating: GridItem(.flexible(), spacing: 4), count: 7)
+
+                // Header row
+                HStack(spacing: 4) {
+                    ForEach(["Su","Mo","Tu","We","Th","Fr","Sa"], id: \.self) { label in
+                        Text(label)
                             .font(.caption.weight(.bold))
                             .foregroundColor(.subtleText)
                             .frame(maxWidth: .infinity)
                     }
                 }
 
-                // Calendar grid with flame overlays
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 4), count: 7), spacing: 6) {
-                    // Leading blanks
-                    ForEach(0..<leadingBlanks, id: \.self) { _ in
-                        Color.clear
-                            .frame(width: 28, height: 28)
-                    }
+                // Day cells
+                let rows = (totalCells + 6) / 7
+                VStack(spacing: 6) {
+                    ForEach(0..<rows, id: \.self) { row in
+                        HStack(spacing: 4) {
+                            ForEach(0..<7, id: \.self) { col in
+                                let index = row * 7 + col
+                                let dayNumber = index - leadingBlanks + 1
 
-                    // Days of the month
-                    ForEach(1...daysInMonth, id: \.self) { day in
-                        let dayDate = calendar.date(byAdding: .day, value: day - 1, to: monthStart) ?? monthStart
-                        let dayStart = calendar.startOfDay(for: dayDate)
-                        let isFuture = dayStart > today
-                        let status = dayStatus(for: dayStart, logEntries: logEntries, isFuture: isFuture)
+                                if index < leadingBlanks || dayNumber > daysInMonth {
+                                    // Blank cell
+                                    Color.clear
+                                        .frame(width: 28, height: 28)
+                                        .frame(maxWidth: .infinity)
+                                } else {
+                                    // Day cell
+                                    let dayDate = calendar.date(byAdding: .day, value: dayNumber - 1, to: monthStart) ?? monthStart
+                                    let dayStart = calendar.startOfDay(for: dayDate)
+                                    let isFuture = dayStart > today
+                                    let status = dayStatus(for: dayStart, logEntries: logEntries, isFuture: isFuture)
 
-                        ZStack {
-                            Circle()
-                                .fill(status.color)
-                                .frame(width: 28, height: 28)
+                                    ZStack {
+                                        Circle()
+                                            .fill(status.color)
+                                            .frame(width: 28, height: 28)
 
-                            if status.showFlame {
-                                Text("\u{1F525}")
-                                    .font(.system(size: 11))
-                                    .offset(x: 8, y: -8)
-                            }
+                                        if status.showFlame {
+                                            Text("\u{1F525}")
+                                                .font(.system(size: 11))
+                                                .offset(x: 8, y: -8)
+                                        }
 
-                            if status.showLapseX {
-                                ZStack {
-                                    Circle()
-                                        .fill(Color.red)
-                                        .frame(width: 12, height: 12)
-                                    Image(systemName: "xmark")
-                                        .font(.system(size: 6, weight: .bold))
-                                        .foregroundColor(.white)
+                                        if status.showLapseX {
+                                            ZStack {
+                                                Circle()
+                                                    .fill(Color.red)
+                                                    .frame(width: 12, height: 12)
+                                                Image(systemName: "xmark")
+                                                    .font(.system(size: 6, weight: .bold))
+                                                    .foregroundColor(.white)
+                                            }
+                                            .offset(x: 8, y: -8)
+                                        }
+
+                                        Text("\(dayNumber)")
+                                            .font(.caption2.weight(.medium))
+                                            .foregroundColor(status.textColor)
+                                    }
+                                    .frame(maxWidth: .infinity)
                                 }
-                                .offset(x: 8, y: -8)
                             }
-
-                            Text("\(day)")
-                                .font(.caption2.weight(.medium))
-                                .foregroundColor(status.textColor)
                         }
                     }
                 }

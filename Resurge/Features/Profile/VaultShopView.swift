@@ -271,6 +271,11 @@ struct VaultShopView: View {
 
         // Sync balance from Core Data to AppStorage
         let wallet = CDRewardWallet.fetchOrCreate(in: viewContext)
+        // DEBUG: Give 4000 surges for testing - REMOVE BEFORE RELEASE
+        if wallet.shardsBalance < 4000 {
+            wallet.shardsBalance = 4000
+            try? viewContext.save()
+        }
         shardBalance = Int(wallet.shardsBalance)
     }
 }
