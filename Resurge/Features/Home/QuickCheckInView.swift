@@ -339,8 +339,8 @@ struct QuickCheckInView: View {
             }
             .padding(.bottom, 40)
         }
-        .transition(.opacity)
-        .background(Color.appBackground)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.appBackground.ignoresSafeArea())
     }
 
     // MARK: - Helpers
