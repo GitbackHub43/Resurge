@@ -286,7 +286,7 @@ struct NotificationSettingsView: View {
     }
 
     private func scheduleQuoteNotifications() {
-        settingsViewModel.updateQuoteNotifications(isPremium: isPremium)
+        NotificationScheduler.scheduleAll(context: environment.viewContext)
     }
 
     // MARK: - Notification Time Row

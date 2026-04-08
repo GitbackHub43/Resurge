@@ -58,29 +58,26 @@ struct EveningReviewView: View {
         ZStack {
             Color.appBackground.ignoresSafeArea()
 
-            if showCompletion {
-                completionOverlay
-            } else {
-                ScrollView {
-                    VStack(spacing: AppStyle.largeSpacing) {
-                        headerSection
-                        moodCheckSection
-                        winSection
-                        eveningTagsSection
-                        lapseCheckSection
-                        reflectionSection
-                        gratitudeSection
-                        tomorrowSection
-                        saveButton
-                    }
-                    .padding(.horizontal, AppStyle.screenPadding)
-                    .padding(.bottom, 40)
+            ScrollView {
+                VStack(spacing: AppStyle.largeSpacing) {
+                    headerSection
+                    moodCheckSection
+                    winSection
+                    eveningTagsSection
+                    lapseCheckSection
+                    reflectionSection
+                    gratitudeSection
+                    tomorrowSection
+                    saveButton
                 }
+                .padding(.horizontal, AppStyle.screenPadding)
+                .padding(.bottom, 40)
             }
         }
+        .fullScreenCover(isPresented: $showCompletion) {
+            completionOverlay
+        }
         .onAppear {
-            // Reset ALL state — SwiftUI caches NavigationLink destinations
-            showCompletion = false
             isUpdate = false
             existingEntry = nil
             loadExistingEntry()
@@ -431,18 +428,31 @@ struct EveningReviewView: View {
                     .font(Typography.title)
                     .foregroundColor(.textPrimary)
 
-                Text("Tomorrow is a new day.")
+                Text("You showed up today. That's what matters. Tomorrow is a fresh start.")
                     .font(Typography.body)
                     .foregroundColor(.textSecondary)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
             }
 
             Spacer()
+
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Text("Continue")
+                    .font(Typography.headline)
+                    .foregroundColor(.neonCyan)
+                    .padding(.horizontal, 40)
+                    .padding(.vertical, 14)
+                    .background(Color.neonCyan.opacity(0.12))
+                    .cornerRadius(20)
+                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.neonCyan.opacity(0.3), lineWidth: 1))
+            }
+            .padding(.bottom, 40)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onTapGesture {
-            presentationMode.wrappedValue.dismiss()
-        }
-        // No auto-dismiss here — saveEveningReview() handles the dismiss timing
+        .background(Color.appBackground)
     }
 
     // MARK: - Load Existing Entry
@@ -532,13 +542,8 @@ struct EveningReviewView: View {
         // Check if all 3 daily loop tasks are now done
         checkDailyLoopCompletion()
 
-        // Always show completion and dismiss
-        withAnimation(.easeInOut(duration: 0.3)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             showCompletion = true
-        }
-        let delay: Double = didLapse ? 5.0 : 1.5
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-            presentationMode.wrappedValue.dismiss()
         }
     }
 

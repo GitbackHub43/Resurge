@@ -74,30 +74,27 @@ struct MorningPlanView: View {
         ZStack {
             Color.appBackground.ignoresSafeArea()
 
-            if showCompletion {
-                completionOverlay
-            } else {
-                ScrollView {
-                    VStack(spacing: AppStyle.largeSpacing) {
-                        headerSection
-                        pledgeSection
-                        morningReflectionSection
-                        morningTagsSection
-                        riskCheckSection
-                        intentionSection
-                        saveButton
-                    }
-                    .padding(.horizontal, AppStyle.screenPadding)
-                    .padding(.bottom, 40)
+            ScrollView {
+                VStack(spacing: AppStyle.largeSpacing) {
+                    headerSection
+                    pledgeSection
+                    morningReflectionSection
+                    morningTagsSection
+                    riskCheckSection
+                    intentionSection
+                    saveButton
                 }
+                .padding(.horizontal, AppStyle.screenPadding)
+                .padding(.bottom, 40)
             }
         }
         .onAppear {
-            // Reset ALL state — SwiftUI caches NavigationLink destinations
-            showCompletion = false
             isUpdate = false
             existingEntry = nil
             loadExistingEntry()
+        }
+        .fullScreenCover(isPresented: $showCompletion) {
+            completionOverlay
         }
     }
 
@@ -382,17 +379,28 @@ struct MorningPlanView: View {
                 .font(Typography.title)
                 .foregroundColor(.textPrimary)
 
-            Text("One moment at a time.")
+            Text("Go make today count. You've got this.")
                 .font(Typography.body)
                 .foregroundColor(.textSecondary)
 
             Spacer()
+
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Text("Continue")
+                    .font(Typography.headline)
+                    .foregroundColor(.neonCyan)
+                    .padding(.horizontal, 40)
+                    .padding(.vertical, 14)
+                    .background(Color.neonCyan.opacity(0.12))
+                    .cornerRadius(20)
+                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.neonCyan.opacity(0.3), lineWidth: 1))
+            }
+            .padding(.bottom, 40)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onTapGesture {
-            presentationMode.wrappedValue.dismiss()
-        }
-        // No auto-dismiss here — saveMorningPlan() handles the dismiss timing
+        .background(Color.appBackground)
     }
 
     // MARK: - Load Existing Entry
@@ -472,12 +480,9 @@ struct MorningPlanView: View {
         // Check if all 3 daily loop tasks are now done
         checkDailyLoopCompletion()
 
-        // Always show completion and dismiss
-        withAnimation(.easeInOut(duration: 0.3)) {
+        // Delay showing overlay so Core Data save notifications settle first
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             showCompletion = true
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            presentationMode.wrappedValue.dismiss()
         }
     }
 

@@ -698,7 +698,6 @@ struct HomeView: View {
             if let habit = selectedHabit {
                 if isOpen || isComplete {
                     NavigationLink(destination: destination(habit)
-                        .id("\(title)_\(refreshTrigger)")
                         .onDisappear {
                             refreshTrigger = UUID()
                             checkAndAwardSurges()

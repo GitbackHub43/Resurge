@@ -29,19 +29,15 @@ struct QuickCheckInView: View {
     var body: some View {
         ZStack {
             Color.appBackground.ignoresSafeArea()
-
-            if showSuccess {
-                successView
-            } else {
-                checkInContent
-            }
+            checkInContent
         }
         .onAppear {
-            // Reset ALL state — SwiftUI caches NavigationLink destinations
-            showSuccess = false
             isUpdate = false
             existingEntry = nil
             loadExistingEntry()
+        }
+        .fullScreenCover(isPresented: $showSuccess) {
+            successView
         }
     }
 
@@ -318,21 +314,33 @@ struct QuickCheckInView: View {
                         .shadow(color: .neonGreen.opacity(0.6), radius: 20)
                 }
 
-                Text(isUpdate ? "Updated!" : "Check-in Complete!")
+                Text(isUpdate ? "Updated!" : "Afternoon Check-in Complete!")
                     .font(Typography.title)
                     .rainbowText()
 
-                Text("Keep going \u{2014} you're doing great.")
+                Text("You're halfway through the day. Stay strong.")
                     .font(Typography.body)
                     .foregroundColor(.textSecondary)
             }
 
             Spacer()
+
+            Button {
+                dismiss()
+            } label: {
+                Text("Continue")
+                    .font(Typography.headline)
+                    .foregroundColor(.neonCyan)
+                    .padding(.horizontal, 40)
+                    .padding(.vertical, 14)
+                    .background(Color.neonCyan.opacity(0.12))
+                    .cornerRadius(20)
+                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.neonCyan.opacity(0.3), lineWidth: 1))
+            }
+            .padding(.bottom, 40)
         }
         .transition(.opacity)
-        .onTapGesture {
-            dismiss()
-        }
+        .background(Color.appBackground)
     }
 
     // MARK: - Helpers
@@ -448,13 +456,8 @@ struct QuickCheckInView: View {
         // Check if all 3 daily loop tasks are now done
         checkDailyLoopCompletion()
 
-        // Always show success and dismiss
-        withAnimation(.easeInOut(duration: 0.4)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             showSuccess = true
-        }
-        let delay: Double = didLapse ? 5.0 : 1.5
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-            dismiss()
         }
     }
 
