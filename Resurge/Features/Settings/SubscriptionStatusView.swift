@@ -143,9 +143,22 @@ struct SubscriptionStatusView: View {
                 .buttonStyle(RainbowButtonStyle())
                 .disabled(isPurchasing)
 
-                Text("Cancel anytime. No commitment.")
-                    .font(Typography.footnote)
-                    .foregroundColor(.subtleText.opacity(0.7))
+                VStack(spacing: 4) {
+                    Text("Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period. Payment is charged to your Apple ID account.")
+                        .font(.system(size: 9))
+                        .foregroundColor(.subtleText.opacity(0.6))
+                        .multilineTextAlignment(.center)
+
+                    HStack(spacing: 12) {
+                        Link("Privacy Policy", destination: URL(string: "http://thryvenex.com/LoopRoot-Support-legal/privacy-policy.html")!)
+                            .font(.system(size: 10, weight: .medium))
+                            .foregroundColor(.neonCyan)
+                        Text("·").foregroundColor(.subtleText.opacity(0.4))
+                        Link("Terms of Use", destination: URL(string: "http://thryvenex.com/LoopRoot-Support-legal/terms-of-service.html")!)
+                            .font(.system(size: 10, weight: .medium))
+                            .foregroundColor(.neonCyan)
+                    }
+                }
             }
             .padding(.horizontal)
         }

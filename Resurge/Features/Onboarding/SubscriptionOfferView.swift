@@ -125,6 +125,25 @@ struct SubscriptionOfferView: View {
                 .padding(.horizontal, AppStyle.screenPadding)
 
                 // Skip link
+                // Apple-required subscription info
+                VStack(spacing: 4) {
+                    Text("Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period. Payment is charged to your Apple ID account. Manage subscriptions in your Account Settings.")
+                        .font(.system(size: 9))
+                        .foregroundColor(.textSecondary.opacity(0.6))
+                        .multilineTextAlignment(.center)
+
+                    HStack(spacing: 12) {
+                        Link("Privacy Policy", destination: URL(string: "http://thryvenex.com/LoopRoot-Support-legal/privacy-policy.html")!)
+                            .font(.system(size: 10, weight: .medium))
+                            .foregroundColor(.neonCyan)
+                        Text("·").foregroundColor(.textSecondary.opacity(0.4))
+                        Link("Terms of Use", destination: URL(string: "http://thryvenex.com/LoopRoot-Support-legal/terms-of-service.html")!)
+                            .font(.system(size: 10, weight: .medium))
+                            .foregroundColor(.neonCyan)
+                    }
+                }
+                .padding(.horizontal, AppStyle.screenPadding)
+
                 Button {
                     onNext()
                 } label: {

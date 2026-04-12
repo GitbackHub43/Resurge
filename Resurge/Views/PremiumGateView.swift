@@ -98,9 +98,22 @@ struct PremiumGateView: View {
                     .buttonStyle(GoldButtonStyle())
                     .disabled(isPurchasing)
 
-                    Text("Cancel anytime. No commitment.")
-                        .font(Typography.caption)
-                        .foregroundColor(.subtleText)
+                    VStack(spacing: 4) {
+                        Text("Subscriptions auto-renew unless cancelled 24hrs before period ends.")
+                            .font(.system(size: 9))
+                            .foregroundColor(.subtleText.opacity(0.6))
+                            .multilineTextAlignment(.center)
+
+                        HStack(spacing: 12) {
+                            Link("Privacy Policy", destination: URL(string: "http://thryvenex.com/LoopRoot-Support-legal/privacy-policy.html")!)
+                                .font(.system(size: 10, weight: .medium))
+                                .foregroundColor(.neonCyan)
+                            Text("·").foregroundColor(.subtleText.opacity(0.4))
+                            Link("Terms of Use", destination: URL(string: "http://thryvenex.com/LoopRoot-Support-legal/terms-of-service.html")!)
+                                .font(.system(size: 10, weight: .medium))
+                                .foregroundColor(.neonCyan)
+                        }
+                    }
                 }
                 .padding(.horizontal, AppStyle.screenPadding)
 
